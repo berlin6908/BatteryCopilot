@@ -15,7 +15,9 @@ if (!(Test-Path $javaDirectory)) {
     Expand-Archive '.runtime/java21.zip' $javaDirectory
 }
 if (!(Test-Path '.runtime/neo4j-community-5.26.30')) {
-    Invoke-WebRequest 'https://dist.neo4j.org/neo4j-community-5.26.30-windows.zip' -OutFile '.runtime/neo4j.zip'
+    if (!(Test-Path '.runtime/neo4j.zip')) {
+        Invoke-WebRequest 'https://dist.neo4j.org/neo4j-community-5.26.30-windows.zip' -OutFile '.runtime/neo4j.zip'
+    }
     Expand-Archive '.runtime/neo4j.zip' '.runtime'
     Add-Content '.runtime/neo4j-community-5.26.30/conf/neo4j.conf' "`nserver.memory.heap.initial_size=256m`nserver.memory.heap.max_size=512m`nserver.memory.pagecache.size=256m`nserver.default_listen_address=127.0.0.1`ndbms.usage_report.enabled=false"
 }
@@ -23,14 +25,14 @@ if (!(Test-Path '.runtime/flutter')) {
     git clone --depth 1 --branch 3.47.4 https://github.com/flutter/flutter.git .runtime/flutter
     if ($LASTEXITCODE -ne 0) { throw 'Flutter download failed' }
 }
-$projectAlias = Join-Path $env:LOCALAPPDATA 'BatteryCopilotProject'
-if (!(Test-Path $projectAlias)) { New-Item -ItemType Junction -Path $projectAlias -Target $projectRoot | Out-Null }
+$projectAlias = & (Join-Path $PSScriptRoot 'project-path.ps1')
 if (!(Test-Path 'data/sources/pem-module-pack-guide.pdf')) {
     Invoke-WebRequest 'https://vdma-branchenfuehrer.de/fileadmin/battprod/downloads/Production_modul_and_pack_assembly.pdf' -OutFile 'data/sources/pem-module-pack-guide.pdf'
 }
 Push-Location (Join-Path $projectAlias 'frontend')
 try {
     & '../.runtime/flutter/bin/flutter.bat' pub get
+    if ($LASTEXITCODE -ne 0) { throw 'Flutter dependency setup failed' }
     & '../.runtime/flutter/bin/flutter.bat' build web --no-web-resources-cdn
     if ($LASTEXITCODE -ne 0) { throw 'Flutter build failed' }
 } finally { Pop-Location }

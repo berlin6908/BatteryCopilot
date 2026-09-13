@@ -1,9 +1,6 @@
 $ErrorActionPreference = 'Stop'
 $projectRoot = Split-Path $PSScriptRoot -Parent
-$runtimeAlias = Join-Path $env:LOCALAPPDATA 'BatteryCopilotRuntime'
-if (!(Test-Path $runtimeAlias)) {
-    New-Item -ItemType Junction -Path $runtimeAlias -Target (Join-Path $projectRoot '.runtime') | Out-Null
-}
+$runtimeAlias = Join-Path (& (Join-Path $PSScriptRoot 'project-path.ps1')) '.runtime'
 # The Windows Java launcher requires an ASCII runtime path on this machine.
 $neo4jRoot = Join-Path $runtimeAlias 'neo4j-community-5.26.30'
 $env:JAVA_HOME = (Get-ChildItem (Join-Path $env:LOCALAPPDATA 'BatteryCopilotJava21') -Directory | Select-Object -First 1).FullName

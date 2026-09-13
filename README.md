@@ -116,7 +116,8 @@ uv run python -m battery_copilot.evaluate --mode retrieval
 前端检查和构建：
 
 ```powershell
-Push-Location "$env:LOCALAPPDATA/BatteryCopilotProject/frontend"
+$projectPath = & ./scripts/project-path.ps1
+Push-Location (Join-Path $projectPath 'frontend')
 ../.runtime/flutter/bin/flutter.bat analyze
 ../.runtime/flutter/bin/flutter.bat build web --no-web-resources-cdn
 Pop-Location

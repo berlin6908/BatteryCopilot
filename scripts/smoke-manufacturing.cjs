@@ -11,7 +11,7 @@ const path = require('node:path');
   page.on('console', m => { if (m.type() === 'error') errors.push(m.text()); });
   const output = path.join(__dirname, '../data/runs/browser');
   fs.mkdirSync(output, { recursive: true });
-  await page.goto('http://127.0.0.1:8000');
+  await page.goto(process.env.BASE_URL || 'http://127.0.0.1:8000');
   await page.getByText('1 · 制造履历', { exact: true }).waitFor();
   await page.getByText('2 · 循环测试记录', { exact: true }).waitFor();
   await page.waitForTimeout(1200);
@@ -36,8 +36,15 @@ const path = require('node:path');
     await page.getByText('1 · 制造履历', { exact: true }).waitFor();
     // A saved report is selected through the same history control the user uses.
     await page.getByRole('button', { name: '已保存报告', exact: true }).click();
-    await page.getByRole('menuitem').first().click();
+    await page.getByRole('menuitem').filter({ hasText: answer.summary }).first().click();
     await page.getByText('人工复核', { exact: true }).waitFor();
+    if (process.env.TEST_REVIEW === '1') {
+      await page.getByRole('textbox', { name: '复核人', exact: true }).fill('automated browser test');
+      await page.getByRole('textbox', { name: '复核意见', exact: true }).fill('自动化流程验收：需补测试条件，不构成工程师验收。');
+      await page.getByRole('button', { name: '保存人工复核', exact: true }).click();
+      await page.getByText('自动化流程验收：需补测试条件，不构成工程师验收。', { exact: false }).waitFor();
+      result.flows.push('test-labelled manual review form');
+    }
     const downloadPromise = page.waitForEvent('download');
     await page.getByRole('button', { name: '导出含来源的 Markdown 报告', exact: true }).click();
     const download = await downloadPromise;
