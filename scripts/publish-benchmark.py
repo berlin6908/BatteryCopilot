@@ -11,7 +11,7 @@ from battery_copilot.benchmark_cases import CATEGORIES, SUITE
 
 
 def percentage(count, total):
-    return f"{count}/{total} ({count / total:.1%})"
+    return f"{count}/{total} ({count / total:.2%})"
 
 
 def main():
@@ -99,6 +99,18 @@ def main():
                 ],
             }
         )
+    failures = {}
+    for variant in "ABC":
+        selected = [r for r in rows if r["split"] == "test" and r["variant"] == variant]
+        failures[variant] = {
+            "no_complete_answer": sum(not r["returned_answer"] for r in selected),
+            "incorrect_answer": sum(
+                r["returned_answer"] and not r["answer_correct"] for r in selected
+            ),
+            "citation_only": sum(
+                r["answer_correct"] and not r["grounded_task_pass"] for r in selected
+            ),
+        }
     published = {
         "frozen_commit": args.commit,
         "suite": json.loads((SUITE / "manifest.json").read_text(encoding="utf-8")),
@@ -106,6 +118,7 @@ def main():
         "summary": summary,
         "test_paired": paired,
         "test_consumption": consumption,
+        "test_failure_categories": failures,
         "workflow_replay": {
             s: sum(r["status"] == s for r in replay)
             for s in ["passed", "failed", "model_dependency_failed"]
@@ -174,7 +187,19 @@ def main():
         r = summary["by_split"]["test"][v]
         lines.append(
             f"- {v}：{r['steps_with_usage']}/{r['steps']} 阶段返回 usage；"
-            f"错误分布：`{json.dumps(r['errors'], ensure_ascii=False)}`。"
+            f"失败阶段 {sum(r['errors'].values())} 个；错误明细见 results.json。"
+        )
+    lines += [
+        "",
+        "按案例归类，以下三类互斥；其中答案错误包括格式或字段值不匹配。",
+        "",
+        "| 方案 | 未返回完整答案 | 答案错误 | 答案正确但引用未达标 |",
+        "| --- | ---: | ---: | ---: |",
+    ]
+    for v in "ABC":
+        f = failures[v]
+        lines.append(
+            f"| {v} | {f['no_complete_answer']} | {f['incorrect_answer']} | {f['citation_only']} |"
         )
     lines += ["", "## 同题比较与流程验证", ""]
     for comparison, counts in paired.items():
