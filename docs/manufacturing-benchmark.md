@@ -73,7 +73,9 @@ JSON-LD 保留原节点与 IRI；循环答案使用标准 CSV 库和 Decimal 解
 
 ## 重现
 
-先按 README 导入 KIproBatt 并配置可用模型。题库重建只读取原始归档，不要求数据库：
+以下命令针对v1源码检查点 `14f44b8`。当前执行器已用于
+[v2验证](manufacturing-validation.md)，重现v1时先在独立检出中使用该检查点，
+按该版本README准备环境和导入数据。题库重建只读取原始归档，不要求数据库：
 
 ```powershell
 $env:PYTHONUTF8 = '1'

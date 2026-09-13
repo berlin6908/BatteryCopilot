@@ -1,6 +1,6 @@
 import json
 
-from battery_copilot.manufacturing_benchmark import grade, same
+from battery_copilot.manufacturing_benchmark import grade, requested_cycles, same
 from battery_copilot.manufacturing_cases import SUITE
 
 
@@ -25,6 +25,12 @@ def test_scoring_separates_missing_zero_rounding_and_evidence():
         wrong[field] = value
         assert not grade({**answer, "summary": json.dumps(wrong)}, gold, [])["answer_pass"]
     assert not grade(answer, gold, [])["answer_and_sources_pass"]
+
+
+def test_fixed_query_selects_cycles_from_question_not_file_dates_or_output_keys():
+    assert requested_cycles("Cycle 1 和 Cycle 100，输出cycle1_ah，文件230306-0100.txt") == [1, 100]
+    assert requested_cycles("核对循环0及循环 50") == [0, 50]
+    assert requested_cycles("核对2023年文件末尾12行") == []
 
 
 def test_source_checked_cases_keep_batches_separate_and_cover_counterexamples():

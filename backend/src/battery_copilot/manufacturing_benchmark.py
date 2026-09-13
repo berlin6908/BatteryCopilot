@@ -5,6 +5,7 @@ import hashlib
 import json
 import math
 import random
+import re
 import time
 from collections import Counter
 from concurrent.futures import ThreadPoolExecutor, as_completed
@@ -16,7 +17,7 @@ from langchain_core.tools import tool
 
 from battery_copilot import manufacturing as mfg
 from battery_copilot.agent import collect_ids, stream_answer
-from battery_copilot.manufacturing_cases import SUITE
+from battery_copilot.manufacturing_validation_cases import SUITE
 from battery_copilot.settings import ROOT, settings
 
 CONTRACT = (
@@ -80,8 +81,13 @@ def grade(result, gold, evidence):
     }
 
 
-def fixed_dossier(cell_uid):
-    """Question-independent policy: trace, each process, first/last 12 test rows."""
+def requested_cycles(question):
+    """Read explicit cycle numbers from user text, without accessing any gold labels."""
+    return sorted({int(n) for n in re.findall(r"(?:\bCycle\s+|循环\s*)(\d+)", question, re.I)})
+
+
+def fixed_dossier(cell_uid, question):
+    """Fixed query policy: trace, all scoped parameters, head/tail and requested cycles."""
     trace = mfg.trace_cell(cell_uid)
     evidence, calls = [trace], 1
     for process in sorted({s["process"]["uid"] for s in trace["stages"] if s["process"]}):
@@ -96,6 +102,10 @@ def fixed_dossier(cell_uid):
                 mfg.test_results(cell_uid, item["test"]["uid"], max(12, head["row_count"] - 12), 12)
             )
             calls += 1
+        cycles = requested_cycles(question)
+        if cycles:
+            evidence.append(mfg.test_results(cell_uid, item["test"]["uid"], cycles=cycles))
+            calls += 1
     return evidence, calls
 
 
@@ -104,7 +114,12 @@ def evaluate(task, variant):
     evidence, events = [], []
     retrieval_calls = 0
     inputs = task["input"]
-    question = inputs["question"] + CONTRACT
+    question = (
+        inputs["question"]
+        + "\n字段类型约定："
+        + json.dumps(inputs["fields"], ensure_ascii=False)
+        + CONTRACT
+    )
     try:
         if variant == "no_data":
             events = list(
@@ -122,7 +137,7 @@ def evaluate(task, variant):
             events = list(mfg.run_analysis(inputs["cell_uid"], question))
             retrieval_calls = sum(e["type"] == "tool" and e["status"] == "started" for e in events)
         else:
-            dossier, retrieval_calls = fixed_dossier(inputs["cell_uid"])
+            dossier, retrieval_calls = fixed_dossier(inputs["cell_uid"], inputs["question"])
 
             @tool
             def read_fixed_dossier() -> list:
@@ -252,8 +267,12 @@ def main():
         "variants": args.variants,
         "max_model_calls": 10,
         "max_tool_calls": 16,
+        "suite": str(SUITE.relative_to(ROOT).as_posix()),
+        "fixed_policy": "trace + all scoped parameters + first/last12 + explicit Cycle lookup",
         "sha256": {
-            str(p.relative_to(ROOT)): hashlib.sha256(p.read_bytes()).hexdigest()
+            p.relative_to(ROOT).as_posix(): hashlib.sha256(
+                p.read_text(encoding="utf-8").encode()
+            ).hexdigest()
             for p in [
                 *sorted((ROOT / "backend/src/battery_copilot").glob("*.py")),
                 SUITE / "cases.json",
