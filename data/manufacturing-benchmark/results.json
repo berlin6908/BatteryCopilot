@@ -1,0 +1,1357 @@
+{
+  "attempts": 108,
+  "groups": [
+    {
+      "split": "dev",
+      "variant": "no_data",
+      "attempts": 6,
+      "answer_pass": 0,
+      "answer_and_sources_pass": 0,
+      "median_seconds": 7.71,
+      "retrieval_calls": 0,
+      "usage": {
+        "input_tokens": 61372,
+        "output_tokens": 981,
+        "cached_input_tokens": 6912,
+        "model_calls": 6
+      },
+      "categories": {
+        "cycle_lookup": {
+          "n": 2,
+          "answer_pass": 0,
+          "answer_and_sources_pass": 0
+        },
+        "lineage": {
+          "n": 1,
+          "answer_pass": 0,
+          "answer_and_sources_pass": 0
+        },
+        "missing_values": {
+          "n": 1,
+          "answer_pass": 0,
+          "answer_and_sources_pass": 0
+        },
+        "parameters": {
+          "n": 2,
+          "answer_pass": 0,
+          "answer_and_sources_pass": 0
+        }
+      },
+      "failures": [
+        {
+          "id": "mfg-01",
+          "score": {
+            "actual": {
+              "chain": null
+            },
+            "fields": {
+              "chain": false
+            },
+            "answer_pass": false,
+            "answer_and_sources_pass": false,
+            "missing_sources": [
+              "ki:trace:ki:4df8de18d3933c20569b"
+            ],
+            "unresolved_sources": []
+          },
+          "error": null
+        },
+        {
+          "id": "mfg-02",
+          "score": {
+            "actual": {
+              "electrolyte_ml": null,
+              "compacting_kpa": null
+            },
+            "fields": {
+              "electrolyte_ml": false,
+              "compacting_kpa": true
+            },
+            "answer_pass": false,
+            "answer_and_sources_pass": false,
+            "missing_sources": [
+              "ki:190c63428cb06e8a6f1a",
+              "ki:71e43ebb5d6ebee8d0b8"
+            ],
+            "unresolved_sources": []
+          },
+          "error": null
+        },
+        {
+          "id": "mfg-03",
+          "score": {
+            "actual": {
+              "charge_ah": null,
+              "dcir_raw": null
+            },
+            "fields": {
+              "charge_ah": true,
+              "dcir_raw": false
+            },
+            "answer_pass": false,
+            "answer_and_sources_pass": false,
+            "missing_sources": [
+              "ki:f32fa0b6022060cdc591:L10"
+            ],
+            "unresolved_sources": []
+          },
+          "error": null
+        },
+        {
+          "id": "mfg-04",
+          "score": {
+            "actual": {
+              "cycle_120_discharge_ah": null
+            },
+            "fields": {
+              "discharge_ah": false
+            },
+            "answer_pass": false,
+            "answer_and_sources_pass": false,
+            "missing_sources": [
+              "ki:3d67ae318d3ffd9f7a94:L130"
+            ],
+            "unresolved_sources": []
+          },
+          "error": null
+        },
+        {
+          "id": "mfg-05",
+          "score": {
+            "actual": {
+              "injection_mbar": null,
+              "sealing_mbar": null,
+              "difference_mbar": null
+            },
+            "fields": {
+              "injection_mbar": false,
+              "sealing_mbar": false,
+              "difference_mbar": false
+            },
+            "answer_pass": false,
+            "answer_and_sources_pass": false,
+            "missing_sources": [
+              "ki:3608004a697730005a79",
+              "ki:d99599401bf5c0f8c3be"
+            ],
+            "unresolved_sources": []
+          },
+          "error": null
+        },
+        {
+          "id": "mfg-06",
+          "score": {
+            "actual": {
+              "row_count": null,
+              "last_cycle": null
+            },
+            "fields": {
+              "row_count": false,
+              "last_cycle": false
+            },
+            "answer_pass": false,
+            "answer_and_sources_pass": false,
+            "missing_sources": [
+              "ki:3d67ae318d3ffd9f7a94",
+              "ki:3d67ae318d3ffd9f7a94:L434"
+            ],
+            "unresolved_sources": []
+          },
+          "error": null
+        }
+      ]
+    },
+    {
+      "split": "dev",
+      "variant": "fixed",
+      "attempts": 6,
+      "answer_pass": 5,
+      "answer_and_sources_pass": 5,
+      "median_seconds": 14.78,
+      "retrieval_calls": 36,
+      "usage": {
+        "input_tokens": 330700,
+        "output_tokens": 1983,
+        "cached_input_tokens": 58368,
+        "model_calls": 14
+      },
+      "categories": {
+        "cycle_lookup": {
+          "n": 2,
+          "answer_pass": 1,
+          "answer_and_sources_pass": 1
+        },
+        "lineage": {
+          "n": 1,
+          "answer_pass": 1,
+          "answer_and_sources_pass": 1
+        },
+        "missing_values": {
+          "n": 1,
+          "answer_pass": 1,
+          "answer_and_sources_pass": 1
+        },
+        "parameters": {
+          "n": 2,
+          "answer_pass": 2,
+          "answer_and_sources_pass": 2
+        }
+      },
+      "failures": [
+        {
+          "id": "mfg-04",
+          "score": {
+            "actual": {
+              "discharge_ah": null
+            },
+            "fields": {
+              "discharge_ah": false
+            },
+            "answer_pass": false,
+            "answer_and_sources_pass": false,
+            "missing_sources": [
+              "ki:3d67ae318d3ffd9f7a94:L130"
+            ],
+            "unresolved_sources": []
+          },
+          "error": null
+        }
+      ]
+    },
+    {
+      "split": "dev",
+      "variant": "agent",
+      "attempts": 6,
+      "answer_pass": 6,
+      "answer_and_sources_pass": 5,
+      "median_seconds": 20.25,
+      "retrieval_calls": 14,
+      "usage": {
+        "input_tokens": 239125,
+        "output_tokens": 2373,
+        "cached_input_tokens": 96768,
+        "model_calls": 19
+      },
+      "categories": {
+        "cycle_lookup": {
+          "n": 2,
+          "answer_pass": 2,
+          "answer_and_sources_pass": 2
+        },
+        "lineage": {
+          "n": 1,
+          "answer_pass": 1,
+          "answer_and_sources_pass": 0
+        },
+        "missing_values": {
+          "n": 1,
+          "answer_pass": 1,
+          "answer_and_sources_pass": 1
+        },
+        "parameters": {
+          "n": 2,
+          "answer_pass": 2,
+          "answer_and_sources_pass": 2
+        }
+      },
+      "failures": [
+        {
+          "id": "mfg-01",
+          "score": {
+            "actual": {
+              "chain": [
+                "DryCell",
+                "FilledCell1",
+                "FormatedCell1"
+              ]
+            },
+            "fields": {
+              "chain": true
+            },
+            "answer_pass": true,
+            "answer_and_sources_pass": false,
+            "missing_sources": [
+              "ki:trace:ki:4df8de18d3933c20569b"
+            ],
+            "unresolved_sources": []
+          },
+          "error": null
+        }
+      ]
+    },
+    {
+      "split": "test",
+      "variant": "no_data",
+      "attempts": 30,
+      "answer_pass": 2,
+      "answer_and_sources_pass": 0,
+      "median_seconds": 6.99,
+      "retrieval_calls": 0,
+      "usage": {
+        "input_tokens": 306579,
+        "output_tokens": 5041,
+        "cached_input_tokens": 200448,
+        "model_calls": 30
+      },
+      "categories": {
+        "cycle_lookup": {
+          "n": 8,
+          "answer_pass": 0,
+          "answer_and_sources_pass": 0
+        },
+        "decision_boundary": {
+          "n": 5,
+          "answer_pass": 0,
+          "answer_and_sources_pass": 0
+        },
+        "identity": {
+          "n": 4,
+          "answer_pass": 0,
+          "answer_and_sources_pass": 0
+        },
+        "lineage": {
+          "n": 3,
+          "answer_pass": 0,
+          "answer_and_sources_pass": 0
+        },
+        "missing_values": {
+          "n": 5,
+          "answer_pass": 2,
+          "answer_and_sources_pass": 0
+        },
+        "parameters": {
+          "n": 5,
+          "answer_pass": 0,
+          "answer_and_sources_pass": 0
+        }
+      },
+      "failures": [
+        {
+          "id": "mfg-07",
+          "score": {
+            "actual": {
+              "chain": null,
+              "unique_processes": null
+            },
+            "fields": {
+              "chain": false,
+              "unique_processes": false
+            },
+            "answer_pass": false,
+            "answer_and_sources_pass": false,
+            "missing_sources": [
+              "ki:trace:ki:37951e10af424d0448d9"
+            ],
+            "unresolved_sources": []
+          },
+          "error": null
+        },
+        {
+          "id": "mfg-08",
+          "score": {
+            "actual": {
+              "linked_object_count": null,
+              "linked_names": null
+            },
+            "fields": {
+              "linked_object_count": false,
+              "linked_names": false
+            },
+            "answer_pass": false,
+            "answer_and_sources_pass": false,
+            "missing_sources": [
+              "ki:fda051c10cb8597e2705"
+            ],
+            "unresolved_sources": []
+          },
+          "error": null
+        },
+        {
+          "id": "mfg-09",
+          "score": {
+            "actual": {
+              "can_count_physical_cells": false,
+              "file_count": null
+            },
+            "fields": {
+              "can_count_physical_cells": true,
+              "file_count": false
+            },
+            "answer_pass": false,
+            "answer_and_sources_pass": false,
+            "missing_sources": [
+              "ki:fda051c10cb8597e2705"
+            ],
+            "unresolved_sources": []
+          },
+          "error": null
+        },
+        {
+          "id": "mfg-10",
+          "score": {
+            "actual": {
+              "chain": [],
+              "upstream_record_found": null
+            },
+            "fields": {
+              "chain": false,
+              "upstream_record_found": false
+            },
+            "answer_pass": false,
+            "answer_and_sources_pass": false,
+            "missing_sources": [
+              "ki:trace:ki:f55776d32b82594208dd"
+            ],
+            "unresolved_sources": []
+          },
+          "error": null
+        },
+        {
+          "id": "mfg-11",
+          "score": {
+            "actual": {
+              "electrolyte_ml": null
+            },
+            "fields": {
+              "electrolyte_ml": true
+            },
+            "answer_pass": true,
+            "answer_and_sources_pass": false,
+            "missing_sources": [
+              "ki:trace:ki:f55776d32b82594208dd"
+            ],
+            "unresolved_sources": []
+          },
+          "error": null
+        },
+        {
+          "id": "mfg-12",
+          "score": {
+            "actual": {
+              "charge_ah": null,
+              "discharge_ah": null
+            },
+            "fields": {
+              "charge_ah": false,
+              "discharge_ah": false
+            },
+            "answer_pass": false,
+            "answer_and_sources_pass": false,
+            "missing_sources": [
+              "ki:766365fc9f24fbd53625:L375"
+            ],
+            "unresolved_sources": []
+          },
+          "error": null
+        },
+        {
+          "id": "mfg-13",
+          "score": {
+            "actual": {
+              "row_count": null,
+              "cycle100_discharge_ah": null
+            },
+            "fields": {
+              "row_count": false,
+              "cycle100_discharge_ah": true
+            },
+            "answer_pass": false,
+            "answer_and_sources_pass": false,
+            "missing_sources": [
+              "ki:42b9b512932c29a0630b"
+            ],
+            "unresolved_sources": []
+          },
+          "error": null
+        },
+        {
+          "id": "mfg-14",
+          "score": {
+            "actual": {
+              "electrolyte_ml": null,
+              "electrolyte_ul": null
+            },
+            "fields": {
+              "electrolyte_ml": false,
+              "electrolyte_ul": false
+            },
+            "answer_pass": false,
+            "answer_and_sources_pass": false,
+            "missing_sources": [
+              "ki:3b60c9de4279d6f87a91"
+            ],
+            "unresolved_sources": []
+          },
+          "error": null
+        },
+        {
+          "id": "mfg-15",
+          "score": {
+            "actual": {
+              "cycle10_present": null,
+              "lifetime_established": null
+            },
+            "fields": {
+              "cycle10_present": false,
+              "lifetime_established": false
+            },
+            "answer_pass": false,
+            "answer_and_sources_pass": false,
+            "missing_sources": [
+              "ki:42b9b512932c29a0630b",
+              "ki:42b9b512932c29a0630b:L20"
+            ],
+            "unresolved_sources": []
+          },
+          "error": null
+        },
+        {
+          "id": "mfg-16",
+          "score": {
+            "actual": {
+              "recorded_ml": null,
+              "draft_matches": null
+            },
+            "fields": {
+              "recorded_ml": false,
+              "draft_matches": false
+            },
+            "answer_pass": false,
+            "answer_and_sources_pass": false,
+            "missing_sources": [
+              "ki:286ee309873f7a442fd5"
+            ],
+            "unresolved_sources": []
+          },
+          "error": null
+        },
+        {
+          "id": "mfg-17",
+          "score": {
+            "actual": {
+              "last_cycle": null,
+              "discharge_ah": null
+            },
+            "fields": {
+              "last_cycle": false,
+              "discharge_ah": false
+            },
+            "answer_pass": false,
+            "answer_and_sources_pass": false,
+            "missing_sources": [
+              "ki:95044186b39040388eb9:L568"
+            ],
+            "unresolved_sources": []
+          },
+          "error": null
+        },
+        {
+          "id": "mfg-18",
+          "score": {
+            "actual": {
+              "cycle1_ah": null,
+              "cycle100_ah": null,
+              "soh_established": false
+            },
+            "fields": {
+              "cycle1_ah": false,
+              "cycle100_ah": false,
+              "soh_established": true
+            },
+            "answer_pass": false,
+            "answer_and_sources_pass": false,
+            "missing_sources": [
+              "ki:95044186b39040388eb9:L11",
+              "ki:95044186b39040388eb9:L110"
+            ],
+            "unresolved_sources": []
+          },
+          "error": null
+        },
+        {
+          "id": "mfg-19",
+          "score": {
+            "actual": {
+              "discharge_ah": null,
+              "exactly_zero": null,
+              "failure_established": null
+            },
+            "fields": {
+              "discharge_ah": false,
+              "exactly_zero": false,
+              "failure_established": false
+            },
+            "answer_pass": false,
+            "answer_and_sources_pass": false,
+            "missing_sources": [
+              "ki:514ddf06bff20831e9a9:L11"
+            ],
+            "unresolved_sources": []
+          },
+          "error": null
+        },
+        {
+          "id": "mfg-20",
+          "score": {
+            "actual": {
+              "cycle50_ah": null,
+              "cycle51_ah": null
+            },
+            "fields": {
+              "cycle50_ah": false,
+              "cycle51_ah": false
+            },
+            "answer_pass": false,
+            "answer_and_sources_pass": false,
+            "missing_sources": [
+              "ki:514ddf06bff20831e9a9:L60",
+              "ki:514ddf06bff20831e9a9:L61"
+            ],
+            "unresolved_sources": []
+          },
+          "error": null
+        },
+        {
+          "id": "mfg-21",
+          "score": {
+            "actual": {
+              "formation_c": null
+            },
+            "fields": {
+              "formation_c": false
+            },
+            "answer_pass": false,
+            "answer_and_sources_pass": false,
+            "missing_sources": [
+              "ki:266c9236cf633bebb39f"
+            ],
+            "unresolved_sources": []
+          },
+          "error": null
+        },
+        {
+          "id": "mfg-22",
+          "score": {
+            "actual": {
+              "acr_raw": null,
+              "dcir_raw": null
+            },
+            "fields": {
+              "acr_raw": false,
+              "dcir_raw": false
+            },
+            "answer_pass": false,
+            "answer_and_sources_pass": false,
+            "missing_sources": [
+              "ki:d5ae29136e95229cdcc8:L11"
+            ],
+            "unresolved_sources": []
+          },
+          "error": null
+        },
+        {
+          "id": "mfg-23",
+          "score": {
+            "actual": {
+              "discharge_ah": null,
+              "discharge_wh": null
+            },
+            "fields": {
+              "discharge_ah": false,
+              "discharge_wh": false
+            },
+            "answer_pass": false,
+            "answer_and_sources_pass": false,
+            "missing_sources": [
+              "ki:d5ae29136e95229cdcc8:L190"
+            ],
+            "unresolved_sources": []
+          },
+          "error": null
+        },
+        {
+          "id": "mfg-24",
+          "score": {
+            "actual": {
+              "parameter_present": null,
+              "compacting_kpa": null
+            },
+            "fields": {
+              "parameter_present": false,
+              "compacting_kpa": true
+            },
+            "answer_pass": false,
+            "answer_and_sources_pass": false,
+            "missing_sources": [
+              "ki:f9249d23b5033ccce885"
+            ],
+            "unresolved_sources": []
+          },
+          "error": null
+        },
+        {
+          "id": "mfg-25",
+          "score": {
+            "actual": {
+              "cycle": 200,
+              "charge_ah": null,
+              "discharge_ah": null
+            },
+            "fields": {
+              "charge_ah": false,
+              "discharge_ah": false
+            },
+            "answer_pass": false,
+            "answer_and_sources_pass": false,
+            "missing_sources": [
+              "ki:e1317a5d5e54b377fdce:L210"
+            ],
+            "unresolved_sources": []
+          },
+          "error": null
+        },
+        {
+          "id": "mfg-26",
+          "score": {
+            "actual": {
+              "attached_to_selected_cell": null
+            },
+            "fields": {
+              "attached_to_selected_cell": false
+            },
+            "answer_pass": false,
+            "answer_and_sources_pass": false,
+            "missing_sources": [
+              "ki:trace:ki:366ffe7e505d308588ed"
+            ],
+            "unresolved_sources": []
+          },
+          "error": null
+        },
+        {
+          "id": "mfg-27",
+          "score": {
+            "actual": {
+              "electrode_count": null
+            },
+            "fields": {
+              "electrode_count": false
+            },
+            "answer_pass": false,
+            "answer_and_sources_pass": false,
+            "missing_sources": [
+              "ki:d1ea867c706b83e3f3ae"
+            ],
+            "unresolved_sources": []
+          },
+          "error": null
+        },
+        {
+          "id": "mfg-28",
+          "score": {
+            "actual": {
+              "filename": null
+            },
+            "fields": {
+              "filename": false
+            },
+            "answer_pass": false,
+            "answer_and_sources_pass": false,
+            "missing_sources": [
+              "ki:e56a7177a58da15e4d3a"
+            ],
+            "unresolved_sources": []
+          },
+          "error": null
+        },
+        {
+          "id": "mfg-29",
+          "score": {
+            "actual": {
+              "charge_ah": null,
+              "discharge_ah": null
+            },
+            "fields": {
+              "charge_ah": false,
+              "discharge_ah": false
+            },
+            "answer_pass": false,
+            "answer_and_sources_pass": false,
+            "missing_sources": [
+              "ki:e56a7177a58da15e4d3a:L25"
+            ],
+            "unresolved_sources": []
+          },
+          "error": null
+        },
+        {
+          "id": "mfg-30",
+          "score": {
+            "actual": {
+              "unique_processes": null
+            },
+            "fields": {
+              "unique_processes": false
+            },
+            "answer_pass": false,
+            "answer_and_sources_pass": false,
+            "missing_sources": [
+              "ki:trace:ki:856fab4c441df15da6cc"
+            ],
+            "unresolved_sources": []
+          },
+          "error": null
+        },
+        {
+          "id": "mfg-31",
+          "score": {
+            "actual": {
+              "wet_g": null,
+              "dry_with_bracing_g": null,
+              "can_compute_mass_difference": false
+            },
+            "fields": {
+              "wet_g": false,
+              "dry_with_bracing_g": true,
+              "can_compute_mass_difference": true
+            },
+            "answer_pass": false,
+            "answer_and_sources_pass": false,
+            "missing_sources": [
+              "ki:f079b3e2ab85d4db1582",
+              "ki:ffe45a3c8b83c121f6a0"
+            ],
+            "unresolved_sources": []
+          },
+          "error": null
+        },
+        {
+          "id": "mfg-32",
+          "score": {
+            "actual": {
+              "wet_g": null,
+              "wet_kg": null
+            },
+            "fields": {
+              "wet_g": false,
+              "wet_kg": false
+            },
+            "answer_pass": false,
+            "answer_and_sources_pass": false,
+            "missing_sources": [
+              "ki:ffe45a3c8b83c121f6a0"
+            ],
+            "unresolved_sources": []
+          },
+          "error": null
+        },
+        {
+          "id": "mfg-33",
+          "score": {
+            "actual": {
+              "mass_field_reviewable": false,
+              "filling_accepted": null
+            },
+            "fields": {
+              "mass_field_reviewable": false,
+              "filling_accepted": true
+            },
+            "answer_pass": false,
+            "answer_and_sources_pass": false,
+            "missing_sources": [
+              "ki:ffe45a3c8b83c121f6a0"
+            ],
+            "unresolved_sources": []
+          },
+          "error": null
+        },
+        {
+          "id": "mfg-34",
+          "score": {
+            "actual": {
+              "cycle150_wh": null,
+              "cycle151_wh": null
+            },
+            "fields": {
+              "cycle150_wh": false,
+              "cycle151_wh": false
+            },
+            "answer_pass": false,
+            "answer_and_sources_pass": false,
+            "missing_sources": [
+              "ki:536058d068f9882f25a1:L160",
+              "ki:536058d068f9882f25a1:L161"
+            ],
+            "unresolved_sources": []
+          },
+          "error": null
+        },
+        {
+          "id": "mfg-35",
+          "score": {
+            "actual": {
+              "electrolyte_selection": null
+            },
+            "fields": {
+              "electrolyte_selection": true
+            },
+            "answer_pass": true,
+            "answer_and_sources_pass": false,
+            "missing_sources": [
+              "ki:e0a250d8858ba8668692"
+            ],
+            "unresolved_sources": []
+          },
+          "error": null
+        },
+        {
+          "id": "mfg-36",
+          "score": {
+            "actual": {
+              "process_count": null,
+              "complete_history_proven": false
+            },
+            "fields": {
+              "process_count": false,
+              "complete_history_proven": true
+            },
+            "answer_pass": false,
+            "answer_and_sources_pass": false,
+            "missing_sources": [
+              "ki:trace:ki:f0241181d02f2fdeb374"
+            ],
+            "unresolved_sources": []
+          },
+          "error": null
+        }
+      ]
+    },
+    {
+      "split": "test",
+      "variant": "fixed",
+      "attempts": 30,
+      "answer_pass": 22,
+      "answer_and_sources_pass": 20,
+      "median_seconds": 14.57,
+      "retrieval_calls": 174,
+      "usage": {
+        "input_tokens": 1126333,
+        "output_tokens": 11117,
+        "cached_input_tokens": 423936,
+        "model_calls": 61
+      },
+      "categories": {
+        "cycle_lookup": {
+          "n": 8,
+          "answer_pass": 3,
+          "answer_and_sources_pass": 3
+        },
+        "decision_boundary": {
+          "n": 5,
+          "answer_pass": 3,
+          "answer_and_sources_pass": 3
+        },
+        "identity": {
+          "n": 4,
+          "answer_pass": 4,
+          "answer_and_sources_pass": 3
+        },
+        "lineage": {
+          "n": 3,
+          "answer_pass": 2,
+          "answer_and_sources_pass": 2
+        },
+        "missing_values": {
+          "n": 5,
+          "answer_pass": 5,
+          "answer_and_sources_pass": 4
+        },
+        "parameters": {
+          "n": 5,
+          "answer_pass": 5,
+          "answer_and_sources_pass": 5
+        }
+      },
+      "failures": [
+        {
+          "id": "mfg-07",
+          "score": {
+            "actual": {
+              "chain": [
+                {
+                  "object": "DryCell",
+                  "process": "Stacking Protocol"
+                },
+                {
+                  "object": "FilledCell1",
+                  "process": "Filling Protocol"
+                },
+                {
+                  "object": "FormatedCell1",
+                  "process": "Formation Protocol"
+                },
+                {
+                  "object": "TestedCell1",
+                  "process": "Formation Protocol"
+                }
+              ],
+              "unique_processes": [
+                "Stacking Protocol",
+                "Filling Protocol",
+                "Formation Protocol"
+              ]
+            },
+            "fields": {
+              "chain": false,
+              "unique_processes": false
+            },
+            "answer_pass": false,
+            "answer_and_sources_pass": false,
+            "missing_sources": [],
+            "unresolved_sources": []
+          },
+          "error": null
+        },
+        {
+          "id": "mfg-11",
+          "score": {
+            "actual": {
+              "electrolyte_ml": null
+            },
+            "fields": {
+              "electrolyte_ml": true
+            },
+            "answer_pass": true,
+            "answer_and_sources_pass": false,
+            "missing_sources": [
+              "ki:trace:ki:f55776d32b82594208dd"
+            ],
+            "unresolved_sources": []
+          },
+          "error": null
+        },
+        {
+          "id": "mfg-18",
+          "score": {
+            "actual": {
+              "cycle1_ah": 0.347363,
+              "cycle100_ah": null,
+              "soh_established": false
+            },
+            "fields": {
+              "cycle1_ah": true,
+              "cycle100_ah": false,
+              "soh_established": true
+            },
+            "answer_pass": false,
+            "answer_and_sources_pass": false,
+            "missing_sources": [
+              "ki:95044186b39040388eb9:L110"
+            ],
+            "unresolved_sources": []
+          },
+          "error": null
+        },
+        {
+          "id": "mfg-20",
+          "score": {
+            "actual": {
+              "cycle50_ah": null,
+              "cycle51_ah": null
+            },
+            "fields": {
+              "cycle50_ah": false,
+              "cycle51_ah": false
+            },
+            "answer_pass": false,
+            "answer_and_sources_pass": false,
+            "missing_sources": [
+              "ki:514ddf06bff20831e9a9:L60",
+              "ki:514ddf06bff20831e9a9:L61"
+            ],
+            "unresolved_sources": []
+          },
+          "error": null
+        },
+        {
+          "id": "mfg-23",
+          "score": {
+            "actual": {
+              "discharge_ah": null,
+              "discharge_wh": null
+            },
+            "fields": {
+              "discharge_ah": false,
+              "discharge_wh": false
+            },
+            "answer_pass": false,
+            "answer_and_sources_pass": false,
+            "missing_sources": [
+              "ki:d5ae29136e95229cdcc8:L190"
+            ],
+            "unresolved_sources": []
+          },
+          "error": null
+        },
+        {
+          "id": "mfg-25",
+          "score": {
+            "actual": {
+              "cycle": 200,
+              "charge_ah": null,
+              "discharge_ah": null
+            },
+            "fields": {
+              "charge_ah": false,
+              "discharge_ah": false
+            },
+            "answer_pass": false,
+            "answer_and_sources_pass": false,
+            "missing_sources": [
+              "ki:e1317a5d5e54b377fdce:L210"
+            ],
+            "unresolved_sources": []
+          },
+          "error": null
+        },
+        {
+          "id": "mfg-26",
+          "score": {
+            "actual": {
+              "attached_to_selected_cell": false
+            },
+            "fields": {
+              "attached_to_selected_cell": true
+            },
+            "answer_pass": true,
+            "answer_and_sources_pass": false,
+            "missing_sources": [
+              "ki:trace:ki:366ffe7e505d308588ed"
+            ],
+            "unresolved_sources": []
+          },
+          "error": null
+        },
+        {
+          "id": "mfg-29",
+          "score": {
+            "actual": {
+              "charge_ah": null,
+              "discharge_ah": null
+            },
+            "fields": {
+              "charge_ah": false,
+              "discharge_ah": false
+            },
+            "answer_pass": false,
+            "answer_and_sources_pass": false,
+            "missing_sources": [
+              "ki:e56a7177a58da15e4d3a:L25"
+            ],
+            "unresolved_sources": []
+          },
+          "error": null
+        },
+        {
+          "id": "mfg-33",
+          "score": {
+            "actual": {
+              "wet_cell_mass": 2.27,
+              "mass_field_reviewable": true,
+              "filling_accepted": null
+            },
+            "fields": {
+              "mass_field_reviewable": true,
+              "filling_accepted": true
+            },
+            "answer_pass": false,
+            "answer_and_sources_pass": false,
+            "missing_sources": [],
+            "unresolved_sources": []
+          },
+          "error": null
+        },
+        {
+          "id": "mfg-34",
+          "score": {
+            "actual": {
+              "cycle150_wh": null,
+              "cycle151_wh": null
+            },
+            "fields": {
+              "cycle150_wh": false,
+              "cycle151_wh": false
+            },
+            "answer_pass": false,
+            "answer_and_sources_pass": false,
+            "missing_sources": [
+              "ki:536058d068f9882f25a1:L160",
+              "ki:536058d068f9882f25a1:L161"
+            ],
+            "unresolved_sources": []
+          },
+          "error": null
+        }
+      ]
+    },
+    {
+      "split": "test",
+      "variant": "agent",
+      "attempts": 30,
+      "answer_pass": 27,
+      "answer_and_sources_pass": 24,
+      "median_seconds": 21.92,
+      "retrieval_calls": 79,
+      "usage": {
+        "input_tokens": 1277995,
+        "output_tokens": 12355,
+        "cached_input_tokens": 677888,
+        "model_calls": 96
+      },
+      "categories": {
+        "cycle_lookup": {
+          "n": 8,
+          "answer_pass": 8,
+          "answer_and_sources_pass": 8
+        },
+        "decision_boundary": {
+          "n": 5,
+          "answer_pass": 4,
+          "answer_and_sources_pass": 4
+        },
+        "identity": {
+          "n": 4,
+          "answer_pass": 4,
+          "answer_and_sources_pass": 3
+        },
+        "lineage": {
+          "n": 3,
+          "answer_pass": 2,
+          "answer_and_sources_pass": 1
+        },
+        "missing_values": {
+          "n": 5,
+          "answer_pass": 4,
+          "answer_and_sources_pass": 3
+        },
+        "parameters": {
+          "n": 5,
+          "answer_pass": 5,
+          "answer_and_sources_pass": 5
+        }
+      },
+      "failures": [
+        {
+          "id": "mfg-07",
+          "score": {
+            "actual": null,
+            "fields": {
+              "chain": false,
+              "unique_processes": false
+            },
+            "answer_pass": false,
+            "answer_and_sources_pass": false,
+            "missing_sources": [
+              "ki:trace:ki:37951e10af424d0448d9"
+            ],
+            "unresolved_sources": []
+          },
+          "error": "offset >= 0; 1 <= limit <= 40"
+        },
+        {
+          "id": "mfg-09",
+          "score": {
+            "actual": {
+              "can_count_physical_cells": false,
+              "file_count": 1
+            },
+            "fields": {
+              "can_count_physical_cells": true,
+              "file_count": true
+            },
+            "answer_pass": true,
+            "answer_and_sources_pass": false,
+            "missing_sources": [
+              "ki:fda051c10cb8597e2705"
+            ],
+            "unresolved_sources": []
+          },
+          "error": null
+        },
+        {
+          "id": "mfg-11",
+          "score": {
+            "actual": {
+              "electrolyte_ml": null
+            },
+            "fields": {
+              "electrolyte_ml": true
+            },
+            "answer_pass": true,
+            "answer_and_sources_pass": false,
+            "missing_sources": [
+              "ki:trace:ki:f55776d32b82594208dd"
+            ],
+            "unresolved_sources": []
+          },
+          "error": null
+        },
+        {
+          "id": "mfg-18",
+          "score": {
+            "actual": null,
+            "fields": {
+              "cycle1_ah": false,
+              "cycle100_ah": false,
+              "soh_established": false
+            },
+            "answer_pass": false,
+            "answer_and_sources_pass": false,
+            "missing_sources": [
+              "ki:95044186b39040388eb9:L11",
+              "ki:95044186b39040388eb9:L110"
+            ],
+            "unresolved_sources": []
+          },
+          "error": "offset >= 0; 1 <= limit <= 40"
+        },
+        {
+          "id": "mfg-22",
+          "score": {
+            "actual": {
+              "acr_raw": "0",
+              "dcir_raw": "0"
+            },
+            "fields": {
+              "acr_raw": false,
+              "dcir_raw": false
+            },
+            "answer_pass": false,
+            "answer_and_sources_pass": false,
+            "missing_sources": [],
+            "unresolved_sources": []
+          },
+          "error": null
+        },
+        {
+          "id": "mfg-30",
+          "score": {
+            "actual": {
+              "unique_processes": 3
+            },
+            "fields": {
+              "unique_processes": true
+            },
+            "answer_pass": true,
+            "answer_and_sources_pass": false,
+            "missing_sources": [
+              "ki:trace:ki:856fab4c441df15da6cc"
+            ],
+            "unresolved_sources": []
+          },
+          "error": null
+        }
+      ]
+    }
+  ]
+}

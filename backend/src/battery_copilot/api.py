@@ -11,6 +11,7 @@ from battery_copilot.case_api import router as case_router
 from battery_copilot.cases import CaseConflict, CaseNotFound
 from battery_copilot.changes import compare_scenario
 from battery_copilot.graph import graph
+from battery_copilot.manufacturing_api import router as manufacturing_router
 from battery_copilot.retrieval import search
 from battery_copilot.settings import DERIVED, PDF, ROOT, settings
 
@@ -23,6 +24,7 @@ async def lifespan(app):
 
 app = FastAPI(title="Battery Engineering Copilot", version="0.1.0", lifespan=lifespan)
 app.include_router(case_router)
+app.include_router(manufacturing_router)
 
 
 @app.exception_handler(CaseConflict)

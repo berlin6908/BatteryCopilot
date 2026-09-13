@@ -171,6 +171,25 @@ def run_agent(
     max_model_calls: int | None = None,
     max_tool_calls: int | None = None,
 ):
+    yield from stream_answer(
+        request.question,
+        domain_tools(request, case_context),
+        SYSTEM,
+        request.model_dump(),
+        max_model_calls=max_model_calls,
+        max_tool_calls=max_tool_calls,
+    )
+
+
+def stream_answer(
+    question: str,
+    tools: list,
+    system_prompt: str,
+    request_metadata: dict,
+    *,
+    max_model_calls: int | None = None,
+    max_tool_calls: int | None = None,
+):
     started, run_id = time.perf_counter(), uuid.uuid4().hex
     trace, seen, answer = [], set(), None
     usage = {"input_tokens": 0, "output_tokens": 0, "cached_input_tokens": 0, "model_calls": 0}
@@ -202,13 +221,13 @@ def run_agent(
     try:
         agent = create_agent(
             model(),
-            domain_tools(request, case_context),
-            system_prompt=SYSTEM,
+            tools,
+            system_prompt=system_prompt,
             response_format=ToolStrategy(response_schema),
             middleware=[track_evidence],
         )
         for update in agent.stream(
-            {"messages": [{"role": "user", "content": request.question}]},
+            {"messages": [{"role": "user", "content": question}]},
             {"recursion_limit": 24},
             stream_mode="updates",
         ):
@@ -287,7 +306,7 @@ def run_agent(
         json.dumps(
             {
                 "created_at": datetime.now(timezone.utc).isoformat(),
-                "request": request.model_dump(),
+                "request": request_metadata,
                 "model": settings().model_name,
                 "model_provider": settings().model_provider,
                 "trace": trace,

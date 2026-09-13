@@ -141,7 +141,7 @@ class LocalGraph extends StatelessWidget {
 Future<void> showEvidence(
   BuildContext context,
   String uid,
-  int battery, {
+  int? battery, {
   Map? evidence,
 }) async {
   try {
@@ -178,6 +178,8 @@ Future<void> showEvidence(
                           ? '通用工艺指南'
                           : data['source_kind'] == 'simulation'
                           ? '模拟设定'
+                          : data['source_kind'] == 'manufacturing'
+                          ? 'KIproBatt 制造记录'
                           : 'KIT 原始记录',
                     ),
                     IconButton(
@@ -285,9 +287,13 @@ Future<void> showEvidence(
                             ),
                             if (data['raw_record'] != null) ...[
                               const SizedBox(height: 24),
-                              const Text(
-                                '原始 CSV 行',
-                                style: TextStyle(fontWeight: FontWeight.w600),
+                              Text(
+                                data['source_kind'] == 'manufacturing'
+                                    ? '来源属性 / 测试原始行'
+                                    : '原始 CSV 行',
+                                style: const TextStyle(
+                                  fontWeight: FontWeight.w600,
+                                ),
                               ),
                               const SizedBox(height: 8),
                               SelectableText(

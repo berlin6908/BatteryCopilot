@@ -36,14 +36,16 @@ class Api {
     String question,
     int battery,
     String scenario,
-  ) async* {
-    final request = http.Request('POST', uri('agent/run'))
+  ) => stream('agent/run', {
+    'question': question,
+    'battery_id': battery,
+    'scenario_id': scenario,
+  });
+
+  Stream<Map<String, dynamic>> stream(String path, Map body) async* {
+    final request = http.Request('POST', uri(path))
       ..headers['Content-Type'] = 'application/json'
-      ..body = jsonEncode({
-        'question': question,
-        'battery_id': battery,
-        'scenario_id': scenario,
-      });
+      ..body = jsonEncode(body);
     final response = await client.send(request);
     if (response.statusCode != 200) {
       throw Exception(

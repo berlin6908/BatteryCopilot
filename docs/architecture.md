@@ -40,6 +40,43 @@ flowchart LR
 
 ## 图模式
 
+### 制造履历
+
+`manufacturing_ingest.py` 用 RDFLib 解析固定版本 JSON-LD，保留原始 IRI、来源文件、
+RDF 属性及含原单位的 `HasValue`。独立的 `MfgRecord` / `MfgTest` 标签和 UID 索引
+承载制造数据，复用 Evidence 引用与 Neo4j 数据库。KIT 的拆解标签和顺序含义保持独立。
+
+```text
+Parameter -FOR_OBJECT-> OutputObject
+Parameter -SOURCE_OBJECT-> PredecessorObject
+OutputObject -DERIVED_FROM {evidence_uid: Parameter.uid}-> PredecessorObject
+Object -OUTPUT_OF-> Process <-STEP_OF- Step <-FOR_STEP- Parameter
+Object -HAS_TEST {evidence_uid: FileParameter.uid}-> MfgTest
+```
+
+`DERIVED_FROM` 是由原始对象参数的两个明确关系投影出来的边，不是模型推断。
+按这条边最多追溯 30 跳；同批其他输出、内部中间对象不会自动归入电芯履历。
+过程详情只返回该履历对象的参数及未绑定其他对象的共享参数。
+终点表示缺少进一步明确关系，不意味着该对象就是制造起点。
+
+循环统计使用标准 CSV 库读取制表符、小数逗号和科学计数法，空值保留为 null。
+行证据 ID 为 `ki:<文件哈希>:L<原始行号>`。保存文件 SHA-256、头部元数据和原始单元格。
+一个文件可能被多个图谱对象引用，工具显式返回全部关联对象；不据此计算独立电芯数。
+ACR/DCIR 和 Date 保留来源值，不推定单位、日期时区或测试阶段。
+
+`manufacturing.py` 的四个工具绑定选中电芯，复用 `agent.py` 的 `stream_answer` 循环、
+结构化回答和引用校验。工具决定数据范围和计算口径，模型决定取证次序与报告内容。
+生成上限为 10 次模型调用、16 次领域工具调用；未得到完整答案就返回错误。
+`MfgReport` 保存任务、数据版本、结构化答案和被引用证据快照，人工意见单独保存一次。
+模型不能调用人工复核接口。导出支持未复核的报告，并保留实际复核状态和来源。
+该闭环用于资料复核，未加入制造执行、质量放行或工艺优化控制。
+
+`run_analysis` 执行同一取证循环，`run_report` 在结果完整后保存报告；制造评测调用前者，
+从而检查产品实际策略，并避免评测回答混入用户报告列表。标准答案从原始归档独立读取，
+不调用生产图查询；固定档案策略同样使用生产资料接口，按声明的首尾页采样流程取证。
+
+### 拆解与指南
+
 `kit-v1:part:1000` 与 `kit-v1:fixation:1000` 是不同对象。节点共享 Evidence 标签以便引用，
 结构节点另有 Record 和具体类型标签。UID 有唯一约束。
 

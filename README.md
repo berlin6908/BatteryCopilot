@@ -2,13 +2,15 @@
 
 电池工程知识图谱与证据助手，使用 FastAPI、Neo4j、Docling、LangChain/LangGraph 和 Flutter Web。
 
+- 基于 KIproBatt 实际电芯试制数据，追溯电芯前驱、制造过程和已填写参数。
+- 核对循环测试原始行，生成有引用的制造复核报告，保存人工意见并导出来源快照。
 - 浏览电池部件、连接件及已记录拆解操作，追溯原始 CSV 行。
 - 检索工艺指南，在 PDF 原页定位证据区域。
 - 通过 Agent 调用领域工具，生成带引用的回答。
 - 保存变更申请，检查工具卡、作业指导书和关联对象，补充资料后重新分析。
 - 逐项记录人工复核，完成变更单并导出带来源和版本的 Markdown 报告。
 
-![工作台](docs/images/workbench.png)
+![制造履历与循环测试](docs/images/manufacturing-workbench.png)
 
 ## 安装与运行
 
@@ -29,6 +31,7 @@ $env:PYTHONUTF8 = '1'
 uv run python -m battery_copilot.ingest
 uv run python -m battery_copilot.documents
 uv run python -m battery_copilot.retrieval
+uv run python -m battery_copilot.manufacturing_ingest
 pwsh -File scripts/start.ps1
 ```
 
@@ -60,6 +63,27 @@ MODEL_NAME=your-tool-calling-model
 
 修改配置后重启后端。图查询、证据浏览和申请保存可以独立于生成模型使用，变更分析需要模型。
 服务默认仅监听本机；Codex 模式用于个人本地演示。
+
+## 体验制造履历与检验复核
+
+默认进入「制造履历」。选择测试关联电芯，展开「制造履历」中的工序参数，
+在「循环测试记录」中查看充放电容量、翻页并点击原始行证据。
+点击「生成制造复核报告」后，Agent 自行调用履历、过程参数、测试和来源读取工具。
+报告保存到 Neo4j；刷新后从「已保存报告」重新打开，填写人工复核意见并导出 Markdown。
+
+默认样本 `FormatedCell1 · 101_tizue-ki-230306-tizue-0400-059_-STATS-.txt`
+可明确回溯到叠片产出的干电芯、注液和化成过程。
+循环 1 的原始放电容量为 **0.438290374336 Ah**，可在文件第 11 行核对。
+更上游的电极料盒存在过程记录，但没有连接到该电芯的明确对象前驱，页面显示追溯终点。
+测试包含不同阶段；当前数据不足以由首末容量之比判断 SOH、制造缺陷或合格性。
+
+制造导入固定在 KIproBatt v0.3.2：718 个过程实例、24,577 个源节点、108 份循环统计。
+这些文件关联 109 个图谱对象，其中一份被两个对象引用；对象数不代表独立物理电芯数。
+使用公共实验室制造数据，未声称接入工业量产系统。
+下载约 78 MB 归档，校验后导入；也可传 `--archive <本地归档路径>`。
+原始归档不上传 GitHub，详见 [来源与转换说明](data/sources/kiprobatt/ATTRIBUTION.md)。
+
+![制造报告与人工复核](docs/images/manufacturing-report.png)
 
 ## 体验变更流程
 
@@ -103,6 +127,20 @@ Pop-Location
 资料补充、刷新恢复、人工复核与报告下载，并额外检查真实模型问答。
 评测执行器、示例题及评分格式见 [评测说明](docs/evaluation.md)。
 
+`scripts/smoke-manufacturing.cjs` 检查制造履历、循环原始行与分页；设置 `LIVE_AGENT=1`
+还会实际调用模型，检查报告保存、刷新恢复及含来源的导出。两个脚本均需可解析的 Playwright
+Node 包和本机 Edge。制造功能的数值与对象范围测试位于 `backend/tests/test_manufacturing.py`。
+原 300 题不覆盖 KIproBatt 新业务，下面的分数不能作为制造复核能力的评测结果。
+
+制造功能另有 [36 个来源核查案例](data/manufacturing-benchmark/cases.json)，
+覆盖 12 个测试批次；6 题开发检查、30 题冻结评测。
+对比无资料、固定工艺档案与 Agent，检查真实参数、循环定位、资料缺口和判断边界，
+详细范围及重现命令见 [制造业务诊断协议](docs/manufacturing-benchmark.md)。
+已使用 Terra 完成108次尝试；30题冻结评测中，Agent严格字段通过27/30、
+字段及预设引用通过24/30，固定档案分别为22/30、20/30。
+格式问题、采样缺口和分页错误分别记录在 [制造诊断实测结果](docs/manufacturing-results.md)；
+这是单电芯资料核查的小规模诊断，不代表工业业务准确率。
+
 300 案例、60/240 开发测试划分及三方案对照见 [完整评测协议](docs/benchmark-300.md)。
 题库包含原始来源、确定答案和模拟业务修订流程，可独立重新生成。
 
@@ -126,6 +164,11 @@ docs/                架构、评测说明和界面预览
 架构及工具设计见 [架构说明](docs/architecture.md)。
 
 ## 数据来源与范围
+
+KIproBatt：[v0.3.2 数据归档](https://zenodo.org/records/11895571)，CC BY 4.0。
+实验室电芯制造过程、对象、参数及测试导出，作者署名见
+[ATTRIBUTION](data/sources/kiprobatt/ATTRIBUTION.md)。本轮未纳入另 13 份非循环统计导出，
+未下载源平台外部图片，也未把未解析的过程状态判为成功完工。
 
 KIT / WBK：Marina Baucks、Alexander Morasch；贡献者 Sebastian Henschel、Jürgen Fleischer。
 [数据 DOI](https://doi.org/10.35097/emz24pksshndq468)，CC BY 4.0。10 个电池包的原始 CSV

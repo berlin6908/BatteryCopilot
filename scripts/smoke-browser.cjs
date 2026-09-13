@@ -11,6 +11,7 @@ const path = require('node:path');
   const output = path.join(__dirname, '../data/runs/browser');
   fs.mkdirSync(output, { recursive: true });
   await page.goto('http://127.0.0.1:8000');
+  await page.getByRole('button', { name: '结构与记录', exact: true }).click();
   await page.getByRole('button', { name: '查看当前对象证据', exact: true }).waitFor();
   await page.getByRole('button', { name: /^screw 1000/ }).waitFor();
   await page.waitForTimeout(1200);
