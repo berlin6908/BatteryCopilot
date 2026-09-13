@@ -92,3 +92,15 @@ uv run python -m battery_copilot.benchmark --output data/runs/benchmark-300 --su
 工具返回、评分、耗时与可用的 usage；`summary.json` 汇总开发/测试集和各类别。
 这些原始运行记录留在忽略目录 `data/runs/`，公开仓库保留题库、执行器、协议和结果摘要。
 结果只支持这套公开资料及模拟流程下的结论。
+
+完整运行后重放 50 个保存流程，再生成公开报告：
+
+```powershell
+uv run python scripts/benchmark-workflows.py --run data/runs/benchmark-300
+uv run python scripts/publish-benchmark.py data/runs/benchmark-300 --commit <冻结源码提交>
+```
+
+重放复用实际 C 回答，不再调用模型。复核人由脚本模拟，验证应用的状态流转，
+不能把它算作人工验收。发布脚本要求全部 900 个尝试和 50 个流程结果齐全。
+题库 manifest 的 `sha256` 按 UTF-8、LF 换行的 JSON 文本计算；
+运行 manifest 的逐文件指纹按本机原始字节计算，跨平台核对需注意文本换行。
