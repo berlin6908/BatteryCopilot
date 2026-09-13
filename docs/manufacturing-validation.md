@@ -38,6 +38,56 @@ v2不是在旧输出上重新评分，所有模型尝试重新运行并分别保
 每个题目/策略组合只运行一次，不重试覆盖失败。先跑8题回归，再运行24题冻结验证；
 源代码、题库、锁文件及模型配置冻结在同一运行清单中。
 
+## 实测与修复验证
+
+v2共32题×3策略=96次尝试。随后根据失败与来源抽查，补充参数对象绑定，
+调整整条履历和文件的引用提示，再以相同金标准完整重放96次。两轮均无运行异常，
+每题每策略在各轮中只运行一次，所有失败均保留。
+
+下表单元格为「字段通过 / 字段及预设引用通过」，分母是对应行的题数：
+
+| 运行与分组 | 题数 | 无资料 | 固定查询 | Agent |
+| --- | ---: | --- | --- | --- |
+| v2已知回归 | 8 | 1 / 0 | 8 / 8 | 8 / 7 |
+| v2同批次新对象 | 24 | 2 / 0 | 23 / 23 | 24 / 23 |
+| 修复后回归重放 | 8 | 1 / 0 | 8 / 8 | 8 / 8 |
+| 修复后新对象题重放 | 24 | 2 / 0 | 24 / 24 | 24 / 24 |
+
+修复前：[结果](../data/manufacturing-validation/results-v2.json)、
+[运行指纹](../data/manufacturing-validation/run-manifest-v2.json)、
+[16份回答抽查](../data/manufacturing-validation/audit-v2.json)。
+修复后：[结果](../data/manufacturing-validation/results-final.json)、
+[运行指纹](../data/manufacturing-validation/run-manifest-final.json)、
+[18份回答抽查](../data/manufacturing-validation/audit-final.json)。
+
+v2的具体发现：
+
+- `new-12` Agent正确抄录了湿质量显示值，却将其归属到干电芯前驱。原始参数的
+  `IsObjectParameterOf` 指向 FilledCell1。工具现在显式返回绑定对象，修复后重放归属正确。
+- `new-22` 固定查询把过程名称写进要求对象名称的数组；修复后重放未再次发生。
+  这也说明生成输出有波动，不能把一次改善都归因于新增字段。
+- `new-24` Agent正确返回null，但以文件关联参数支持“缺少前驱”，引用范围不足。
+  `mfg-09`还遗漏了规定的文件引用。调整引用候选和范围说明后，两题本次重放通过。
+
+v2定向抽查的16份回答中3份有上述问题；修复后检查相同8题的两种有资料策略，
+另加 `mfg-09` 两份回答，共18份，未在检查范围内发现新问题。
+检查由开发助手对照原始节点、对象绑定、循环行和实际claims完成，未经外部工程师验收。
+**修复后问题已被查看，是回归验证，不能称为新的盲测，也不是100%的业务正确率。**
+无资料策略在新对象组通过的2题，其所求字段恰好全为null，不表示取证能力。
+
+修复后24题的实际开销：
+
+| 策略 | 资料查询总数 | 模型调用总数 | 中位耗时 | 输入token | 输出token | 缓存输入token |
+| --- | ---: | ---: | ---: | ---: | ---: | ---: |
+| 无资料 | 0 | 24 | 6.88秒 | 248,918 | 3,393 | 158,976 |
+| 固定查询 | 152 | 48 | 13.28秒 | 895,660 | 6,191 | 337,920 |
+| Agent | 54 | 71 | 17.86秒 | 916,893 | 7,826 | 497,920 |
+
+Agent减少了资料查询次数，但模型轮数、输入token和耗时更高；本轮没有证明其准确率
+超过加强后的固定流程。输入token包含缓存部分，不重复相加，不折算API费用。
+运行使用Terra、3个并发worker；耗时包括CLI与本机查询开销，同时进行了安装验证，
+因此这些时延用于披露本次运行成本，不作为独立性能压测。
+
 ## 重现
 
 先完成README安装及KIproBatt导入，然后执行：
@@ -46,8 +96,10 @@ v2不是在旧输出上重新评分，所有模型尝试重新运行并分别保
 $env:PYTHONUTF8 = '1'
 $env:HF_HUB_OFFLINE = '1'
 uv run python -m battery_copilot.manufacturing_validation_cases --archive data/sources/kiprobatt/dataset-v0.3.2.zip
-uv run python -m battery_copilot.manufacturing_benchmark --output data/runs/manufacturing-validation-v2 --split dev --workers 3
-uv run python -m battery_copilot.manufacturing_benchmark --output data/runs/manufacturing-validation-v2 --split test --workers 3
+uv run python -m battery_copilot.manufacturing_benchmark --output data/runs/manufacturing-validation-replay --workers 3
 ```
 
 原始轨迹留在被忽略的 `data/runs/`；公开仓库保存协议、题库、执行器和汇总结果。
+历史v2源码检查点为 `ded512b`，最终制造重放源码为 `101025c`；当前制造实现与后者相同。
+不同源码/配置的尝试必须写入新目录。再次执行同一配置可以补齐未运行的组合，
+不能覆盖已有失败；模型重新运行可能产生不同回答。

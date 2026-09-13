@@ -1,0 +1,420 @@
+{
+  "reviewer": "development assistant (not an external engineer)",
+  "selection": "Purposive post-run review of the same eight v2 audit cases plus the file-identity regression mfg-09; not random or independent holdout.",
+  "scope": "Claims, cited IDs and original source nodes/rows; findings apply only to the checked answers.",
+  "reviewed_answers": 18,
+  "answers_with_findings": 0,
+  "rows": [
+    {
+      "case_id": "new-04",
+      "variant": "fixed",
+      "summary": "{\"wet_g\":1.51,\"dry_g\":null}",
+      "claims": [
+        {
+          "statement": "湿质量（WettCellMass13）记录为 1.51 g，且对象绑定为该电芯的明确前驱 FilledCell1。",
+          "evidence_ids": [
+            "ki:625e4d749eb990cd9293"
+          ],
+          "scope": "record"
+        },
+        {
+          "statement": "干电芯带支撑质量（DryCellWithBracingMass13）未填写原始值，因此为 null。",
+          "evidence_ids": [
+            "ki:66489c864992fd1420aa"
+          ],
+          "scope": "record"
+        }
+      ],
+      "verdict": "supported_in_checked_scope",
+      "basis": "原始湿质量1.51 g、干电芯带支撑质量无HasValue；两参数均明确绑定FilledCell1。",
+      "finding": null
+    },
+    {
+      "case_id": "new-04",
+      "variant": "agent",
+      "summary": "{\"wet_g\":1.51,\"dry_g\":null}",
+      "claims": [
+        {
+          "statement": "FilledCell1（选中 FormatedCell1 的明确前驱）的湿质量记录为 1.51 g；该参数绑定至 FilledCell1。",
+          "evidence_ids": [
+            "ki:625e4d749eb990cd9293"
+          ],
+          "scope": "record"
+        },
+        {
+          "statement": "FilledCell1 的干电芯带支撑质量参数未填写，因此 dry_g 为 null。",
+          "evidence_ids": [
+            "ki:66489c864992fd1420aa"
+          ],
+          "scope": "record"
+        },
+        {
+          "statement": "追溯记录显示 FilledCell1 是 FormatedCell1 的明确前驱。",
+          "evidence_ids": [
+            "ki:trace:ki:eb90fb411cbe2ba12348"
+          ],
+          "scope": "record"
+        }
+      ],
+      "verdict": "supported_in_checked_scope",
+      "basis": "原始湿质量1.51 g、干电芯带支撑质量无HasValue；两参数均明确绑定FilledCell1。",
+      "finding": null
+    },
+    {
+      "case_id": "new-06",
+      "variant": "fixed",
+      "summary": "{\"dry_g\":0,\"wet_g\":1.615}",
+      "claims": [
+        {
+          "statement": "称重表中 DryCellWithBracingMass12 已填写为记录值 0 g（不是缺失）；其对象绑定为该电芯的 FilledCell1 前驱。",
+          "evidence_ids": [
+            "ki:ea6cdbd3daeea520b4ad"
+          ],
+          "scope": "record"
+        },
+        {
+          "statement": "WettCellMass12 已填写为 1.615 g，且绑定到同一 FilledCell1。",
+          "evidence_ids": [
+            "ki:bc36427e00ebde4253c7"
+          ],
+          "scope": "record"
+        }
+      ],
+      "verdict": "supported_in_checked_scope",
+      "basis": "原始干质量0 g是已填写值，湿质量1.615 g；两参数均绑定FilledCell1，未把零替换为缺失。",
+      "finding": null
+    },
+    {
+      "case_id": "new-06",
+      "variant": "agent",
+      "summary": "{\"dry_g\":0,\"wet_g\":1.615}",
+      "claims": [
+        {
+          "statement": "称重表中，FormatedCell1 的明确前驱 FilledCell1 的干电芯带支撑质量已填写为 0 g（记录值，并非缺失）。",
+          "evidence_ids": [
+            "ki:ea6cdbd3daeea520b4ad"
+          ],
+          "scope": "record"
+        },
+        {
+          "statement": "同一对象的湿电芯质量已填写为 1.615 g。",
+          "evidence_ids": [
+            "ki:bc36427e00ebde4253c7"
+          ],
+          "scope": "record"
+        }
+      ],
+      "verdict": "supported_in_checked_scope",
+      "basis": "原始干质量0 g是已填写值，湿质量1.615 g；两参数均绑定FilledCell1，未把零替换为缺失。",
+      "finding": null
+    },
+    {
+      "case_id": "new-10",
+      "variant": "fixed",
+      "summary": "{\"electrolyte_ml\":0.92,\"dry_g\":11.815,\"wet_g\":12.91}",
+      "claims": [
+        {
+          "statement": "沿当前电芯的明确前驱，Filling Protocol 中与 FilledCell1 绑定的 ElectrolyteVolume13 记录为 0.92 ml。",
+          "evidence_ids": [
+            "ki:e6e1547bc7f4092ed35a"
+          ],
+          "scope": "record"
+        },
+        {
+          "statement": "同一明确前驱上的 DryCellWithBracingMass13 记录为 11.815 g。",
+          "evidence_ids": [
+            "ki:42b9bc304cf167085773"
+          ],
+          "scope": "record"
+        },
+        {
+          "statement": "同一明确前驱上的 WettCellMass13 记录为 12.91 g。",
+          "evidence_ids": [
+            "ki:392fce6c36d5224c5742"
+          ],
+          "scope": "record"
+        }
+      ],
+      "verdict": "supported_in_checked_scope",
+      "basis": "原始ElectrolyteVolume13=0.92 ml、DryCellWithBracingMass13=11.815 g、WettCellMass13=12.91 g，均绑定明确前驱FilledCell1。",
+      "finding": null
+    },
+    {
+      "case_id": "new-10",
+      "variant": "agent",
+      "summary": "{\"electrolyte_ml\":0.92,\"dry_g\":11.815,\"wet_g\":12.91}",
+      "claims": [
+        {
+          "statement": "沿明确前驱，FormatedCell1 的前驱为 FilledCell1，后者关联的 Filling Protocol 中记录了该对象的电解液体积、干态质量和湿态质量。",
+          "evidence_ids": [
+            "ki:trace:ki:bb8ac3e502adf5bdb195",
+            "ki:e6e1547bc7f4092ed35a",
+            "ki:42b9bc304cf167085773",
+            "ki:392fce6c36d5224c5742"
+          ],
+          "scope": "record"
+        },
+        {
+          "statement": "FilledCell1 的对象绑定参数 ElectrolyteVolume13 为 0.92 ml，DryCellWithBracingMass13 为 11.815 g，WettCellMass13 为 12.91 g。",
+          "evidence_ids": [
+            "ki:e6e1547bc7f4092ed35a",
+            "ki:42b9bc304cf167085773",
+            "ki:392fce6c36d5224c5742"
+          ],
+          "scope": "record"
+        }
+      ],
+      "verdict": "supported_in_checked_scope",
+      "basis": "原始ElectrolyteVolume13=0.92 ml、DryCellWithBracingMass13=11.815 g、WettCellMass13=12.91 g，均绑定明确前驱FilledCell1。",
+      "finding": null
+    },
+    {
+      "case_id": "new-12",
+      "variant": "fixed",
+      "summary": "{\"wet_source_value\":\"2-2C11 g\"}",
+      "claims": [
+        {
+          "statement": "FilledCell1 的 WettCellMass2（湿质量）记录的工具显示值为“2-2C11 g”。",
+          "evidence_ids": [
+            "ki:c324d36ad545c66214c7"
+          ],
+          "scope": "record"
+        }
+      ],
+      "verdict": "supported_in_checked_scope",
+      "basis": "HasValue保留2-2C11_g编码，来源附Processing_error；原始IsObjectParameterOf绑定FilledCell1。本次两答案均未误归属DryCell前驱。",
+      "finding": null
+    },
+    {
+      "case_id": "new-12",
+      "variant": "agent",
+      "summary": "{\"wet_source_value\":\"2-2C11 g\"}",
+      "claims": [
+        {
+          "statement": "湿质量参数 WettCellMass2 的工具显示原始值为“2-2C11 g”，且该参数绑定到本履历中的 FilledCell1（FormatedCell1 的明确前驱）。",
+          "evidence_ids": [
+            "ki:c324d36ad545c66214c7"
+          ],
+          "scope": "record"
+        }
+      ],
+      "verdict": "supported_in_checked_scope",
+      "basis": "HasValue保留2-2C11_g编码，来源附Processing_error；原始IsObjectParameterOf绑定FilledCell1。本次两答案均未误归属DryCell前驱。",
+      "finding": null
+    },
+    {
+      "case_id": "new-18",
+      "variant": "fixed",
+      "summary": "{\"injection_pa\":10000,\"sealing_pa\":5000}",
+      "claims": [
+        {
+          "statement": "注液压力记录为100 mbar，换算为10000 Pa。",
+          "evidence_ids": [
+            "ki:e36b4287849a9ca030f2"
+          ],
+          "scope": "record"
+        },
+        {
+          "statement": "封口压力记录为50 mbar，换算为5000 Pa。",
+          "evidence_ids": [
+            "ki:e65f448368a1a4d2188d"
+          ],
+          "scope": "record"
+        }
+      ],
+      "verdict": "supported_in_checked_scope",
+      "basis": "原始共享注液100 mbar、封口50 mbar，分别对应10000 Pa与5000 Pa；引用的是两个压力参数。",
+      "finding": null
+    },
+    {
+      "case_id": "new-18",
+      "variant": "agent",
+      "summary": "{\"injection_pa\":10000,\"sealing_pa\":5000}",
+      "claims": [
+        {
+          "statement": "注液压力记录为 100 mbar，换算为 injection_pa 10000 Pa。",
+          "evidence_ids": [
+            "ki:e36b4287849a9ca030f2"
+          ],
+          "scope": "record"
+        },
+        {
+          "statement": "封口压力记录为 50 mbar，换算为 sealing_pa 5000 Pa。",
+          "evidence_ids": [
+            "ki:e65f448368a1a4d2188d"
+          ],
+          "scope": "record"
+        }
+      ],
+      "verdict": "supported_in_checked_scope",
+      "basis": "原始共享注液100 mbar、封口50 mbar，分别对应10000 Pa与5000 Pa；引用的是两个压力参数。",
+      "finding": null
+    },
+    {
+      "case_id": "new-19",
+      "variant": "fixed",
+      "summary": "{\"cycle10_ah\":0.402326962045,\"cycle100_ah\":null}",
+      "claims": [
+        {
+          "statement": "Cycle 10 的 AH-OUT 为 0.402326962045 Ah。",
+          "evidence_ids": [
+            "ki:1434369ba6f08bb57d22:L20"
+          ],
+          "scope": "record"
+        },
+        {
+          "statement": "该测试记录未包含 Cycle 100；其缺失于所请求循环列表中。",
+          "evidence_ids": [
+            "ki:1434369ba6f08bb57d22"
+          ],
+          "scope": "record"
+        }
+      ],
+      "verdict": "supported_in_checked_scope",
+      "basis": "原文件第20行Cycle10的AH-OUT为0.402326962045；23数据行中无Cycle100，缺失引用完整文件证据。",
+      "finding": null
+    },
+    {
+      "case_id": "new-19",
+      "variant": "agent",
+      "summary": "{\"cycle10_ah\":0.402326962045,\"cycle100_ah\":null}",
+      "claims": [
+        {
+          "statement": "Cycle 10 has AH-OUT of 0.402326962045 Ah (reported as cycle10_ah).",
+          "evidence_ids": [
+            "ki:1434369ba6f08bb57d22:L20"
+          ],
+          "scope": "record"
+        },
+        {
+          "statement": "Cycle 100 is absent from the linked test file.",
+          "evidence_ids": [
+            "ki:1434369ba6f08bb57d22"
+          ],
+          "scope": "record"
+        }
+      ],
+      "verdict": "supported_in_checked_scope",
+      "basis": "原文件第20行Cycle10的AH-OUT为0.402326962045；23数据行中无Cycle100，缺失引用完整文件证据。",
+      "finding": null
+    },
+    {
+      "case_id": "new-22",
+      "variant": "fixed",
+      "summary": "{\"chain\":[\"DryCell\",\"FilledCell1\",\"FormatedCell1\"],\"process_count\":3}",
+      "claims": [
+        {
+          "statement": "所选电芯的已追溯对象链（上游至下游）为 DryCell → FilledCell1 → FormatedCell1；对应去重过程数为 3（Stacking Protocol、Filling Protocol、Formation Protocol）。",
+          "evidence_ids": [
+            "ki:trace:ki:9ec2a667fef70302da1b"
+          ],
+          "scope": "record"
+        }
+      ],
+      "verdict": "supported_in_checked_scope",
+      "basis": "两个原始对象选择参数组成DryCell→FilledCell1→FormatedCell1，3个过程。本次固定方案返回对象名称链，引用整条追溯。",
+      "finding": null
+    },
+    {
+      "case_id": "new-22",
+      "variant": "agent",
+      "summary": "{\"chain\":[\"DryCell\",\"FilledCell1\",\"FormatedCell1\"],\"process_count\":3}",
+      "claims": [
+        {
+          "statement": "该选中电芯的上游至下游对象履历为 DryCell、FilledCell1、FormatedCell1；去重后关联过程数量为3（Stacking Protocol、Filling Protocol、Formation Protocol）。",
+          "evidence_ids": [
+            "ki:trace:ki:9ec2a667fef70302da1b"
+          ],
+          "scope": "record"
+        }
+      ],
+      "verdict": "supported_in_checked_scope",
+      "basis": "两个原始对象选择参数组成DryCell→FilledCell1→FormatedCell1，3个过程。本次固定方案返回对象名称链，引用整条追溯。",
+      "finding": null
+    },
+    {
+      "case_id": "new-24",
+      "variant": "fixed",
+      "summary": "{\"electrolyte_ml\":null}",
+      "claims": [
+        {
+          "statement": "该电芯的可追溯记录仅包含其自身的 Formation Protocol 阶段，未记录明确前驱对象；因此无法从明确前驱资料取得其上游注液量 electrolyte_ml，返回 null。",
+          "evidence_ids": [
+            "ki:trace:ki:170d61b822e11c0193e8"
+          ],
+          "scope": "record"
+        }
+      ],
+      "verdict": "supported_in_checked_scope",
+      "basis": "原对象参数无HasPredecessor；两答案均引用本对象追溯范围说明无法获取上游注液量，未用文件关联替代完整范围。",
+      "finding": null
+    },
+    {
+      "case_id": "new-24",
+      "variant": "agent",
+      "summary": "{\"electrolyte_ml\":null}",
+      "claims": [
+        {
+          "statement": "FormatedCell1 的追溯结果仅包含其自身的 Formation Protocol 阶段，未发现 HasPredecessor 链接；因此没有明确前驱记录可用于取得该对象上游的 electrolyte_ml，返回 null。",
+          "evidence_ids": [
+            "ki:trace:ki:170d61b822e11c0193e8"
+          ],
+          "scope": "record"
+        }
+      ],
+      "verdict": "supported_in_checked_scope",
+      "basis": "原对象参数无HasPredecessor；两答案均引用本对象追溯范围说明无法获取上游注液量，未用文件关联替代完整范围。",
+      "finding": null
+    },
+    {
+      "case_id": "mfg-09",
+      "variant": "fixed",
+      "summary": "{\"can_count_physical_cells\":false,\"file_count\":1}",
+      "claims": [
+        {
+          "statement": "不能将该循环统计文件被图谱对象引用的数量直接视为独立物理电芯数量；档案明确说明需核对身份，且该文件关联了两个对象。",
+          "evidence_ids": [
+            "ki:fda051c10cb8597e2705"
+          ],
+          "scope": "record"
+        },
+        {
+          "statement": "当前对象的追溯结果列出1个不同的循环统计文件：Gron_KI_220803-kaop-0251-mi-033_-STATS-.txt。",
+          "evidence_ids": [
+            "ki:trace:ki:37951e10af424d0448d9",
+            "ki:fda051c10cb8597e2705"
+          ],
+          "scope": "record"
+        }
+      ],
+      "verdict": "supported_in_checked_scope",
+      "basis": "一个循环文件绑定两个源对象；对象引用数不证明独立物理电芯数。两答案均引用完整文件，文件计数为1。",
+      "finding": null
+    },
+    {
+      "case_id": "mfg-09",
+      "variant": "agent",
+      "summary": "{\"can_count_physical_cells\":false,\"file_count\":1}",
+      "claims": [
+        {
+          "statement": "The selected cell is bound to one distinct cycle-statistics file: Gron_KI_220803-kaop-0251-mi-033_-STATS-.txt.",
+          "evidence_ids": [
+            "ki:fda051c10cb8597e2705",
+            "ki:f1388918f04b98cb736d"
+          ],
+          "scope": "record"
+        },
+        {
+          "statement": "The number of graph objects that reference a file cannot directly be counted as independent physical cells; the trace records object/process relationships and one test-file binding, not a physical-cell uniqueness count.",
+          "evidence_ids": [
+            "ki:trace:ki:37951e10af424d0448d9"
+          ],
+          "scope": "record"
+        }
+      ],
+      "verdict": "supported_in_checked_scope",
+      "basis": "一个循环文件绑定两个源对象；对象引用数不证明独立物理电芯数。两答案均引用完整文件，文件计数为1。",
+      "finding": null
+    }
+  ]
+}
