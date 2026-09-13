@@ -1,6 +1,7 @@
 import json
 from types import SimpleNamespace
 
+import pytest
 from battery_copilot.agent import AgentRequest, read_evidence, run_agent
 from battery_copilot.codex_model import CodexChatModel
 
@@ -20,7 +21,10 @@ def test_summary_supplies_exact_totals_instead_of_requiring_model_arithmetic(mon
     assert json.loads(summary["text"])["totals"] == summary["totals"]
 
 
-def test_agent_reads_missing_citation_after_structured_output_feedback(monkeypatch, tmp_path):
+@pytest.mark.parametrize("budget", [None, 2])
+def test_agent_reads_missing_citation_after_structured_output_feedback(
+    monkeypatch, tmp_path, budget
+):
     calls = []
     seen_feedback = []
 
@@ -79,7 +83,17 @@ def test_agent_reads_missing_citation_after_structured_output_feedback(monkeypat
         "battery_copilot.agent.read_evidence",
         lambda uid, _: {"uid": uid, "text": "连接件连接上盖。", "source_kind": "record"},
     )
-    events = list(run_agent(AgentRequest(question="连接件1000连接什么？", battery_id=1)))
+    events = list(
+        run_agent(
+            AgentRequest(question="连接件1000连接什么？", battery_id=1), max_model_calls=budget
+        )
+    )
+    if budget is not None:
+        assert calls == ["Answer", "read_source"]
+        assert events[-1]["type"] == "error"
+        assert "budget exhausted" in events[-1]["message"]
+        assert events[-1]["usage"]["model_calls"] == budget
+        return
     assert calls == ["Answer", "read_source", "Answer"]
     assert "kit-v1:fixation:1000" in seen_feedback[0]
     assert events[-1]["type"] == "answer"

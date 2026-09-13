@@ -164,13 +164,22 @@ def collect_ids(value) -> set[str]:
     return set()
 
 
-def run_agent(request: AgentRequest, case_context: dict | None = None):
+def run_agent(
+    request: AgentRequest,
+    case_context: dict | None = None,
+    *,
+    max_model_calls: int | None = None,
+    max_tool_calls: int | None = None,
+):
     started, run_id = time.perf_counter(), uuid.uuid4().hex
     trace, seen, answer = [], set(), None
     usage = {"input_tokens": 0, "output_tokens": 0, "cached_input_tokens": 0, "model_calls": 0}
+    tool_calls = 0
 
     @before_model
     def track_evidence(state, runtime):
+        if max_model_calls is not None and usage["model_calls"] >= max_model_calls:
+            raise ValueError("Model-call budget exhausted before a complete answer.")
         for message in state["messages"]:
             if isinstance(message, ToolMessage) and message.name != "Answer":
                 if message.status == "success":
@@ -218,6 +227,10 @@ def run_agent(request: AgentRequest, case_context: dict | None = None):
                             .get("cache_read", 0)
                         )
                         usage["model_calls"] += 1
+                        planned = sum(call["name"] != "Answer" for call in message.tool_calls)
+                        if max_tool_calls is not None and tool_calls + planned > max_tool_calls:
+                            raise ValueError("Tool-call budget exhausted before a complete answer.")
+                        tool_calls += planned
                         for call in message.tool_calls:
                             if call["name"] != "Answer":
                                 event = {
