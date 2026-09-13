@@ -48,8 +48,10 @@ def search(query: str, battery_id: int, scope: str = "all", limit: int = 6) -> l
 def main():
     started = time.perf_counter()
     db = graph()
+    db.query("MATCH (n:Searchable) REMOVE n:Searchable")
+    db.query("MATCH (n:GuideChunk) REMOVE n:GuideChunk")
     db.query(
-        "MATCH (n:Evidence) WHERE NOT n.kind IN "
+        "MATCH (n:Evidence) WHERE n.source_kind IN ['record','guide'] AND NOT n.kind IN "
         "['section_header','title','page_header','page_footer','caption'] SET n:Searchable"
     )
     rows = db.query(

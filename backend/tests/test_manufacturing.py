@@ -118,6 +118,16 @@ def test_real_lineage_stops_at_missing_link_and_excludes_batch_siblings(imported
     assert by_name["MeasurementChannel1"]["values"] == ["59"]
     assert by_name["CompactingPressure1"]["values"] == []
     assert "MeasurementChannel2" not in by_name
+    filled = next(s for s in trace["stages"] if s["object"]["name"] == "FilledCell1")
+    filling_parameters = [
+        p
+        for s in mfg.process_details(CELL, filled["process"]["uid"])["steps"]
+        for p in s["parameters"]
+    ]
+    wet = next(p for p in filling_parameters if p["name"] == "WettCellMass1")
+    assert wet["objects"] == [{"uid": filled["object"]["uid"], "name": "FilledCell1"}]
+    pressure = next(p for p in filling_parameters if p["name"] == "InjectionPressure")
+    assert pressure["objects"] == []
     with pytest.raises(ValueError, match="可追溯范围"):
         mfg.read_source(CELL, SIBLING)
 

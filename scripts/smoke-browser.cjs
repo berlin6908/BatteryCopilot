@@ -10,7 +10,7 @@ const path = require('node:path');
   page.on('console', message => { if (message.type() === 'error') { errors.push(message.text()); console.error(message.text()); } });
   const output = path.join(__dirname, '../data/runs/browser');
   fs.mkdirSync(output, { recursive: true });
-  await page.goto('http://127.0.0.1:8000');
+  await page.goto(process.env.BASE_URL || 'http://127.0.0.1:8000');
   await page.getByRole('button', { name: '结构与记录', exact: true }).click();
   await page.getByRole('button', { name: '查看当前对象证据', exact: true }).waitFor();
   await page.getByRole('button', { name: /^screw 1000/ }).waitFor();

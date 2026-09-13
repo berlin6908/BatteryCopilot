@@ -17,6 +17,8 @@ SYSTEM = """你是电芯试制履历与检验复核助手。数据来自 KIproBa
 查询指定 Cycle 使用 read_cycles；浏览未知位置使用 read_test_results，每页最多40行。
 只分析选中电芯及其明确前驱；同批次不等于同一电芯。追溯终点不表示制造起点。
 record 表示 KIproBatt 实际记录，所有 claims 使用 record。每条事实引用工具返回的证据 uid。
+参数的归属以其 objects 字段为准，不把对象选择参数的前驱当成相邻测量参数的归属对象。
+objects 为空的参数是过程共享参数。参数数值引用参数自身uid；对象绑定用来核对归属。
 HasValue 保留来源单位；不把归一化数值擅自标为 g、h 等显示单位。缺失值不等于零。
 循环统计包含多种测试阶段；没有程序分段、电流/温度条件、验收标准时，不计算 SOH、
 不由首末容量之比判断衰减、不作合格/不合格判断，不把关联称为缺陷原因。
@@ -80,10 +82,16 @@ def trace_cell(cell_uid: str) -> dict:
         "stages": rows,
         "links": edges,
         "tests": tests,
-        "evidence_ids": sorted({e["evidence_uid"] for e in edges + tests}),
+        "evidence_ids": [
+            f"ki:trace:{cell_uid}",
+            *(t["test"]["uid"] for t in tests),
+            *sorted({e["evidence_uid"] for e in edges + tests}),
+        ],
         "trace_endpoints": sorted(leaf_ids),
         "scope": "沿对象参数的 IsObjectParameterOf + HasPredecessor 追溯；"
-        "未将同批其他输出或内部中间对象推定为本电芯前驱。最多30跳。",
+        "未将同批其他输出或内部中间对象推定为本电芯前驱。最多30跳。"
+        "完整履历、总数与缺少前驱引用本结果uid；文件元数据引用test.uid；"
+        "单条关联参数只支持其对应关系。",
     }
 
 
@@ -101,7 +109,10 @@ def process_details(cell_uid: str, process_uid: str) -> dict:
         OPTIONAL MATCH (p:MfgRecord)-[:FOR_STEP]->(s)
         WHERE NOT (p)-[:FOR_OBJECT]->() OR EXISTS {{
             MATCH (p)-[:FOR_OBJECT]->(o) WHERE o.uid IN $objects }}
-        RETURN s{BRIEF} AS step,collect(p{BRIEF}) AS parameters ORDER BY step.iri""",
+        RETURN s{BRIEF} AS step,
+        collect(p{{.uid,.iri,.name,.kind,.values,.source_file,
+            objects:[(p)-[:FOR_OBJECT]->(o) | o{{.uid,.name}}]}}) AS parameters
+        ORDER BY step.iri""",
         uid=process_uid,
         objects=stage_objects,
     )
