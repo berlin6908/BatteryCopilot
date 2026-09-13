@@ -7,6 +7,8 @@ from fastapi.responses import FileResponse, JSONResponse, StreamingResponse
 from fastapi.staticfiles import StaticFiles
 
 from battery_copilot.agent import AgentRequest, read_evidence, run_agent
+from battery_copilot.case_api import router as case_router
+from battery_copilot.cases import CaseConflict, CaseNotFound
 from battery_copilot.changes import compare_scenario
 from battery_copilot.graph import graph
 from battery_copilot.retrieval import search
@@ -20,6 +22,17 @@ async def lifespan(app):
 
 
 app = FastAPI(title="Battery Engineering Copilot", version="0.1.0", lifespan=lifespan)
+app.include_router(case_router)
+
+
+@app.exception_handler(CaseConflict)
+async def case_conflict(request, exc):
+    return JSONResponse({"detail": str(exc)}, status_code=409)
+
+
+@app.exception_handler(CaseNotFound)
+async def case_not_found(request, exc):
+    return JSONResponse({"detail": str(exc)}, status_code=404)
 
 
 @app.exception_handler(ValueError)
