@@ -1,748 +1,2321 @@
-[
-  {
-    "page": 6,
-    "split": "dev",
-    "family": "process_requirements",
-    "intent": "Begin - of - line testing：工艺约束核对",
-    "question": "为“Begin - of - line testing”准备工艺约束核对。请定位 PEM 指南第 6 页“左栏 Process parameters & requirements”栏的全部项目符号条目，不包含标题、成本和图片说明。",
-    "query": "Begin - of - line testing Process parameters & requirements",
-    "evidence_ids": [
-      "pem:p6:e118:0",
-      "pem:p6:e119:0",
-      "pem:p6:e120:0"
-    ],
-    "review_basis": "原始 PDF 页已视觉核对；按真实栏位置选择，而非继承解析器栏目标签。"
-  },
-  {
-    "page": 6,
-    "split": "dev",
-    "family": "quality_checklist",
-    "intent": "Begin - of - line testing：质量检查清单",
-    "question": "为“Begin - of - line testing”准备质量检查清单。请定位 PEM 指南第 6 页“右栏 Quality parameters”栏的全部项目符号条目，不包含标题、成本和图片说明。",
-    "query": "Begin - of - line testing Quality parameters",
-    "evidence_ids": [
-      "pem:p6:e122:0",
-      "pem:p6:e123:0",
-      "pem:p6:e124:0"
-    ],
-    "review_basis": "原始 PDF 页已视觉核对；按真实栏位置选择，而非继承解析器栏目标签。"
-  },
-  {
-    "page": 6,
-    "split": "dev",
-    "family": "production_operations",
-    "intent": "Begin - of - line testing：工序资料准备",
-    "question": "为“Begin - of - line testing”准备工序资料准备。请定位 PEM 指南第 6 页“Production process”栏的全部项目符号条目，不包含标题、成本和图片说明。",
-    "query": "Begin - of - line testing Production process",
-    "evidence_ids": [
-      "pem:p6:e111:0",
-      "pem:p6:e112:0",
-      "pem:p6:e113:0",
-      "pem:p6:e114:0",
-      "pem:p6:e115:0"
-    ],
-    "review_basis": "原始 PDF 页已视觉核对；按真实栏位置选择，而非继承解析器栏目标签。"
-  },
-  {
-    "page": 7,
-    "split": "dev",
-    "family": "process_requirements",
-    "intent": "Stacking the cells：工艺约束核对",
-    "question": "为“Stacking the cells”准备工艺约束核对。请定位 PEM 指南第 7 页“左栏 Process parameters & requirements”栏的全部项目符号条目，不包含标题、成本和图片说明。",
-    "query": "Stacking the cells Process parameters & requirements",
-    "evidence_ids": [
-      "pem:p7:e147:0",
-      "pem:p7:e148:0",
-      "pem:p7:e149:0",
-      "pem:p7:e150:0"
-    ],
-    "review_basis": "原始 PDF 页已视觉核对；按真实栏位置选择，而非继承解析器栏目标签。"
-  },
-  {
-    "page": 7,
-    "split": "dev",
-    "family": "quality_checklist",
-    "intent": "Stacking the cells：质量检查清单",
-    "question": "为“Stacking the cells”准备质量检查清单。请定位 PEM 指南第 7 页“右栏 Quality parameters”栏的全部项目符号条目，不包含标题、成本和图片说明。",
-    "query": "Stacking the cells Quality parameters",
-    "evidence_ids": [
-      "pem:p7:e152:0",
-      "pem:p7:e153:0",
-      "pem:p7:e154:0",
-      "pem:p7:e155:0"
-    ],
-    "review_basis": "原始 PDF 页已视觉核对；按真实栏位置选择，而非继承解析器栏目标签。"
-  },
-  {
-    "page": 7,
-    "split": "dev",
-    "family": "production_operations",
-    "intent": "Stacking the cells：工序资料准备",
-    "question": "为“Stacking the cells”准备工序资料准备。请定位 PEM 指南第 7 页“Production process”栏的全部项目符号条目，不包含标题、成本和图片说明。",
-    "query": "Stacking the cells Production process",
-    "evidence_ids": [
-      "pem:p7:e139:0",
-      "pem:p7:e140:0",
-      "pem:p7:e141:0",
-      "pem:p7:e142:0",
-      "pem:p7:e143:0",
-      "pem:p7:e144:0"
-    ],
-    "review_basis": "原始 PDF 页已视觉核对；按真实栏位置选择，而非继承解析器栏目标签。"
-  },
-  {
-    "page": 8,
-    "split": "test",
-    "family": "process_requirements",
-    "intent": "Stacking the cells：工艺约束核对",
-    "question": "为“Stacking the cells”准备工艺约束核对。请定位 PEM 指南第 8 页“左栏 Process parameters & requirements”栏的全部项目符号条目，不包含标题、成本和图片说明。",
-    "query": "Stacking the cells Process parameters & requirements",
-    "evidence_ids": [
-      "pem:p8:e177:0",
-      "pem:p8:e178:0",
-      "pem:p8:e179:0"
-    ],
-    "review_basis": "原始 PDF 页已视觉核对；按真实栏位置选择，而非继承解析器栏目标签。"
-  },
-  {
-    "page": 8,
-    "split": "test",
-    "family": "quality_checklist",
-    "intent": "Stacking the cells：质量检查清单",
-    "question": "为“Stacking the cells”准备质量检查清单。请定位 PEM 指南第 8 页“右栏 Quality parameters”栏的全部项目符号条目，不包含标题、成本和图片说明。",
-    "query": "Stacking the cells Quality parameters",
-    "evidence_ids": [
-      "pem:p8:e181:0",
-      "pem:p8:e182:0",
-      "pem:p8:e183:0",
-      "pem:p8:e184:0"
-    ],
-    "review_basis": "原始 PDF 页已视觉核对；按真实栏位置选择，而非继承解析器栏目标签。"
-  },
-  {
-    "page": 8,
-    "split": "test",
-    "family": "production_operations",
-    "intent": "Stacking the cells：工序资料准备",
-    "question": "为“Stacking the cells”准备工序资料准备。请定位 PEM 指南第 8 页“Production process”栏的全部项目符号条目，不包含标题、成本和图片说明。",
-    "query": "Stacking the cells Production process",
-    "evidence_ids": [
-      "pem:p8:e169:0",
-      "pem:p8:e170:0",
-      "pem:p8:e171:0",
-      "pem:p8:e172:0",
-      "pem:p8:e173:0",
-      "pem:p8:e174:0"
-    ],
-    "review_basis": "原始 PDF 页已视觉核对；按真实栏位置选择，而非继承解析器栏目标签。"
-  },
-  {
-    "page": 9,
-    "split": "test",
-    "family": "process_requirements",
-    "intent": "Stacking the cells：工艺约束核对",
-    "question": "为“Stacking the cells”准备工艺约束核对。请定位 PEM 指南第 9 页“左栏 Process parameters & requirements”栏的全部项目符号条目，不包含标题、成本和图片说明。",
-    "query": "Stacking the cells Process parameters & requirements",
-    "evidence_ids": [
-      "pem:p9:e205:0",
-      "pem:p9:e206:0",
-      "pem:p9:e207:0",
-      "pem:p9:e208:0"
-    ],
-    "review_basis": "原始 PDF 页已视觉核对；按真实栏位置选择，而非继承解析器栏目标签。"
-  },
-  {
-    "page": 9,
-    "split": "test",
-    "family": "quality_checklist",
-    "intent": "Stacking the cells：质量检查清单",
-    "question": "为“Stacking the cells”准备质量检查清单。请定位 PEM 指南第 9 页“右栏 Quality parameters”栏的全部项目符号条目，不包含标题、成本和图片说明。",
-    "query": "Stacking the cells Quality parameters",
-    "evidence_ids": [
-      "pem:p9:e210:0",
-      "pem:p9:e211:0",
-      "pem:p9:e212:0",
-      "pem:p9:e213:0"
-    ],
-    "review_basis": "原始 PDF 页已视觉核对；按真实栏位置选择，而非继承解析器栏目标签。"
-  },
-  {
-    "page": 9,
-    "split": "test",
-    "family": "production_operations",
-    "intent": "Stacking the cells：工序资料准备",
-    "question": "为“Stacking the cells”准备工序资料准备。请定位 PEM 指南第 9 页“Production process”栏的全部项目符号条目，不包含标题、成本和图片说明。",
-    "query": "Stacking the cells Production process",
-    "evidence_ids": [
-      "pem:p9:e197:0",
-      "pem:p9:e198:0",
-      "pem:p9:e199:0",
-      "pem:p9:e200:0",
-      "pem:p9:e201:0",
-      "pem:p9:e202:0"
-    ],
-    "review_basis": "原始 PDF 页已视觉核对；按真实栏位置选择，而非继承解析器栏目标签。"
-  },
-  {
-    "page": 10,
-    "split": "test",
-    "family": "process_requirements",
-    "intent": "Mounting the BMS：工艺约束核对",
-    "question": "为“Mounting the BMS”准备工艺约束核对。请定位 PEM 指南第 10 页“左栏 Process parameters & requirements”栏的全部项目符号条目，不包含标题、成本和图片说明。",
-    "query": "Mounting the BMS Process parameters & requirements",
-    "evidence_ids": [
-      "pem:p10:e233:0",
-      "pem:p10:e234:0"
-    ],
-    "review_basis": "原始 PDF 页已视觉核对；按真实栏位置选择，而非继承解析器栏目标签。"
-  },
-  {
-    "page": 10,
-    "split": "test",
-    "family": "quality_checklist",
-    "intent": "Mounting the BMS：质量检查清单",
-    "question": "为“Mounting the BMS”准备质量检查清单。请定位 PEM 指南第 10 页“右栏 Quality parameters”栏的全部项目符号条目，不包含标题、成本和图片说明。",
-    "query": "Mounting the BMS Quality parameters",
-    "evidence_ids": [
-      "pem:p10:e236:0",
-      "pem:p10:e237:0",
-      "pem:p10:e238:0",
-      "pem:p10:e239:0",
-      "pem:p10:e240:0"
-    ],
-    "review_basis": "原始 PDF 页已视觉核对；按真实栏位置选择，而非继承解析器栏目标签。"
-  },
-  {
-    "page": 10,
-    "split": "test",
-    "family": "production_operations",
-    "intent": "Mounting the BMS：工序资料准备",
-    "question": "为“Mounting the BMS”准备工序资料准备。请定位 PEM 指南第 10 页“Production process”栏的全部项目符号条目，不包含标题、成本和图片说明。",
-    "query": "Mounting the BMS Production process",
-    "evidence_ids": [
-      "pem:p10:e226:0",
-      "pem:p10:e227:0",
-      "pem:p10:e228:0",
-      "pem:p10:e229:0",
-      "pem:p10:e230:0"
-    ],
-    "review_basis": "原始 PDF 页已视觉核对；按真实栏位置选择，而非继承解析器栏目标签。"
-  },
-  {
-    "page": 12,
-    "split": "test",
-    "family": "process_requirements",
-    "intent": "Contacting the tabs：工艺约束核对",
-    "question": "为“Contacting the tabs”准备工艺约束核对。请定位 PEM 指南第 12 页“左栏 Process parameters & requirements”栏的全部项目符号条目，不包含标题、成本和图片说明。",
-    "query": "Contacting the tabs Process parameters & requirements",
-    "evidence_ids": [
-      "pem:p12:e281:0",
-      "pem:p12:e282:0",
-      "pem:p12:e283:0",
-      "pem:p12:e284:0"
-    ],
-    "review_basis": "原始 PDF 页已视觉核对；按真实栏位置选择，而非继承解析器栏目标签。"
-  },
-  {
-    "page": 12,
-    "split": "test",
-    "family": "quality_checklist",
-    "intent": "Contacting the tabs：质量检查清单",
-    "question": "为“Contacting the tabs”准备质量检查清单。请定位 PEM 指南第 12 页“右栏 Quality parameters”栏的全部项目符号条目，不包含标题、成本和图片说明。",
-    "query": "Contacting the tabs Quality parameters",
-    "evidence_ids": [
-      "pem:p12:e286:0",
-      "pem:p12:e287:0",
-      "pem:p12:e288:0"
-    ],
-    "review_basis": "原始 PDF 页已视觉核对；按真实栏位置选择，而非继承解析器栏目标签。"
-  },
-  {
-    "page": 12,
-    "split": "test",
-    "family": "production_operations",
-    "intent": "Contacting the tabs：工序资料准备",
-    "question": "为“Contacting the tabs”准备工序资料准备。请定位 PEM 指南第 12 页“Production process”栏的全部项目符号条目，不包含标题、成本和图片说明。",
-    "query": "Contacting the tabs Production process",
-    "evidence_ids": [
-      "pem:p12:e274:0",
-      "pem:p12:e275:0",
-      "pem:p12:e276:0",
-      "pem:p12:e277:0",
-      "pem:p12:e278:0"
-    ],
-    "review_basis": "原始 PDF 页已视觉核对；按真实栏位置选择，而非继承解析器栏目标签。"
-  },
-  {
-    "page": 13,
-    "split": "test",
-    "family": "process_requirements",
-    "intent": "Contacting the tabs：工艺约束核对",
-    "question": "为“Contacting the tabs”准备工艺约束核对。请定位 PEM 指南第 13 页“左栏 Process parameters & requirements”栏的全部项目符号条目，不包含标题、成本和图片说明。",
-    "query": "Contacting the tabs Process parameters & requirements",
-    "evidence_ids": [
-      "pem:p13:e308:0",
-      "pem:p13:e309:0",
-      "pem:p13:e310:0"
-    ],
-    "review_basis": "原始 PDF 页已视觉核对；按真实栏位置选择，而非继承解析器栏目标签。"
-  },
-  {
-    "page": 13,
-    "split": "test",
-    "family": "quality_checklist",
-    "intent": "Contacting the tabs：质量检查清单",
-    "question": "为“Contacting the tabs”准备质量检查清单。请定位 PEM 指南第 13 页“右栏 Quality parameters”栏的全部项目符号条目，不包含标题、成本和图片说明。",
-    "query": "Contacting the tabs Quality parameters",
-    "evidence_ids": [
-      "pem:p13:e312:0",
-      "pem:p13:e313:0",
-      "pem:p13:e314:0",
-      "pem:p13:e315:0"
-    ],
-    "review_basis": "原始 PDF 页已视觉核对；按真实栏位置选择，而非继承解析器栏目标签。"
-  },
-  {
-    "page": 13,
-    "split": "test",
-    "family": "production_operations",
-    "intent": "Contacting the tabs：工序资料准备",
-    "question": "为“Contacting the tabs”准备工序资料准备。请定位 PEM 指南第 13 页“Production process”栏的全部项目符号条目，不包含标题、成本和图片说明。",
-    "query": "Contacting the tabs Production process",
-    "evidence_ids": [
-      "pem:p13:e301:0",
-      "pem:p13:e302:0",
-      "pem:p13:e303:0",
-      "pem:p13:e304:0",
-      "pem:p13:e305:0"
-    ],
-    "review_basis": "原始 PDF 页已视觉核对；按真实栏位置选择，而非继承解析器栏目标签。"
-  },
-  {
-    "page": 15,
-    "split": "test",
-    "family": "process_requirements",
-    "intent": "Tensioning of the cells：工艺约束核对",
-    "question": "为“Tensioning of the cells”准备工艺约束核对。请定位 PEM 指南第 15 页“左栏 Process parameters & requirements”栏的全部项目符号条目，不包含标题、成本和图片说明。",
-    "query": "Tensioning of the cells Process parameters & requirements",
-    "evidence_ids": [
-      "pem:p15:e363:0",
-      "pem:p15:e364:0"
-    ],
-    "review_basis": "原始 PDF 页已视觉核对；按真实栏位置选择，而非继承解析器栏目标签。"
-  },
-  {
-    "page": 15,
-    "split": "test",
-    "family": "quality_checklist",
-    "intent": "Tensioning of the cells：质量检查清单",
-    "question": "为“Tensioning of the cells”准备质量检查清单。请定位 PEM 指南第 15 页“右栏 Quality parameters”栏的全部项目符号条目，不包含标题、成本和图片说明。",
-    "query": "Tensioning of the cells Quality parameters",
-    "evidence_ids": [
-      "pem:p15:e366:0",
-      "pem:p15:e367:0",
-      "pem:p15:e368:0"
-    ],
-    "review_basis": "原始 PDF 页已视觉核对；按真实栏位置选择，而非继承解析器栏目标签。"
-  },
-  {
-    "page": 15,
-    "split": "test",
-    "family": "production_operations",
-    "intent": "Tensioning of the cells：工序资料准备",
-    "question": "为“Tensioning of the cells”准备工序资料准备。请定位 PEM 指南第 15 页“Production process”栏的全部项目符号条目，不包含标题、成本和图片说明。",
-    "query": "Tensioning of the cells Production process",
-    "evidence_ids": [
-      "pem:p15:e357:0",
-      "pem:p15:e358:0",
-      "pem:p15:e359:0",
-      "pem:p15:e360:0"
-    ],
-    "review_basis": "原始 PDF 页已视觉核对；按真实栏位置选择，而非继承解析器栏目标签。"
-  },
-  {
-    "page": 17,
-    "split": "test",
-    "family": "process_requirements",
-    "intent": "Module final assembly：工艺约束核对",
-    "question": "为“Module final assembly”准备工艺约束核对。请定位 PEM 指南第 17 页“左栏 Process parameters & requirements”栏的全部项目符号条目，不包含标题、成本和图片说明。",
-    "query": "Module final assembly Process parameters & requirements",
-    "evidence_ids": [
-      "pem:p17:e419:0",
-      "pem:p17:e420:0",
-      "pem:p17:e421:0",
-      "pem:p17:e422:0"
-    ],
-    "review_basis": "原始 PDF 页已视觉核对；按真实栏位置选择，而非继承解析器栏目标签。"
-  },
-  {
-    "page": 17,
-    "split": "test",
-    "family": "quality_checklist",
-    "intent": "Module final assembly：质量检查清单",
-    "question": "为“Module final assembly”准备质量检查清单。请定位 PEM 指南第 17 页“右栏 Quality parameters”栏的全部项目符号条目，不包含标题、成本和图片说明。",
-    "query": "Module final assembly Quality parameters",
-    "evidence_ids": [
-      "pem:p17:e424:0",
-      "pem:p17:e425:0",
-      "pem:p17:e426:0",
-      "pem:p17:e427:0"
-    ],
-    "review_basis": "原始 PDF 页已视觉核对；按真实栏位置选择，而非继承解析器栏目标签。"
-  },
-  {
-    "page": 17,
-    "split": "test",
-    "family": "production_operations",
-    "intent": "Module final assembly：工序资料准备",
-    "question": "为“Module final assembly”准备工序资料准备。请定位 PEM 指南第 17 页“Production process”栏的全部项目符号条目，不包含标题、成本和图片说明。",
-    "query": "Module final assembly Production process",
-    "evidence_ids": [
-      "pem:p17:e408:0",
-      "pem:p17:e409:0",
-      "pem:p17:e410:0",
-      "pem:p17:e411:0",
-      "pem:p17:e412:0",
-      "pem:p17:e413:0",
-      "pem:p17:e414:0",
-      "pem:p17:e415:0",
-      "pem:p17:e416:0"
-    ],
-    "review_basis": "原始 PDF 页已视觉核对；按真实栏位置选择，而非继承解析器栏目标签。"
-  },
-  {
-    "page": 18,
-    "split": "test",
-    "family": "process_requirements",
-    "intent": "Mounting the modules：工艺约束核对",
-    "question": "为“Mounting the modules”准备工艺约束核对。请定位 PEM 指南第 18 页“左栏 Process parameters & requirements”栏的全部项目符号条目，不包含标题、成本和图片说明。",
-    "query": "Mounting the modules Process parameters & requirements",
-    "evidence_ids": [
-      "pem:p18:e447:0",
-      "pem:p18:e448:0",
-      "pem:p18:e449:0"
-    ],
-    "review_basis": "原始 PDF 页已视觉核对；按真实栏位置选择，而非继承解析器栏目标签。"
-  },
-  {
-    "page": 18,
-    "split": "test",
-    "family": "quality_checklist",
-    "intent": "Mounting the modules：质量检查清单",
-    "question": "为“Mounting the modules”准备质量检查清单。请定位 PEM 指南第 18 页“右栏 Quality parameters”栏的全部项目符号条目，不包含标题、成本和图片说明。",
-    "query": "Mounting the modules Quality parameters",
-    "evidence_ids": [
-      "pem:p18:e451:0",
-      "pem:p18:e452:0",
-      "pem:p18:e453:0"
-    ],
-    "review_basis": "原始 PDF 页已视觉核对；按真实栏位置选择，而非继承解析器栏目标签。"
-  },
-  {
-    "page": 18,
-    "split": "test",
-    "family": "production_operations",
-    "intent": "Mounting the modules：工序资料准备",
-    "question": "为“Mounting the modules”准备工序资料准备。请定位 PEM 指南第 18 页“Production process”栏的全部项目符号条目，不包含标题、成本和图片说明。",
-    "query": "Mounting the modules Production process",
-    "evidence_ids": [
-      "pem:p18:e440:0",
-      "pem:p18:e441:0",
-      "pem:p18:e442:0",
-      "pem:p18:e443:0",
-      "pem:p18:e444:0"
-    ],
-    "review_basis": "原始 PDF 页已视觉核对；按真实栏位置选择，而非继承解析器栏目标签。"
-  },
-  {
-    "page": 20,
-    "split": "test",
-    "family": "process_requirements",
-    "intent": "Assembly of internal components：工艺约束核对",
-    "question": "为“Assembly of internal components”准备工艺约束核对。请定位 PEM 指南第 20 页“左栏 Process parameters & requirements”栏的全部项目符号条目，不包含标题、成本和图片说明。",
-    "query": "Assembly of internal components Process parameters & requirements",
-    "evidence_ids": [
-      "pem:p20:e499:0",
-      "pem:p20:e500:0"
-    ],
-    "review_basis": "原始 PDF 页已视觉核对；按真实栏位置选择，而非继承解析器栏目标签。"
-  },
-  {
-    "page": 20,
-    "split": "test",
-    "family": "quality_checklist",
-    "intent": "Assembly of internal components：质量检查清单",
-    "question": "为“Assembly of internal components”准备质量检查清单。请定位 PEM 指南第 20 页“右栏 Quality parameters”栏的全部项目符号条目，不包含标题、成本和图片说明。",
-    "query": "Assembly of internal components Quality parameters",
-    "evidence_ids": [
-      "pem:p20:e502:0",
-      "pem:p20:e503:0",
-      "pem:p20:e504:0"
-    ],
-    "review_basis": "原始 PDF 页已视觉核对；按真实栏位置选择，而非继承解析器栏目标签。"
-  },
-  {
-    "page": 20,
-    "split": "test",
-    "family": "production_operations",
-    "intent": "Assembly of internal components：工序资料准备",
-    "question": "为“Assembly of internal components”准备工序资料准备。请定位 PEM 指南第 20 页“Production process”栏的全部项目符号条目，不包含标题、成本和图片说明。",
-    "query": "Assembly of internal components Production process",
-    "evidence_ids": [
-      "pem:p20:e491:0",
-      "pem:p20:e492:0",
-      "pem:p20:e493:0",
-      "pem:p20:e494:0",
-      "pem:p20:e495:0",
-      "pem:p20:e496:0"
-    ],
-    "review_basis": "原始 PDF 页已视觉核对；按真实栏位置选择，而非继承解析器栏目标签。"
-  },
-  {
-    "page": 21,
-    "split": "test",
-    "family": "process_requirements",
-    "intent": "Sealing & Leak testing：工艺约束核对",
-    "question": "为“Sealing & Leak testing”准备工艺约束核对。请定位 PEM 指南第 21 页“左栏 Process parameters & requirements”栏的全部项目符号条目，不包含标题、成本和图片说明。",
-    "query": "Sealing & Leak testing Process parameters & requirements",
-    "evidence_ids": [
-      "pem:p21:e525:0",
-      "pem:p21:e526:0",
-      "pem:p21:e527:0"
-    ],
-    "review_basis": "原始 PDF 页已视觉核对；按真实栏位置选择，而非继承解析器栏目标签。"
-  },
-  {
-    "page": 21,
-    "split": "test",
-    "family": "quality_checklist",
-    "intent": "Sealing & Leak testing：质量检查清单",
-    "question": "为“Sealing & Leak testing”准备质量检查清单。请定位 PEM 指南第 21 页“右栏 Quality parameters”栏的全部项目符号条目，不包含标题、成本和图片说明。",
-    "query": "Sealing & Leak testing Quality parameters",
-    "evidence_ids": [
-      "pem:p21:e529:0",
-      "pem:p21:e530:0",
-      "pem:p21:e531:0",
-      "pem:p21:e532:0"
-    ],
-    "review_basis": "原始 PDF 页已视觉核对；按真实栏位置选择，而非继承解析器栏目标签。"
-  },
-  {
-    "page": 21,
-    "split": "test",
-    "family": "production_operations",
-    "intent": "Sealing & Leak testing：工序资料准备",
-    "question": "为“Sealing & Leak testing”准备工序资料准备。请定位 PEM 指南第 21 页“Production process”栏的全部项目符号条目，不包含标题、成本和图片说明。",
-    "query": "Sealing & Leak testing Production process",
-    "evidence_ids": [
-      "pem:p21:e518:0",
-      "pem:p21:e519:0",
-      "pem:p21:e520:0",
-      "pem:p21:e521:0",
-      "pem:p21:e522:0"
-    ],
-    "review_basis": "原始 PDF 页已视觉核对；按真实栏位置选择，而非继承解析器栏目标签。"
-  },
-  {
-    "page": 22,
-    "split": "test",
-    "family": "process_requirements",
-    "intent": "Charging & Flashing：工艺约束核对",
-    "question": "为“Charging & Flashing”准备工艺约束核对。请定位 PEM 指南第 22 页“左栏 Process parameters & requirements”栏的全部项目符号条目，不包含标题、成本和图片说明。",
-    "query": "Charging & Flashing Process parameters & requirements",
-    "evidence_ids": [
-      "pem:p22:e551:0",
-      "pem:p22:e552:0",
-      "pem:p22:e553:0"
-    ],
-    "review_basis": "原始 PDF 页已视觉核对；按真实栏位置选择，而非继承解析器栏目标签。"
-  },
-  {
-    "page": 22,
-    "split": "test",
-    "family": "quality_checklist",
-    "intent": "Charging & Flashing：质量检查清单",
-    "question": "为“Charging & Flashing”准备质量检查清单。请定位 PEM 指南第 22 页“右栏 Quality parameters”栏的全部项目符号条目，不包含标题、成本和图片说明。",
-    "query": "Charging & Flashing Quality parameters",
-    "evidence_ids": [
-      "pem:p22:e555:0",
-      "pem:p22:e556:0",
-      "pem:p22:e557:0"
-    ],
-    "review_basis": "原始 PDF 页已视觉核对；按真实栏位置选择，而非继承解析器栏目标签。"
-  },
-  {
-    "page": 22,
-    "split": "test",
-    "family": "production_operations",
-    "intent": "Charging & Flashing：工序资料准备",
-    "question": "为“Charging & Flashing”准备工序资料准备。请定位 PEM 指南第 22 页“Production process”栏的全部项目符号条目，不包含标题、成本和图片说明。",
-    "query": "Charging & Flashing Production process",
-    "evidence_ids": [
-      "pem:p22:e545:0",
-      "pem:p22:e546:0",
-      "pem:p22:e547:0",
-      "pem:p22:e548:0"
-    ],
-    "review_basis": "原始 PDF 页已视觉核对；按真实栏位置选择，而非继承解析器栏目标签。"
-  },
-  {
-    "page": 23,
-    "split": "test",
-    "family": "process_requirements",
-    "intent": "End - of - line testing：工艺约束核对",
-    "question": "为“End - of - line testing”准备工艺约束核对。请定位 PEM 指南第 23 页“左栏 Process parameters & requirements”栏的全部项目符号条目，不包含标题、成本和图片说明。",
-    "query": "End - of - line testing Process parameters & requirements",
-    "evidence_ids": [
-      "pem:p23:e576:0",
-      "pem:p23:e577:0",
-      "pem:p23:e578:0"
-    ],
-    "review_basis": "原始 PDF 页已视觉核对；按真实栏位置选择，而非继承解析器栏目标签。"
-  },
-  {
-    "page": 23,
-    "split": "test",
-    "family": "quality_checklist",
-    "intent": "End - of - line testing：质量检查清单",
-    "question": "为“End - of - line testing”准备质量检查清单。请定位 PEM 指南第 23 页“右栏 Quality parameters”栏的全部项目符号条目，不包含标题、成本和图片说明。",
-    "query": "End - of - line testing Quality parameters",
-    "evidence_ids": [
-      "pem:p23:e580:0"
-    ],
-    "review_basis": "原始 PDF 页已视觉核对；按真实栏位置选择，而非继承解析器栏目标签。"
-  },
-  {
-    "page": 23,
-    "split": "test",
-    "family": "production_operations",
-    "intent": "End - of - line testing：工序资料准备",
-    "question": "为“End - of - line testing”准备工序资料准备。请定位 PEM 指南第 23 页“Production process”栏的全部项目符号条目，不包含标题、成本和图片说明。",
-    "query": "End - of - line testing Production process",
-    "evidence_ids": [
-      "pem:p23:e568:0",
-      "pem:p23:e569:0",
-      "pem:p23:e570:0",
-      "pem:p23:e571:0",
-      "pem:p23:e572:0",
-      "pem:p23:e573:0"
-    ],
-    "review_basis": "原始 PDF 页已视觉核对；按真实栏位置选择，而非继承解析器栏目标签。"
-  },
-  {
-    "page": 14,
-    "split": "dev",
-    "family": "laser_tradeoffs",
-    "intent": "连接工艺选型依据",
-    "question": "为连接工艺选型准备依据，定位 PEM 指南第 14 页关于激光焊接的占地、颗粒控制和反射表面限制的全部对应条目。",
-    "query": "Comparison of welding processes laser",
-    "evidence_ids": [
-      "pem:p14:e333:0",
-      "pem:p14:e334:0",
-      "pem:p14:e335:0"
-    ],
-    "review_basis": "原始 PDF 第14页四种工艺栏已逐项视觉核对。"
-  },
-  {
-    "page": 14,
-    "split": "dev",
-    "family": "ultrasonic_tradeoffs",
-    "intent": "连接工艺选型依据",
-    "question": "为连接工艺选型准备依据，定位 PEM 指南第 14 页关于超声焊接的接触形式、连接性能及设备可达性限制的全部对应条目。",
-    "query": "Comparison of welding processes ultrasonic",
-    "evidence_ids": [
-      "pem:p14:e338:0",
-      "pem:p14:e339:0",
-      "pem:p14:e340:0"
-    ],
-    "review_basis": "原始 PDF 第14页四种工艺栏已逐项视觉核对。"
-  },
-  {
-    "page": 14,
-    "split": "dev",
-    "family": "resistance_tradeoffs",
-    "intent": "连接工艺选型依据",
-    "question": "为连接工艺选型准备依据，定位 PEM 指南第 14 页关于电阻焊接的电压施加、发热机制、自动化收益及材料限制的全部对应条目。",
-    "query": "Comparison of welding processes resistance",
-    "evidence_ids": [
-      "pem:p14:e342:0",
-      "pem:p14:e343:0",
-      "pem:p14:e344:0",
-      "pem:p14:e345:0"
-    ],
-    "review_basis": "原始 PDF 第14页四种工艺栏已逐项视觉核对。"
-  },
-  {
-    "page": 14,
-    "split": "dev",
-    "family": "wire_bonding_tradeoffs",
-    "intent": "连接工艺选型依据",
-    "question": "为连接工艺选型准备依据，定位 PEM 指南第 14 页关于线键合的连接方式、成形作用、熔断保护、错位补偿及强度限制的全部对应条目。",
-    "query": "Comparison of welding processes wire bonding",
-    "evidence_ids": [
-      "pem:p14:e347:0",
-      "pem:p14:e348:0",
-      "pem:p14:e349:0",
-      "pem:p14:e350:0",
-      "pem:p14:e351:0"
-    ],
-    "review_basis": "原始 PDF 第14页四种工艺栏已逐项视觉核对。"
-  },
-  {
-    "page": 16,
-    "split": "test",
-    "family": "mechanical_requirements",
-    "intent": "设计约束来源核对",
-    "question": "整理设计约束来源：定位 PEM 指南第 16 页“Mechanical load and fixation of the cells”栏全部正文条目，不包括下方示意图标签。",
-    "query": "Battery safety Mechanical load and fixation of the cells",
-    "evidence_ids": [
-      "pem:p16:e378:0",
-      "pem:p16:e379:0",
-      "pem:p16:e380:0"
-    ],
-    "review_basis": "原始 PDF 第16页正文与图标签已区分。"
-  },
-  {
-    "page": 16,
-    "split": "test",
-    "family": "thermal_requirements",
-    "intent": "设计约束来源核对",
-    "question": "整理设计约束来源：定位 PEM 指南第 16 页“Thermal load and fire protection”栏全部正文条目，不包括下方示意图标签。",
-    "query": "Battery safety Thermal load and fire protection",
-    "evidence_ids": [
-      "pem:p16:e382:0",
-      "pem:p16:e383:0",
-      "pem:p16:e384:0"
-    ],
-    "review_basis": "原始 PDF 第16页正文与图标签已区分。"
-  },
-  {
-    "page": 16,
-    "split": "test",
-    "family": "insulation_requirements",
-    "intent": "设计约束来源核对",
-    "question": "整理设计约束来源：定位 PEM 指南第 16 页“Insulation and electromagnetic compatibility”栏全部正文条目，不包括下方示意图标签。",
-    "query": "Battery safety Insulation and electromagnetic compatibility",
-    "evidence_ids": [
-      "pem:p16:e386:0",
-      "pem:p16:e387:0"
-    ],
-    "review_basis": "原始 PDF 第16页正文与图标签已区分。"
-  },
-  {
-    "page": 19,
-    "split": "test",
-    "family": "cooling_comparison",
-    "intent": "冷却方案比较依据",
-    "question": "比较底板冷却与浸没冷却，定位 PEM 指南第 19 页描述两者传热介质/位置、冷却性能以及浸没方案密封和维护要求的条目，不包括底板单件安装说明。",
-    "query": "Cooling systems Base plate Immersion cooling performance tightness maintenance",
-    "evidence_ids": [
-      "pem:p19:e465:0",
-      "pem:p19:e467:0",
-      "pem:p19:e483:0",
-      "pem:p19:e484:0",
-      "pem:p19:e485:0"
-    ],
-    "review_basis": "原始 PDF 第19页两种冷却方式的指定事实已视觉核对。"
-  }
-]
+{
+  "elements_sha256": "4d3f76f9f3b97ddb6e0cbb0f8aba4d78f5d8b0cb052f2c165f31a6e0653dde01",
+  "elements": 703,
+  "scope": "Frozen annotations for the historical 300-case suite. The original PDF parse is required for guide evaluation; annotations can be regenerated independently of runtime parse output.",
+  "items": [
+    {
+      "page": 6,
+      "split": "dev",
+      "family": "process_requirements",
+      "intent": "Begin - of - line testing：工艺约束核对",
+      "question": "为“Begin - of - line testing”准备工艺约束核对。请定位 PEM 指南第 6 页“左栏 Process parameters & requirements”栏的全部项目符号条目，不包含标题、成本和图片说明。",
+      "query": "Begin - of - line testing Process parameters & requirements",
+      "review_basis": "原始 PDF 页已视觉核对；按真实栏位置选择，而非继承解析器栏目标签。",
+      "evidence": [
+        {
+          "uid": "pem:p6:e118:0",
+          "bbox": [
+            0.08529856106556395,
+            0.663540160628245,
+            0.46503377089265513,
+            0.69046866768546
+          ]
+        },
+        {
+          "uid": "pem:p6:e119:0",
+          "bbox": [
+            0.08529856106556395,
+            0.6950494443644517,
+            0.425816356009827,
+            0.7501789034229988
+          ]
+        },
+        {
+          "uid": "pem:p6:e120:0",
+          "bbox": [
+            0.08529856106556395,
+            0.7549292138287271,
+            0.4748024540164769,
+            0.7817533982356033
+          ]
+        }
+      ]
+    },
+    {
+      "page": 6,
+      "split": "dev",
+      "family": "quality_checklist",
+      "intent": "Begin - of - line testing：质量检查清单",
+      "question": "为“Begin - of - line testing”准备质量检查清单。请定位 PEM 指南第 6 页“右栏 Quality parameters”栏的全部项目符号条目，不包含标题、成本和图片说明。",
+      "query": "Begin - of - line testing Quality parameters",
+      "review_basis": "原始 PDF 页已视觉核对；按真实栏位置选择，而非继承解析器栏目标签。",
+      "evidence": [
+        {
+          "uid": "pem:p6:e122:0",
+          "bbox": [
+            0.530483469773815,
+            0.663540160628245,
+            0.8802866774702744,
+            0.7045283114038899
+          ]
+        },
+        {
+          "uid": "pem:p6:e123:0",
+          "bbox": [
+            0.5304863122240346,
+            0.7091595286997564,
+            0.8790832012742446,
+            0.7361192597045687
+          ]
+        },
+        {
+          "uid": "pem:p6:e124:0",
+          "bbox": [
+            0.530483469773815,
+            0.7408043590338994,
+            0.8531043260197376,
+            0.7676285434407756
+          ]
+        }
+      ]
+    },
+    {
+      "page": 6,
+      "split": "dev",
+      "family": "production_operations",
+      "intent": "Begin - of - line testing：工序资料准备",
+      "question": "为“Begin - of - line testing”准备工序资料准备。请定位 PEM 指南第 6 页“Production process”栏的全部项目符号条目，不包含标题、成本和图片说明。",
+      "query": "Begin - of - line testing Production process",
+      "review_basis": "原始 PDF 页已视觉核对；按真实栏位置选择，而非继承解析器栏目标签。",
+      "evidence": [
+        {
+          "uid": "pem:p6:e111:0",
+          "bbox": [
+            0.07998035823830793,
+            0.4356410886853557,
+            0.8859473740152848,
+            0.4625695957425708
+          ]
+        },
+        {
+          "uid": "pem:p6:e112:0",
+          "bbox": [
+            0.07998035823830793,
+            0.4671503975413917,
+            0.8767458458451388,
+            0.4940182150914508
+          ]
+        },
+        {
+          "uid": "pem:p6:e113:0",
+          "bbox": [
+            0.07998035823830793,
+            0.49868437406962435,
+            0.9102013987955936,
+            0.539737710801838
+          ]
+        },
+        {
+          "uid": "pem:p6:e114:0",
+          "bbox": [
+            0.07998035823830793,
+            0.5443185126006589,
+            0.8766927006395169,
+            0.5712469694182157
+          ]
+        },
+        {
+          "uid": "pem:p6:e115:0",
+          "bbox": [
+            0.07998035823830793,
+            0.5760308901553078,
+            0.9153875784236323,
+            0.6168159471125109
+          ]
+        }
+      ]
+    },
+    {
+      "page": 7,
+      "split": "dev",
+      "family": "process_requirements",
+      "intent": "Stacking the cells：工艺约束核对",
+      "question": "为“Stacking the cells”准备工艺约束核对。请定位 PEM 指南第 7 页“左栏 Process parameters & requirements”栏的全部项目符号条目，不包含标题、成本和图片说明。",
+      "query": "Stacking the cells Process parameters & requirements",
+      "review_basis": "原始 PDF 页已视觉核对；按真实栏位置选择，而非继承解析器栏目标签。",
+      "evidence": [
+        {
+          "uid": "pem:p7:e147:0",
+          "bbox": [
+            0.08529856106556395,
+            0.663540160628245,
+            0.4298263211234879,
+            0.69046866768546
+          ]
+        },
+        {
+          "uid": "pem:p7:e148:0",
+          "bbox": [
+            0.08529856106556395,
+            0.69337025914721,
+            0.45454973779688745,
+            0.7173914223018063
+          ]
+        },
+        {
+          "uid": "pem:p7:e149:0",
+          "bbox": [
+            0.08529856106556395,
+            0.7233156074421815,
+            0.43306761878987077,
+            0.7502441144993964
+          ]
+        },
+        {
+          "uid": "pem:p7:e150:0",
+          "bbox": [
+            0.08529856106556395,
+            0.7532500537313145,
+            0.46586088083914645,
+            0.7771666430372808
+          ]
+        }
+      ]
+    },
+    {
+      "page": 7,
+      "split": "dev",
+      "family": "quality_checklist",
+      "intent": "Stacking the cells：质量检查清单",
+      "question": "为“Stacking the cells”准备质量检查清单。请定位 PEM 指南第 7 页“右栏 Quality parameters”栏的全部项目符号条目，不包含标题、成本和图片说明。",
+      "query": "Stacking the cells Quality parameters",
+      "review_basis": "原始 PDF 页已视觉核对；按真实栏位置选择，而非继承解析器栏目标签。",
+      "evidence": [
+        {
+          "uid": "pem:p7:e152:0",
+          "bbox": [
+            0.530483469773815,
+            0.663540160628245,
+            0.7761390430176416,
+            0.6763438128906322
+          ]
+        },
+        {
+          "uid": "pem:p7:e153:0",
+          "bbox": [
+            0.530483469773815,
+            0.6793442006403145,
+            0.9000028596771906,
+            0.7061739114095972
+          ]
+        },
+        {
+          "uid": "pem:p7:e154:0",
+          "bbox": [
+            0.5304863122240346,
+            0.7091595286997564,
+            0.8433075198657123,
+            0.7361192597045687
+          ]
+        },
+        {
+          "uid": "pem:p7:e155:0",
+          "bbox": [
+            0.530483469773815,
+            0.73922397010459,
+            0.8594975995077221,
+            0.7659493833433628
+          ]
+        }
+      ]
+    },
+    {
+      "page": 7,
+      "split": "dev",
+      "family": "production_operations",
+      "intent": "Stacking the cells：工序资料准备",
+      "question": "为“Stacking the cells”准备工序资料准备。请定位 PEM 指南第 7 页“Production process”栏的全部项目符号条目，不包含标题、成本和图片说明。",
+      "query": "Stacking the cells Production process",
+      "review_basis": "原始 PDF 页已视觉核对；按真实栏位置选择，而非继承解析器栏目标签。",
+      "evidence": [
+        {
+          "uid": "pem:p7:e139:0",
+          "bbox": [
+            0.07998035823830793,
+            0.4387572537274561,
+            0.8697440296055833,
+            0.4517043150942943
+          ]
+        },
+        {
+          "uid": "pem:p7:e140:0",
+          "bbox": [
+            0.07998035823830793,
+            0.45608757455690885,
+            0.914202793491168,
+            0.4801085116330431
+          ]
+        },
+        {
+          "uid": "pem:p7:e141:0",
+          "bbox": [
+            0.07998035823830793,
+            0.48752277991703824,
+            0.9138620440042302,
+            0.528576116649252
+          ]
+        },
+        {
+          "uid": "pem:p7:e142:0",
+          "bbox": [
+            0.07998035823830793,
+            0.5329593761118664,
+            0.8898788272084848,
+            0.5598878329294232
+          ]
+        },
+        {
+          "uid": "pem:p7:e143:0",
+          "bbox": [
+            0.07998035823830793,
+            0.5644741610906507,
+            0.7732557648766523,
+            0.5771734907026991
+          ]
+        },
+        {
+          "uid": "pem:p7:e144:0",
+          "bbox": [
+            0.07998035823830793,
+            0.5816555213334168,
+            0.9040316452567,
+            0.6084852572225287
+          ]
+        }
+      ]
+    },
+    {
+      "page": 8,
+      "split": "test",
+      "family": "process_requirements",
+      "intent": "Stacking the cells：工艺约束核对",
+      "question": "为“Stacking the cells”准备工艺约束核对。请定位 PEM 指南第 8 页“左栏 Process parameters & requirements”栏的全部项目符号条目，不包含标题、成本和图片说明。",
+      "query": "Stacking the cells Process parameters & requirements",
+      "review_basis": "原始 PDF 页已视觉核对；按真实栏位置选择，而非继承解析器栏目标签。",
+      "evidence": [
+        {
+          "uid": "pem:p8:e177:0",
+          "bbox": [
+            0.08529856106556395,
+            0.6636444832785838,
+            0.42978161713366975,
+            0.69046866768546
+          ]
+        },
+        {
+          "uid": "pem:p8:e178:0",
+          "bbox": [
+            0.08529856106556395,
+            0.69337025914721,
+            0.45454973779688745,
+            0.7173914223018063
+          ]
+        },
+        {
+          "uid": "pem:p8:e179:0",
+          "bbox": [
+            0.08529856106556395,
+            0.7234199300925204,
+            0.44377517183472925,
+            0.7502441144993964
+          ]
+        }
+      ]
+    },
+    {
+      "page": 8,
+      "split": "test",
+      "family": "quality_checklist",
+      "intent": "Stacking the cells：质量检查清单",
+      "question": "为“Stacking the cells”准备质量检查清单。请定位 PEM 指南第 8 页“右栏 Quality parameters”栏的全部项目符号条目，不包含标题、成本和图片说明。",
+      "query": "Stacking the cells Quality parameters",
+      "review_basis": "原始 PDF 页已视觉核对；按真实栏位置选择，而非继承解析器栏目标签。",
+      "evidence": [
+        {
+          "uid": "pem:p8:e181:0",
+          "bbox": [
+            0.530483469773815,
+            0.663540160628245,
+            0.913258841613678,
+            0.6875610977043792
+          ]
+        },
+        {
+          "uid": "pem:p8:e182:0",
+          "bbox": [
+            0.530483469773815,
+            0.6934745817975488,
+            0.8753912029783366,
+            0.7203033882529832
+          ]
+        },
+        {
+          "uid": "pem:p8:e183:0",
+          "bbox": [
+            0.530483469773815,
+            0.7233156074421815,
+            0.906887877053175,
+            0.7473365445183158
+          ]
+        },
+        {
+          "uid": "pem:p8:e184:0",
+          "bbox": [
+            0.530483469773815,
+            0.7531457310809756,
+            0.8067869442299208,
+            0.763041813362282
+          ]
+        }
+      ]
+    },
+    {
+      "page": 8,
+      "split": "test",
+      "family": "production_operations",
+      "intent": "Stacking the cells：工序资料准备",
+      "question": "为“Stacking the cells”准备工序资料准备。请定位 PEM 指南第 8 页“Production process”栏的全部项目符号条目，不包含标题、成本和图片说明。",
+      "query": "Stacking the cells Production process",
+      "review_basis": "原始 PDF 页已视觉核对；按真实栏位置选择，而非继承解析器栏目标签。",
+      "evidence": [
+        {
+          "uid": "pem:p8:e169:0",
+          "bbox": [
+            0.07998035823830793,
+            0.43890068795173615,
+            0.893592359218178,
+            0.4517043150942943
+          ]
+        },
+        {
+          "uid": "pem:p8:e170:0",
+          "bbox": [
+            0.07998035823830793,
+            0.45608757455690885,
+            0.9163262760749586,
+            0.49710041812457967
+          ]
+        },
+        {
+          "uid": "pem:p8:e171:0",
+          "bbox": [
+            0.07998035823830793,
+            0.5017519071225467,
+            0.4778486562359654,
+            0.514451236734595
+          ]
+        },
+        {
+          "uid": "pem:p8:e172:0",
+          "bbox": [
+            0.07998035823830793,
+            0.5188344961972096,
+            0.9038920206565164,
+            0.5428554835130021
+          ]
+        },
+        {
+          "uid": "pem:p8:e173:0",
+          "bbox": [
+            0.07998035823830793,
+            0.5502450338851423,
+            0.8932737463890116,
+            0.5630486610277005
+          ]
+        },
+        {
+          "uid": "pem:p8:e174:0",
+          "bbox": [
+            0.07998035823830793,
+            0.5675306916584182,
+            0.8941288932308512,
+            0.5803343439208054
+          ]
+        }
+      ]
+    },
+    {
+      "page": 9,
+      "split": "test",
+      "family": "process_requirements",
+      "intent": "Stacking the cells：工艺约束核对",
+      "question": "为“Stacking the cells”准备工艺约束核对。请定位 PEM 指南第 9 页“左栏 Process parameters & requirements”栏的全部项目符号条目，不包含标题、成本和图片说明。",
+      "query": "Stacking the cells Process parameters & requirements",
+      "review_basis": "原始 PDF 页已视觉核对；按真实栏位置选择，而非继承解析器栏目标签。",
+      "evidence": [
+        {
+          "uid": "pem:p9:e205:0",
+          "bbox": [
+            0.08529856106556395,
+            0.663540160628245,
+            0.4298263211234879,
+            0.69046866768546
+          ]
+        },
+        {
+          "uid": "pem:p9:e206:0",
+          "bbox": [
+            0.08529856106556395,
+            0.69337025914721,
+            0.45454973779688745,
+            0.7173914223018063
+          ]
+        },
+        {
+          "uid": "pem:p9:e207:0",
+          "bbox": [
+            0.08529856106556395,
+            0.7233156074421815,
+            0.43306761878987077,
+            0.7502441144993964
+          ]
+        },
+        {
+          "uid": "pem:p9:e208:0",
+          "bbox": [
+            0.08529856106556395,
+            0.7532500537313145,
+            0.46586088083914645,
+            0.7771666430372808
+          ]
+        }
+      ]
+    },
+    {
+      "page": 9,
+      "split": "test",
+      "family": "quality_checklist",
+      "intent": "Stacking the cells：质量检查清单",
+      "question": "为“Stacking the cells”准备质量检查清单。请定位 PEM 指南第 9 页“右栏 Quality parameters”栏的全部项目符号条目，不包含标题、成本和图片说明。",
+      "query": "Stacking the cells Quality parameters",
+      "review_basis": "原始 PDF 页已视觉核对；按真实栏位置选择，而非继承解析器栏目标签。",
+      "evidence": [
+        {
+          "uid": "pem:p9:e210:0",
+          "bbox": [
+            0.530483469773815,
+            0.663540160628245,
+            0.7761390430176416,
+            0.6763438128906322
+          ]
+        },
+        {
+          "uid": "pem:p9:e211:0",
+          "bbox": [
+            0.530483469773815,
+            0.6793442006403145,
+            0.9000028596771906,
+            0.7061739114095972
+          ]
+        },
+        {
+          "uid": "pem:p9:e212:0",
+          "bbox": [
+            0.5304863122240346,
+            0.7091595286997564,
+            0.8655555500046427,
+            0.7361192597045687
+          ]
+        },
+        {
+          "uid": "pem:p9:e213:0",
+          "bbox": [
+            0.530483469773815,
+            0.73922397010459,
+            0.8594975995077221,
+            0.7659493833433628
+          ]
+        }
+      ]
+    },
+    {
+      "page": 9,
+      "split": "test",
+      "family": "production_operations",
+      "intent": "Stacking the cells：工序资料准备",
+      "question": "为“Stacking the cells”准备工序资料准备。请定位 PEM 指南第 9 页“Production process”栏的全部项目符号条目，不包含标题、成本和图片说明。",
+      "query": "Stacking the cells Production process",
+      "review_basis": "原始 PDF 页已视觉核对；按真实栏位置选择，而非继承解析器栏目标签。",
+      "evidence": [
+        {
+          "uid": "pem:p9:e197:0",
+          "bbox": [
+            0.07998035823830793,
+            0.43890068795173615,
+            0.9159014589694033,
+            0.46573037360118974
+          ]
+        },
+        {
+          "uid": "pem:p9:e198:0",
+          "bbox": [
+            0.07998035823830793,
+            0.47021240423190747,
+            0.8790471969047957,
+            0.4971655789613192
+          ]
+        },
+        {
+          "uid": "pem:p9:e199:0",
+          "bbox": [
+            0.07998035823830793,
+            0.5017519071225467,
+            0.7181363483748334,
+            0.514451236734595
+          ]
+        },
+        {
+          "uid": "pem:p9:e200:0",
+          "bbox": [
+            0.07998035823830793,
+            0.5188344961972096,
+            0.8898788272084848,
+            0.5457630032544246
+          ]
+        },
+        {
+          "uid": "pem:p9:e201:0",
+          "bbox": [
+            0.07998035823830793,
+            0.5503493314156521,
+            0.7732557648766523,
+            0.5630486610277005
+          ]
+        },
+        {
+          "uid": "pem:p9:e202:0",
+          "bbox": [
+            0.07998035823830793,
+            0.5675306916584182,
+            0.8844273522266118,
+            0.594459173595804
+          ]
+        }
+      ]
+    },
+    {
+      "page": 10,
+      "split": "test",
+      "family": "process_requirements",
+      "intent": "Mounting the BMS：工艺约束核对",
+      "question": "为“Mounting the BMS”准备工艺约束核对。请定位 PEM 指南第 10 页“左栏 Process parameters & requirements”栏的全部项目符号条目，不包含标题、成本和图片说明。",
+      "query": "Mounting the BMS Process parameters & requirements",
+      "review_basis": "原始 PDF 页已视觉核对；按真实栏位置选择，而非继承解析器栏目标签。",
+      "evidence": [
+        {
+          "uid": "pem:p10:e233:0",
+          "bbox": [
+            0.08529856106556395,
+            0.663540160628245,
+            0.4610935750116584,
+            0.6875610977043792
+          ]
+        },
+        {
+          "uid": "pem:p10:e234:0",
+          "bbox": [
+            0.08529856106556395,
+            0.6934745817975488,
+            0.47104697433233,
+            0.7203033882529832
+          ]
+        }
+      ]
+    },
+    {
+      "page": 10,
+      "split": "test",
+      "family": "quality_checklist",
+      "intent": "Mounting the BMS：质量检查清单",
+      "question": "为“Mounting the BMS”准备质量检查清单。请定位 PEM 指南第 10 页“右栏 Quality parameters”栏的全部项目符号条目，不包含标题、成本和图片说明。",
+      "query": "Mounting the BMS Quality parameters",
+      "review_basis": "原始 PDF 页已视觉核对；按真实栏位置选择，而非继承解析器栏目标签。",
+      "evidence": [
+        {
+          "uid": "pem:p10:e236:0",
+          "bbox": [
+            0.530483469773815,
+            0.663540160628245,
+            0.9030653844517283,
+            0.6904034566090622
+          ]
+        },
+        {
+          "uid": "pem:p10:e237:0",
+          "bbox": [
+            0.530483469773815,
+            0.69337025914721,
+            0.746990146689381,
+            0.7061739114095972
+          ]
+        },
+        {
+          "uid": "pem:p10:e238:0",
+          "bbox": [
+            0.5304863122240346,
+            0.7091595286997564,
+            0.8511432076378876,
+            0.721982573470225
+          ]
+        },
+        {
+          "uid": "pem:p10:e239:0",
+          "bbox": [
+            0.530483469773815,
+            0.7250991153097621,
+            0.7949393533098438,
+            0.7377984449218105
+          ]
+        },
+        {
+          "uid": "pem:p10:e240:0",
+          "bbox": [
+            0.530483469773815,
+            0.7408043590338994,
+            0.8866351608335855,
+            0.7647209734596948
+          ]
+        }
+      ]
+    },
+    {
+      "page": 10,
+      "split": "test",
+      "family": "production_operations",
+      "intent": "Mounting the BMS：工序资料准备",
+      "question": "为“Mounting the BMS”准备工序资料准备。请定位 PEM 指南第 10 页“Production process”栏的全部项目符号条目，不包含标题、成本和图片说明。",
+      "query": "Mounting the BMS Production process",
+      "review_basis": "原始 PDF 页已视觉核对；按真实栏位置选择，而非继承解析器栏目标签。",
+      "evidence": [
+        {
+          "uid": "pem:p10:e226:0",
+          "bbox": [
+            0.07998035823830793,
+            0.43890068795173615,
+            0.8993820857761896,
+            0.46573037360118974
+          ]
+        },
+        {
+          "uid": "pem:p10:e227:0",
+          "bbox": [
+            0.07998035823830793,
+            0.47031670176241724,
+            0.8994713214861156,
+            0.49561402759584045
+          ]
+        },
+        {
+          "uid": "pem:p10:e228:0",
+          "bbox": [
+            0.07998035823830793,
+            0.5016476095920369,
+            0.8507398381112624,
+            0.5256685969078294
+          ]
+        },
+        {
+          "uid": "pem:p10:e229:0",
+          "bbox": [
+            0.07998035823830793,
+            0.5329593761118664,
+            0.784065172387715,
+            0.5457630032544246
+          ]
+        },
+        {
+          "uid": "pem:p10:e230:0",
+          "bbox": [
+            0.07998035823830793,
+            0.5502450338851423,
+            0.8956712239470057,
+            0.5742659709612766
+          ]
+        }
+      ]
+    },
+    {
+      "page": 12,
+      "split": "test",
+      "family": "process_requirements",
+      "intent": "Contacting the tabs：工艺约束核对",
+      "question": "为“Contacting the tabs”准备工艺约束核对。请定位 PEM 指南第 12 页“左栏 Process parameters & requirements”栏的全部项目符号条目，不包含标题、成本和图片说明。",
+      "query": "Contacting the tabs Process parameters & requirements",
+      "review_basis": "原始 PDF 页已视觉核对；按真实栏位置选择，而非继承解析器栏目标签。",
+      "evidence": [
+        {
+          "uid": "pem:p12:e281:0",
+          "bbox": [
+            0.08529856106556395,
+            0.663540160628245,
+            0.45307441999803266,
+            0.7045935224802877
+          ]
+        },
+        {
+          "uid": "pem:p12:e282:0",
+          "bbox": [
+            0.08530140889921206,
+            0.7075848168518283,
+            0.4366125848880531,
+            0.7484997182057569
+          ]
+        },
+        {
+          "uid": "pem:p12:e283:0",
+          "bbox": [
+            0.08529856106556395,
+            0.7516696396821759,
+            0.46307286784794305,
+            0.7643689692942243
+          ]
+        },
+        {
+          "uid": "pem:p12:e284:0",
+          "bbox": [
+            0.08529856106556395,
+            0.7673748834063131,
+            0.373270821249331,
+            0.7800090019419638
+          ]
+        }
+      ]
+    },
+    {
+      "page": 12,
+      "split": "test",
+      "family": "quality_checklist",
+      "intent": "Contacting the tabs：质量检查清单",
+      "question": "为“Contacting the tabs”准备质量检查清单。请定位 PEM 指南第 12 页“右栏 Quality parameters”栏的全部项目符号条目，不包含标题、成本和图片说明。",
+      "query": "Contacting the tabs Quality parameters",
+      "review_basis": "原始 PDF 页已视觉核对；按真实栏位置选择，而非继承解析器栏目标签。",
+      "evidence": [
+        {
+          "uid": "pem:p12:e286:0",
+          "bbox": [
+            0.530483469773815,
+            0.663540160628245,
+            0.9192943109134067,
+            0.701685952499207
+          ]
+        },
+        {
+          "uid": "pem:p12:e287:0",
+          "bbox": [
+            0.5304863122240346,
+            0.7075848168518283,
+            0.8253748459693453,
+            0.7203033882529832
+          ]
+        },
+        {
+          "uid": "pem:p12:e288:0",
+          "bbox": [
+            0.530483469773815,
+            0.7234199300925204,
+            0.8712556963133076,
+            0.7502441144993964
+          ]
+        }
+      ]
+    },
+    {
+      "page": 12,
+      "split": "test",
+      "family": "production_operations",
+      "intent": "Contacting the tabs：工序资料准备",
+      "question": "为“Contacting the tabs”准备工序资料准备。请定位 PEM 指南第 12 页“Production process”栏的全部项目符号条目，不包含标题、成本和图片说明。",
+      "query": "Contacting the tabs Production process",
+      "review_basis": "原始 PDF 页已视觉核对；按真实栏位置选择，而非继承解析器栏目标签。",
+      "evidence": [
+        {
+          "uid": "pem:p12:e274:0",
+          "bbox": [
+            0.07998035823830793,
+            0.43890068795173615,
+            0.829838957106737,
+            0.4517043150942943
+          ]
+        },
+        {
+          "uid": "pem:p12:e275:0",
+          "bbox": [
+            0.07998035823830793,
+            0.45608757455690885,
+            0.9152085901946493,
+            0.49710041812457967
+          ]
+        },
+        {
+          "uid": "pem:p12:e276:0",
+          "bbox": [
+            0.07998035823830793,
+            0.5016476095920369,
+            0.8945535380666962,
+            0.5427009463242506
+          ]
+        },
+        {
+          "uid": "pem:p12:e277:0",
+          "bbox": [
+            0.07998035823830793,
+            0.5470842057868651,
+            0.8834661733780936,
+            0.5740127128440801
+          ]
+        },
+        {
+          "uid": "pem:p12:e278:0",
+          "bbox": [
+            0.07998035823830793,
+            0.5785990410053076,
+            0.9094860488236477,
+            0.6195480802070115
+          ]
+        }
+      ]
+    },
+    {
+      "page": 13,
+      "split": "test",
+      "family": "process_requirements",
+      "intent": "Contacting the tabs：工艺约束核对",
+      "question": "为“Contacting the tabs”准备工艺约束核对。请定位 PEM 指南第 13 页“左栏 Process parameters & requirements”栏的全部项目符号条目，不包含标题、成本和图片说明。",
+      "query": "Contacting the tabs Process parameters & requirements",
+      "review_basis": "原始 PDF 页已视觉核对；按真实栏位置选择，而非继承解析器栏目标签。",
+      "evidence": [
+        {
+          "uid": "pem:p13:e308:0",
+          "bbox": [
+            0.08529856106556395,
+            0.663540160628245,
+            0.4359959454600988,
+            0.6904034566090622
+          ]
+        },
+        {
+          "uid": "pem:p13:e309:0",
+          "bbox": [
+            0.08529856106556395,
+            0.69337025914721,
+            0.4556227627548063,
+            0.7203033882529832
+          ]
+        },
+        {
+          "uid": "pem:p13:e310:0",
+          "bbox": [
+            0.08529856106556395,
+            0.7234199300925204,
+            0.4345653316510622,
+            0.7502441144993964
+          ]
+        }
+      ]
+    },
+    {
+      "page": 13,
+      "split": "test",
+      "family": "quality_checklist",
+      "intent": "Contacting the tabs：质量检查清单",
+      "question": "为“Contacting the tabs”准备质量检查清单。请定位 PEM 指南第 13 页“右栏 Quality parameters”栏的全部项目符号条目，不包含标题、成本和图片说明。",
+      "query": "Contacting the tabs Quality parameters",
+      "review_basis": "原始 PDF 页已视觉核对；按真实栏位置选择，而非继承解析器栏目标签。",
+      "evidence": [
+        {
+          "uid": "pem:p13:e312:0",
+          "bbox": [
+            0.530483469773815,
+            0.6636444832785838,
+            0.8253183415043728,
+            0.6763438128906322
+          ]
+        },
+        {
+          "uid": "pem:p13:e313:0",
+          "bbox": [
+            0.530483469773815,
+            0.6794485232906534,
+            0.883861101688915,
+            0.7061739114095972
+          ]
+        },
+        {
+          "uid": "pem:p13:e314:0",
+          "bbox": [
+            0.5304863122240346,
+            0.70926400206907,
+            0.8819856013530752,
+            0.7332116897234879
+          ]
+        },
+        {
+          "uid": "pem:p13:e315:0",
+          "bbox": [
+            0.530483469773815,
+            0.739119647454251,
+            0.9103304288085947,
+            0.7659493833433628
+          ]
+        }
+      ]
+    },
+    {
+      "page": 13,
+      "split": "test",
+      "family": "production_operations",
+      "intent": "Contacting the tabs：工序资料准备",
+      "question": "为“Contacting the tabs”准备工序资料准备。请定位 PEM 指南第 13 页“Production process”栏的全部项目符号条目，不包含标题、成本和图片说明。",
+      "query": "Contacting the tabs Production process",
+      "review_basis": "原始 PDF 页已视觉核对；按真实栏位置选择，而非继承解析器栏目标签。",
+      "evidence": [
+        {
+          "uid": "pem:p13:e301:0",
+          "bbox": [
+            0.07998035823830793,
+            0.43890068795173615,
+            0.829838957106737,
+            0.4517043150942943
+          ]
+        },
+        {
+          "uid": "pem:p13:e302:0",
+          "bbox": [
+            0.07998035823830793,
+            0.45608757455690885,
+            0.9220713847780072,
+            0.511290458875976
+          ]
+        },
+        {
+          "uid": "pem:p13:e303:0",
+          "bbox": [
+            0.07998035823830793,
+            0.5157724895066937,
+            0.9216911855274149,
+            0.5567270550708042
+          ]
+        },
+        {
+          "uid": "pem:p13:e304:0",
+          "bbox": [
+            0.07998035823830793,
+            0.561209085701522,
+            0.918628574618022,
+            0.5881375676389079
+          ]
+        },
+        {
+          "uid": "pem:p13:e305:0",
+          "bbox": [
+            0.07998035823830793,
+            0.5926195731497965,
+            0.907138960155911,
+            0.6054232254121837
+          ]
+        }
+      ]
+    },
+    {
+      "page": 15,
+      "split": "test",
+      "family": "process_requirements",
+      "intent": "Tensioning of the cells：工艺约束核对",
+      "question": "为“Tensioning of the cells”准备工艺约束核对。请定位 PEM 指南第 15 页“左栏 Process parameters & requirements”栏的全部项目符号条目，不包含标题、成本和图片说明。",
+      "query": "Tensioning of the cells Process parameters & requirements",
+      "review_basis": "原始 PDF 页已视觉核对；按真实栏位置选择，而非继承解析器栏目标签。",
+      "evidence": [
+        {
+          "uid": "pem:p15:e363:0",
+          "bbox": [
+            0.08529856106556395,
+            0.663540160628245,
+            0.47180702829409404,
+            0.7045935224802877
+          ]
+        },
+        {
+          "uid": "pem:p15:e364:0",
+          "bbox": [
+            0.08530140889921206,
+            0.7074803434825147,
+            0.43727892412742375,
+            0.7456573593010739
+          ]
+        }
+      ]
+    },
+    {
+      "page": 15,
+      "split": "test",
+      "family": "quality_checklist",
+      "intent": "Tensioning of the cells：质量检查清单",
+      "question": "为“Tensioning of the cells”准备质量检查清单。请定位 PEM 指南第 15 页“右栏 Quality parameters”栏的全部项目符号条目，不包含标题、成本和图片说明。",
+      "query": "Tensioning of the cells Quality parameters",
+      "review_basis": "原始 PDF 页已视觉核对；按真实栏位置选择，而非继承解析器栏目标签。",
+      "evidence": [
+        {
+          "uid": "pem:p15:e366:0",
+          "bbox": [
+            0.530483469773815,
+            0.6636444832785838,
+            0.879705439467783,
+            0.6763438128906322
+          ]
+        },
+        {
+          "uid": "pem:p15:e367:0",
+          "bbox": [
+            0.530483469773815,
+            0.6793442006403145,
+            0.8834386963593036,
+            0.7061087003331995
+          ]
+        },
+        {
+          "uid": "pem:p15:e368:0",
+          "bbox": [
+            0.5304863122240346,
+            0.7091595286997564,
+            0.9182395896122054,
+            0.7361192597045687
+          ]
+        }
+      ]
+    },
+    {
+      "page": 15,
+      "split": "test",
+      "family": "production_operations",
+      "intent": "Tensioning of the cells：工序资料准备",
+      "question": "为“Tensioning of the cells”准备工序资料准备。请定位 PEM 指南第 15 页“Production process”栏的全部项目符号条目，不包含标题、成本和图片说明。",
+      "query": "Tensioning of the cells Production process",
+      "review_basis": "原始 PDF 页已视觉核对；按真实栏位置选择，而非继承解析器栏目标签。",
+      "evidence": [
+        {
+          "uid": "pem:p15:e357:0",
+          "bbox": [
+            0.07998035823830793,
+            0.43890068795173615,
+            0.8932346411647776,
+            0.4769477337744241
+          ]
+        },
+        {
+          "uid": "pem:p15:e358:0",
+          "bbox": [
+            0.07998035823830793,
+            0.484361951818761,
+            0.9011032324516167,
+            0.5253501277142352
+          ]
+        },
+        {
+          "uid": "pem:p15:e359:0",
+          "bbox": [
+            0.07998035823830793,
+            0.5298973191816925,
+            0.9247985865614811,
+            0.5567270550708042
+          ]
+        },
+        {
+          "uid": "pem:p15:e360:0",
+          "bbox": [
+            0.07998035823830793,
+            0.5613133832320317,
+            0.9038303481002354,
+            0.6163872772285635
+          ]
+        }
+      ]
+    },
+    {
+      "page": 17,
+      "split": "test",
+      "family": "process_requirements",
+      "intent": "Module final assembly：工艺约束核对",
+      "question": "为“Module final assembly”准备工艺约束核对。请定位 PEM 指南第 17 页“左栏 Process parameters & requirements”栏的全部项目符号条目，不包含标题、成本和图片说明。",
+      "query": "Module final assembly Process parameters & requirements",
+      "review_basis": "原始 PDF 页已视觉核对；按真实栏位置选择，而非继承解析器栏目标签。",
+      "evidence": [
+        {
+          "uid": "pem:p17:e419:0",
+          "bbox": [
+            0.08529856106556395,
+            0.663540160628245,
+            0.4186269380557744,
+            0.6763438128906322
+          ]
+        },
+        {
+          "uid": "pem:p17:e420:0",
+          "bbox": [
+            0.08529856106556395,
+            0.6793442006403145,
+            0.43557130062425375,
+            0.7061087003331995
+          ]
+        },
+        {
+          "uid": "pem:p17:e421:0",
+          "bbox": [
+            0.08530140889921206,
+            0.70926400206907,
+            0.46546522038205634,
+            0.7361192597045687
+          ]
+        },
+        {
+          "uid": "pem:p17:e422:0",
+          "bbox": [
+            0.08529856106556395,
+            0.739119647454251,
+            0.4708458063781482,
+            0.7658841722669651
+          ]
+        }
+      ]
+    },
+    {
+      "page": 17,
+      "split": "test",
+      "family": "quality_checklist",
+      "intent": "Module final assembly：质量检查清单",
+      "question": "为“Module final assembly”准备质量检查清单。请定位 PEM 指南第 17 页“右栏 Quality parameters”栏的全部项目符号条目，不包含标题、成本和图片说明。",
+      "query": "Module final assembly Quality parameters",
+      "review_basis": "原始 PDF 页已视觉核对；按真实栏位置选择，而非继承解析器栏目标签。",
+      "evidence": [
+        {
+          "uid": "pem:p17:e424:0",
+          "bbox": [
+            0.530483469773815,
+            0.6636444832785838,
+            0.8765312839209827,
+            0.6904034566090622
+          ]
+        },
+        {
+          "uid": "pem:p17:e425:0",
+          "bbox": [
+            0.530483469773815,
+            0.69337025914721,
+            0.9217991986357618,
+            0.7344400996071561
+          ]
+        },
+        {
+          "uid": "pem:p17:e426:0",
+          "bbox": [
+            0.530483469773815,
+            0.7375447848873481,
+            0.7698088202436204,
+            0.7502441144993964
+          ]
+        },
+        {
+          "uid": "pem:p17:e427:0",
+          "bbox": [
+            0.530483469773815,
+            0.7531457310809756,
+            0.846398124603026,
+            0.7659493833433628
+          ]
+        }
+      ]
+    },
+    {
+      "page": 17,
+      "split": "test",
+      "family": "production_operations",
+      "intent": "Module final assembly：工序资料准备",
+      "question": "为“Module final assembly”准备工序资料准备。请定位 PEM 指南第 17 页“Production process”栏的全部项目符号条目，不包含标题、成本和图片说明。",
+      "query": "Module final assembly Production process",
+      "review_basis": "原始 PDF 页已视觉核对；按真实栏位置选择，而非继承解析器栏目标签。",
+      "evidence": [
+        {
+          "uid": "pem:p17:e408:0",
+          "bbox": [
+            0.07998035823830793,
+            0.43890068795173615,
+            0.8012708681066921,
+            0.4516391542575548
+          ]
+        },
+        {
+          "uid": "pem:p17:e409:0",
+          "bbox": [
+            0.07998035823830793,
+            0.45608757455690885,
+            0.8686900835180782,
+            0.46882604086272744
+          ]
+        },
+        {
+          "uid": "pem:p17:e410:0",
+          "bbox": [
+            0.07998330835709651,
+            0.4733584618706616,
+            0.7894781450893399,
+            0.4861814815213011
+          ]
+        },
+        {
+          "uid": "pem:p17:e411:0",
+          "bbox": [
+            0.07998035823830793,
+            0.49068360801531546,
+            0.8600356839477878,
+            0.5034872351578736
+          ]
+        },
+        {
+          "uid": "pem:p17:e412:0",
+          "bbox": [
+            0.13875969856935175,
+            0.5079747419113396,
+            0.792495018390653,
+            0.5206740715233881
+          ]
+        },
+        {
+          "uid": "pem:p17:e413:0",
+          "bbox": [
+            0.13875969856935175,
+            0.5251561021541057,
+            0.7125350418124428,
+            0.5379597292966639
+          ]
+        },
+        {
+          "uid": "pem:p17:e414:0",
+          "bbox": [
+            0.13875969856935175,
+            0.5424417599273816,
+            0.6482451918231837,
+            0.5552453870699398
+          ]
+        },
+        {
+          "uid": "pem:p17:e415:0",
+          "bbox": [
+            0.07998035823830793,
+            0.5596286465325543,
+            0.6752615614078639,
+            0.5724322736751124
+          ]
+        },
+        {
+          "uid": "pem:p17:e416:0",
+          "bbox": [
+            0.07998035823830793,
+            0.5769143545454883,
+            0.8776763606852269,
+            0.6037776254064765
+          ]
+        }
+      ]
+    },
+    {
+      "page": 18,
+      "split": "test",
+      "family": "process_requirements",
+      "intent": "Mounting the modules：工艺约束核对",
+      "question": "为“Mounting the modules”准备工艺约束核对。请定位 PEM 指南第 18 页“左栏 Process parameters & requirements”栏的全部项目符号条目，不包含标题、成本和图片说明。",
+      "query": "Mounting the modules Process parameters & requirements",
+      "review_basis": "原始 PDF 页已视觉核对；按真实栏位置选择，而非继承解析器栏目标签。",
+      "evidence": [
+        {
+          "uid": "pem:p18:e447:0",
+          "bbox": [
+            0.08529856106556395,
+            0.663540160628245,
+            0.4344982756663349,
+            0.6763438128906322
+          ]
+        },
+        {
+          "uid": "pem:p18:e448:0",
+          "bbox": [
+            0.08529856106556395,
+            0.6794485232906534,
+            0.4356830605987992,
+            0.7173914223018063
+          ]
+        },
+        {
+          "uid": "pem:p18:e449:0",
+          "bbox": [
+            0.08529856106556395,
+            0.7233156074421815,
+            0.4708458063781482,
+            0.7501789034229988
+          ]
+        }
+      ]
+    },
+    {
+      "page": 18,
+      "split": "test",
+      "family": "quality_checklist",
+      "intent": "Mounting the modules：质量检查清单",
+      "question": "为“Mounting the modules”准备质量检查清单。请定位 PEM 指南第 18 页“右栏 Quality parameters”栏的全部项目符号条目，不包含标题、成本和图片说明。",
+      "query": "Mounting the modules Quality parameters",
+      "review_basis": "原始 PDF 页已视觉核对；按真实栏位置选择，而非继承解析器栏目标签。",
+      "evidence": [
+        {
+          "uid": "pem:p18:e451:0",
+          "bbox": [
+            0.530483469773815,
+            0.663540160628245,
+            0.8890270396259956,
+            0.6763438128906322
+          ]
+        },
+        {
+          "uid": "pem:p18:e452:0",
+          "bbox": [
+            0.530483469773815,
+            0.6798135897672668,
+            0.695576079386017,
+            0.6921478529027018
+          ]
+        },
+        {
+          "uid": "pem:p18:e453:0",
+          "bbox": [
+            0.530483469773815,
+            0.6950494443644517,
+            0.8247371035018815,
+            0.707853096626839
+          ]
+        }
+      ]
+    },
+    {
+      "page": 18,
+      "split": "test",
+      "family": "production_operations",
+      "intent": "Mounting the modules：工序资料准备",
+      "question": "为“Mounting the modules”准备工序资料准备。请定位 PEM 指南第 18 页“Production process”栏的全部项目符号条目，不包含标题、成本和图片说明。",
+      "query": "Mounting the modules Production process",
+      "review_basis": "原始 PDF 页已视觉核对；按真实栏位置选择，而非继承解析器栏目标签。",
+      "evidence": [
+        {
+          "uid": "pem:p18:e440:0",
+          "bbox": [
+            0.07998035823830793,
+            0.43890068795173615,
+            0.919992175509759,
+            0.46573037360118974
+          ]
+        },
+        {
+          "uid": "pem:p18:e441:0",
+          "bbox": [
+            0.07998035823830793,
+            0.47021240423190747,
+            0.8997843355496981,
+            0.5112252980392366
+          ]
+        },
+        {
+          "uid": "pem:p18:e442:0",
+          "bbox": [
+            0.07998035823830793,
+            0.5157724895066937,
+            0.886841281541938,
+            0.5427009463242506
+          ]
+        },
+        {
+          "uid": "pem:p18:e443:0",
+          "bbox": [
+            0.07998035823830793,
+            0.5470842057868651,
+            0.8874897908662944,
+            0.5740127128440801
+          ]
+        },
+        {
+          "uid": "pem:p18:e444:0",
+          "bbox": [
+            0.07998035823830793,
+            0.5784947434747978,
+            0.8944195983669521,
+            0.6054232254121837
+          ]
+        }
+      ]
+    },
+    {
+      "page": 20,
+      "split": "test",
+      "family": "process_requirements",
+      "intent": "Assembly of internal components：工艺约束核对",
+      "question": "为“Assembly of internal components”准备工艺约束核对。请定位 PEM 指南第 20 页“左栏 Process parameters & requirements”栏的全部项目符号条目，不包含标题、成本和图片说明。",
+      "query": "Assembly of internal components Process parameters & requirements",
+      "review_basis": "原始 PDF 页已视觉核对；按真实栏位置选择，而非继承解析器栏目标签。",
+      "evidence": [
+        {
+          "uid": "pem:p20:e499:0",
+          "bbox": [
+            0.08529856106556395,
+            0.663540160628245,
+            0.4612112782912085,
+            0.7045935224802877
+          ]
+        },
+        {
+          "uid": "pem:p20:e500:0",
+          "bbox": [
+            0.08530140889921206,
+            0.7074803434825147,
+            0.4709502018225791,
+            0.7343748885307583
+          ]
+        }
+      ]
+    },
+    {
+      "page": 20,
+      "split": "test",
+      "family": "quality_checklist",
+      "intent": "Assembly of internal components：质量检查清单",
+      "question": "为“Assembly of internal components”准备质量检查清单。请定位 PEM 指南第 20 页“右栏 Quality parameters”栏的全部项目符号条目，不包含标题、成本和图片说明。",
+      "query": "Assembly of internal components Quality parameters",
+      "review_basis": "原始 PDF 页已视觉核对；按真实栏位置选择，而非继承解析器栏目标签。",
+      "evidence": [
+        {
+          "uid": "pem:p20:e502:0",
+          "bbox": [
+            0.530483469773815,
+            0.663540160628245,
+            0.877157139778437,
+            0.69046866768546
+          ]
+        },
+        {
+          "uid": "pem:p20:e503:0",
+          "bbox": [
+            0.530483469773815,
+            0.69337025914721,
+            0.877805390698228,
+            0.720238076697269
+          ]
+        },
+        {
+          "uid": "pem:p20:e504:0",
+          "bbox": [
+            0.530483469773815,
+            0.7234199300925204,
+            0.8673884997220428,
+            0.7361192597045687
+          ]
+        }
+      ]
+    },
+    {
+      "page": 20,
+      "split": "test",
+      "family": "production_operations",
+      "intent": "Assembly of internal components：工序资料准备",
+      "question": "为“Assembly of internal components”准备工序资料准备。请定位 PEM 指南第 20 页“Production process”栏的全部项目符号条目，不包含标题、成本和图片说明。",
+      "query": "Assembly of internal components Production process",
+      "review_basis": "原始 PDF 页已视觉核对；按真实栏位置选择，而非继承解析器栏目标签。",
+      "evidence": [
+        {
+          "uid": "pem:p20:e491:0",
+          "bbox": [
+            0.07998035823830793,
+            0.43890068795173615,
+            0.9038750520900537,
+            0.46573037360118974
+          ]
+        },
+        {
+          "uid": "pem:p20:e492:0",
+          "bbox": [
+            0.07998035823830793,
+            0.47021240423190747,
+            0.9227654594407333,
+            0.4971655789613192
+          ]
+        },
+        {
+          "uid": "pem:p20:e493:0",
+          "bbox": [
+            0.07998035823830793,
+            0.5017519071225467,
+            0.8900382628253507,
+            0.5285109558125124
+          ]
+        },
+        {
+          "uid": "pem:p20:e494:0",
+          "bbox": [
+            0.07998035823830793,
+            0.5329593761118664,
+            0.9254244424189355,
+            0.5598878329294232
+          ]
+        },
+        {
+          "uid": "pem:p20:e495:0",
+          "bbox": [
+            0.07998035823830793,
+            0.564369863560141,
+            0.9169746992644601,
+            0.5912331595409582
+          ]
+        },
+        {
+          "uid": "pem:p20:e496:0",
+          "bbox": [
+            0.07998035823830793,
+            0.5956816049601413,
+            0.8800233632181085,
+            0.6226101120173564
+          ]
+        }
+      ]
+    },
+    {
+      "page": 21,
+      "split": "test",
+      "family": "process_requirements",
+      "intent": "Sealing & Leak testing：工艺约束核对",
+      "question": "为“Sealing & Leak testing”准备工艺约束核对。请定位 PEM 指南第 21 页“左栏 Process parameters & requirements”栏的全部项目符号条目，不包含标题、成本和图片说明。",
+      "query": "Sealing & Leak testing Process parameters & requirements",
+      "review_basis": "原始 PDF 页已视觉核对；按真实栏位置选择，而非继承解析器栏目标签。",
+      "evidence": [
+        {
+          "uid": "pem:p21:e525:0",
+          "bbox": [
+            0.08529856106556395,
+            0.663540160628245,
+            0.41411153361214614,
+            0.69046866768546
+          ]
+        },
+        {
+          "uid": "pem:p21:e526:0",
+          "bbox": [
+            0.08529856106556395,
+            0.69337025914721,
+            0.3777192558430871,
+            0.7061739114095972
+          ]
+        },
+        {
+          "uid": "pem:p21:e527:0",
+          "bbox": [
+            0.08530140889921206,
+            0.7091595286997564,
+            0.436532479472772,
+            0.7501789034229988
+          ]
+        }
+      ]
+    },
+    {
+      "page": 21,
+      "split": "test",
+      "family": "quality_checklist",
+      "intent": "Sealing & Leak testing：质量检查清单",
+      "question": "为“Sealing & Leak testing”准备质量检查清单。请定位 PEM 指南第 21 页“右栏 Quality parameters”栏的全部项目符号条目，不包含标题、成本和图片说明。",
+      "query": "Sealing & Leak testing Quality parameters",
+      "review_basis": "原始 PDF 页已视觉核对；按真实栏位置选择，而非继承解析器栏目标签。",
+      "evidence": [
+        {
+          "uid": "pem:p21:e529:0",
+          "bbox": [
+            0.530483469773815,
+            0.663540160628245,
+            0.8737145880230173,
+            0.6763438128906322
+          ]
+        },
+        {
+          "uid": "pem:p21:e530:0",
+          "bbox": [
+            0.530483469773815,
+            0.6793442006403145,
+            0.8324716689541213,
+            0.6921478529027018
+          ]
+        },
+        {
+          "uid": "pem:p21:e531:0",
+          "bbox": [
+            0.530483469773815,
+            0.6950494443644517,
+            0.8666507546877603,
+            0.707853096626839
+          ]
+        },
+        {
+          "uid": "pem:p21:e532:0",
+          "bbox": [
+            0.5304863122240346,
+            0.7108387139169983,
+            0.8698818453738089,
+            0.7236617586874668
+          ]
+        }
+      ]
+    },
+    {
+      "page": 21,
+      "split": "test",
+      "family": "production_operations",
+      "intent": "Sealing & Leak testing：工序资料准备",
+      "question": "为“Sealing & Leak testing”准备工序资料准备。请定位 PEM 指南第 21 页“Production process”栏的全部项目符号条目，不包含标题、成本和图片说明。",
+      "query": "Sealing & Leak testing Production process",
+      "review_basis": "原始 PDF 页已视觉核对；按真实栏位置选择，而非继承解析器栏目标签。",
+      "evidence": [
+        {
+          "uid": "pem:p21:e518:0",
+          "bbox": [
+            0.07998035823830793,
+            0.43890068795173615,
+            0.897616062841234,
+            0.46573037360118974
+          ]
+        },
+        {
+          "uid": "pem:p21:e519:0",
+          "bbox": [
+            0.07998035823830793,
+            0.47021240423190747,
+            0.8803141544890644,
+            0.4971655789613192
+          ]
+        },
+        {
+          "uid": "pem:p21:e520:0",
+          "bbox": [
+            0.07998035823830793,
+            0.5016476095920369,
+            0.8532882239354637,
+            0.528576116649252
+          ]
+        },
+        {
+          "uid": "pem:p21:e521:0",
+          "bbox": [
+            0.07998035823830793,
+            0.5329593761118664,
+            0.8940840169713228,
+            0.5740127128440801
+          ]
+        },
+        {
+          "uid": "pem:p21:e522:0",
+          "bbox": [
+            0.07998035823830793,
+            0.5784947434747978,
+            0.9047468229589356,
+            0.6054232254121837
+          ]
+        }
+      ]
+    },
+    {
+      "page": 22,
+      "split": "test",
+      "family": "process_requirements",
+      "intent": "Charging & Flashing：工艺约束核对",
+      "question": "为“Charging & Flashing”准备工艺约束核对。请定位 PEM 指南第 22 页“左栏 Process parameters & requirements”栏的全部项目符号条目，不包含标题、成本和图片说明。",
+      "query": "Charging & Flashing Process parameters & requirements",
+      "review_basis": "原始 PDF 页已视觉核对；按真实栏位置选择，而非继承解析器栏目标签。",
+      "evidence": [
+        {
+          "uid": "pem:p22:e551:0",
+          "bbox": [
+            0.08529856106556395,
+            0.663540160628245,
+            0.46375962104798213,
+            0.7045935224802877
+          ]
+        },
+        {
+          "uid": "pem:p22:e552:0",
+          "bbox": [
+            0.08530140889921206,
+            0.7074803434825147,
+            0.3802795713447253,
+            0.7315325296260753
+          ]
+        },
+        {
+          "uid": "pem:p22:e553:0",
+          "bbox": [
+            0.08529856106556395,
+            0.7374404622370092,
+            0.4484247743826672,
+            0.7784286130126543
+          ]
+        }
+      ]
+    },
+    {
+      "page": 22,
+      "split": "test",
+      "family": "quality_checklist",
+      "intent": "Charging & Flashing：质量检查清单",
+      "question": "为“Charging & Flashing”准备质量检查清单。请定位 PEM 指南第 22 页“右栏 Quality parameters”栏的全部项目符号条目，不包含标题、成本和图片说明。",
+      "query": "Charging & Flashing Quality parameters",
+      "review_basis": "原始 PDF 页已视觉核对；按真实栏位置选择，而非继承解析器栏目标签。",
+      "evidence": [
+        {
+          "uid": "pem:p22:e555:0",
+          "bbox": [
+            0.530483469773815,
+            0.663540160628245,
+            0.8894741656590324,
+            0.6763438128906322
+          ]
+        },
+        {
+          "uid": "pem:p22:e556:0",
+          "bbox": [
+            0.530483469773815,
+            0.6793442006403145,
+            0.8949061741636435,
+            0.7061087003331995
+          ]
+        },
+        {
+          "uid": "pem:p22:e557:0",
+          "bbox": [
+            0.5304863122240346,
+            0.70926400206907,
+            0.8809414746390561,
+            0.7361192597045687
+          ]
+        }
+      ]
+    },
+    {
+      "page": 22,
+      "split": "test",
+      "family": "production_operations",
+      "intent": "Charging & Flashing：工序资料准备",
+      "question": "为“Charging & Flashing”准备工序资料准备。请定位 PEM 指南第 22 页“Production process”栏的全部项目符号条目，不包含标题、成本和图片说明。",
+      "query": "Charging & Flashing Production process",
+      "review_basis": "原始 PDF 页已视觉核对；按真实栏位置选择，而非继承解析器栏目标签。",
+      "evidence": [
+        {
+          "uid": "pem:p22:e545:0",
+          "bbox": [
+            0.07998035823830793,
+            0.43890068795173615,
+            0.9085471789026109,
+            0.46573037360118974
+          ]
+        },
+        {
+          "uid": "pem:p22:e546:0",
+          "bbox": [
+            0.07998035823830793,
+            0.47021240423190747,
+            0.7881041218801309,
+            0.48301603137446564
+          ]
+        },
+        {
+          "uid": "pem:p22:e547:0",
+          "bbox": [
+            0.07998035823830793,
+            0.48752277991703824,
+            0.678661261072851,
+            0.5003264070595964
+          ]
+        },
+        {
+          "uid": "pem:p22:e548:0",
+          "bbox": [
+            0.07998035823830793,
+            0.5047096665222109,
+            0.9117660384392295,
+            0.5316381233397677
+          ]
+        }
+      ]
+    },
+    {
+      "page": 23,
+      "split": "test",
+      "family": "process_requirements",
+      "intent": "End - of - line testing：工艺约束核对",
+      "question": "为“End - of - line testing”准备工艺约束核对。请定位 PEM 指南第 23 页“左栏 Process parameters & requirements”栏的全部项目符号条目，不包含标题、成本和图片说明。",
+      "query": "End - of - line testing Process parameters & requirements",
+      "review_basis": "原始 PDF 页已视觉核对；按真实栏位置选择，而非继承解析器栏目标签。",
+      "evidence": [
+        {
+          "uid": "pem:p23:e576:0",
+          "bbox": [
+            0.08529856106556395,
+            0.663540160628245,
+            0.4490283213126401,
+            0.69046866768546
+          ]
+        },
+        {
+          "uid": "pem:p23:e577:0",
+          "bbox": [
+            0.08529856106556395,
+            0.69337025914721,
+            0.44493553753576104,
+            0.7203033882529832
+          ]
+        },
+        {
+          "uid": "pem:p23:e578:0",
+          "bbox": [
+            0.08529856106556395,
+            0.7233156074421815,
+            0.42278479671571245,
+            0.7361192597045687
+          ]
+        }
+      ]
+    },
+    {
+      "page": 23,
+      "split": "test",
+      "family": "quality_checklist",
+      "intent": "End - of - line testing：质量检查清单",
+      "question": "为“End - of - line testing”准备质量检查清单。请定位 PEM 指南第 23 页“右栏 Quality parameters”栏的全部项目符号条目，不包含标题、成本和图片说明。",
+      "query": "End - of - line testing Quality parameters",
+      "review_basis": "原始 PDF 页已视觉核对；按真实栏位置选择，而非继承解析器栏目标签。",
+      "evidence": [
+        {
+          "uid": "pem:p23:e580:0",
+          "bbox": [
+            0.530483469773815,
+            0.663540160628245,
+            0.8272407853362644,
+            0.6763438128906322
+          ]
+        }
+      ]
+    },
+    {
+      "page": 23,
+      "split": "test",
+      "family": "production_operations",
+      "intent": "End - of - line testing：工序资料准备",
+      "question": "为“End - of - line testing”准备工序资料准备。请定位 PEM 指南第 23 页“Production process”栏的全部项目符号条目，不包含标题、成本和图片说明。",
+      "query": "End - of - line testing Production process",
+      "review_basis": "原始 PDF 页已视觉核对；按真实栏位置选择，而非继承解析器栏目标签。",
+      "evidence": [
+        {
+          "uid": "pem:p23:e568:0",
+          "bbox": [
+            0.07998035823830793,
+            0.43890068795173615,
+            0.7240377057051077,
+            0.4517043150942943
+          ]
+        },
+        {
+          "uid": "pem:p23:e569:0",
+          "bbox": [
+            0.07998035823830793,
+            0.45608757455690885,
+            0.8449501115532508,
+            0.48301603137446564
+          ]
+        },
+        {
+          "uid": "pem:p23:e570:0",
+          "bbox": [
+            0.07998035823830793,
+            0.48752277991703824,
+            0.8940170040540231,
+            0.5134603599550938
+          ]
+        },
+        {
+          "uid": "pem:p23:e571:0",
+          "bbox": [
+            0.07998035823830793,
+            0.5188344961972096,
+            0.8796883847664652,
+            0.5457630032544246
+          ]
+        },
+        {
+          "uid": "pem:p23:e572:0",
+          "bbox": [
+            0.07998035823830793,
+            0.5501015996608623,
+            0.8690253203742869,
+            0.5630486610277005
+          ]
+        },
+        {
+          "uid": "pem:p23:e573:0",
+          "bbox": [
+            0.07998035823830793,
+            0.567634989188928,
+            0.5145368933672888,
+            0.5803343439208054
+          ]
+        }
+      ]
+    },
+    {
+      "page": 14,
+      "split": "dev",
+      "family": "laser_tradeoffs",
+      "intent": "连接工艺选型依据",
+      "question": "为连接工艺选型准备依据，定位 PEM 指南第 14 页关于激光焊接的占地、颗粒控制和反射表面限制的全部对应条目。",
+      "query": "Comparison of welding processes laser",
+      "review_basis": "原始 PDF 第14页四种工艺栏已逐项视觉核对。",
+      "evidence": [
+        {
+          "uid": "pem:p14:e333:0",
+          "bbox": [
+            0.3628959640824545,
+            0.22183949092355262,
+            0.8283564901149056,
+            0.234538820535601
+          ]
+        },
+        {
+          "uid": "pem:p14:e334:0",
+          "bbox": [
+            0.3628959640824545,
+            0.23911962233442188,
+            0.9381141738177259,
+            0.2660481293916369
+          ]
+        },
+        {
+          "uid": "pem:p14:e335:0",
+          "bbox": [
+            0.36289893573495685,
+            0.2706141607309348,
+            0.9034214659428812,
+            0.3117069355948682
+          ]
+        }
+      ]
+    },
+    {
+      "page": 14,
+      "split": "dev",
+      "family": "ultrasonic_tradeoffs",
+      "intent": "连接工艺选型依据",
+      "question": "为连接工艺选型准备依据，定位 PEM 指南第 14 页关于超声焊接的接触形式、连接性能及设备可达性限制的全部对应条目。",
+      "query": "Comparison of welding processes ultrasonic",
+      "review_basis": "原始 PDF 第14页四种工艺栏已逐项视觉核对。",
+      "evidence": [
+        {
+          "uid": "pem:p14:e338:0",
+          "bbox": [
+            0.3628959640824545,
+            0.43436253962276244,
+            0.9407072636317453,
+            0.4611867491494677
+          ]
+        },
+        {
+          "uid": "pem:p14:e339:0",
+          "bbox": [
+            0.3628959640824545,
+            0.4658718484787984,
+            0.8556952624623785,
+            0.49269600776584543
+          ]
+        },
+        {
+          "uid": "pem:p14:e340:0",
+          "bbox": [
+            0.3628959640824545,
+            0.49727680956466636,
+            0.9304244846250145,
+            0.5241401557851418
+          ]
+        }
+      ]
+    },
+    {
+      "page": 14,
+      "split": "dev",
+      "family": "resistance_tradeoffs",
+      "intent": "连接工艺选型依据",
+      "question": "为连接工艺选型准备依据，定位 PEM 指南第 14 页关于电阻焊接的电压施加、发热机制、自动化收益及材料限制的全部对应条目。",
+      "query": "Comparison of welding processes resistance",
+      "review_basis": "原始 PDF 第14页四种工艺栏已逐项视觉核对。",
+      "evidence": [
+        {
+          "uid": "pem:p14:e342:0",
+          "bbox": [
+            0.3628959640824545,
+            0.6018852984391443,
+            0.9145532762167367,
+            0.6287094828460204
+          ]
+        },
+        {
+          "uid": "pem:p14:e343:0",
+          "bbox": [
+            0.3628959640824545,
+            0.6332902595250122,
+            0.8796139642516233,
+            0.6573111966011465
+          ]
+        },
+        {
+          "uid": "pem:p14:e344:0",
+          "bbox": [
+            0.36289893573495685,
+            0.6647847728016959,
+            0.9193617545049821,
+            0.6916875320340621
+          ]
+        },
+        {
+          "uid": "pem:p14:e345:0",
+          "bbox": [
+            0.3628959640824545,
+            0.6963335197894516,
+            0.888823847502718,
+            0.7232620268466666
+          ]
+        }
+      ]
+    },
+    {
+      "page": 14,
+      "split": "dev",
+      "family": "wire_bonding_tradeoffs",
+      "intent": "连接工艺选型依据",
+      "question": "为连接工艺选型准备依据，定位 PEM 指南第 14 页关于线键合的连接方式、成形作用、熔断保护、错位补偿及强度限制的全部对应条目。",
+      "query": "Comparison of welding processes wire bonding",
+      "review_basis": "原始 PDF 第14页四种工艺栏已逐项视觉核对。",
+      "evidence": [
+        {
+          "uid": "pem:p14:e347:0",
+          "bbox": [
+            0.3628959640824545,
+            0.8002917190875634,
+            0.9371976128241707,
+            0.827115890934525
+          ]
+        },
+        {
+          "uid": "pem:p14:e348:0",
+          "bbox": [
+            0.3628959640824545,
+            0.8316966927333459,
+            0.9262665828976488,
+            0.8585599887141632
+          ]
+        },
+        {
+          "uid": "pem:p14:e349:0",
+          "bbox": [
+            0.3628959640824545,
+            0.8632059764695527,
+            0.8023359255905104,
+            0.8760096161720254
+          ]
+        },
+        {
+          "uid": "pem:p14:e350:0",
+          "bbox": [
+            0.3628959640824545,
+            0.880689176579035,
+            0.9306255233769135,
+            0.9075188999082322
+          ]
+        },
+        {
+          "uid": "pem:p14:e351:0",
+          "bbox": [
+            0.36289893573495685,
+            0.9121804054380612,
+            0.9340256106487488,
+            0.9362358759992794
+          ]
+        }
+      ]
+    },
+    {
+      "page": 16,
+      "split": "test",
+      "family": "mechanical_requirements",
+      "intent": "设计约束来源核对",
+      "question": "整理设计约束来源：定位 PEM 指南第 16 页“Mechanical load and fixation of the cells”栏全部正文条目，不包括下方示意图标签。",
+      "query": "Battery safety Mechanical load and fixation of the cells",
+      "review_basis": "原始 PDF 第16页正文与图标签已区分。",
+      "evidence": [
+        {
+          "uid": "pem:p16:e378:0",
+          "bbox": [
+            0.07317256614338594,
+            0.14615580704635323,
+            0.879351597482864,
+            0.17308421362425178
+          ]
+        },
+        {
+          "uid": "pem:p16:e379:0",
+          "bbox": [
+            0.07317256614338594,
+            0.1776650154230727,
+            0.9264959600168893,
+            0.2045980942891877
+          ]
+        },
+        {
+          "uid": "pem:p16:e380:0",
+          "bbox": [
+            0.07317256614338594,
+            0.20939382134596665,
+            0.9174873739222592,
+            0.25017892854282786
+          ]
+        }
+      ]
+    },
+    {
+      "page": 16,
+      "split": "test",
+      "family": "thermal_requirements",
+      "intent": "设计约束来源核对",
+      "question": "整理设计约束来源：定位 PEM 指南第 16 页“Thermal load and fire protection”栏全部正文条目，不包括下方示意图标签。",
+      "query": "Battery safety Thermal load and fire protection",
+      "review_basis": "原始 PDF 第16页正文与图标签已区分。",
+      "evidence": [
+        {
+          "uid": "pem:p16:e382:0",
+          "bbox": [
+            0.07317256614338594,
+            0.28061074744855385,
+            0.8877343277200397,
+            0.3074349067356008
+          ]
+        },
+        {
+          "uid": "pem:p16:e383:0",
+          "bbox": [
+            0.07317256614338594,
+            0.31201575877408,
+            0.929491299604417,
+            0.3360366958502143
+          ]
+        },
+        {
+          "uid": "pem:p16:e384:0",
+          "bbox": [
+            0.07317256614338594,
+            0.3436237885585609,
+            0.8741430227924886,
+            0.3704534742080145
+          ]
+        }
+      ]
+    },
+    {
+      "page": 16,
+      "split": "test",
+      "family": "insulation_requirements",
+      "intent": "设计约束来源核对",
+      "question": "整理设计约束来源：定位 PEM 指南第 16 页“Insulation and electromagnetic compatibility”栏全部正文条目，不包括下方示意图标签。",
+      "query": "Battery safety Insulation and electromagnetic compatibility",
+      "review_basis": "原始 PDF 第16页正文与图标签已区分。",
+      "evidence": [
+        {
+          "uid": "pem:p16:e386:0",
+          "bbox": [
+            0.07317256614338594,
+            0.4007405526583461,
+            0.9134413613717217,
+            0.4417938893905598
+          ]
+        },
+        {
+          "uid": "pem:p16:e387:0",
+          "bbox": [
+            0.07317256614338594,
+            0.4464789887198905,
+            0.8694934633119782,
+            0.4733031480069375
+          ]
+        }
+      ]
+    },
+    {
+      "page": 19,
+      "split": "test",
+      "family": "cooling_comparison",
+      "intent": "冷却方案比较依据",
+      "question": "比较底板冷却与浸没冷却，定位 PEM 指南第 19 页描述两者传热介质/位置、冷却性能以及浸没方案密封和维护要求的条目，不包括底板单件安装说明。",
+      "query": "Cooling systems Base plate Immersion cooling performance tightness maintenance",
+      "review_basis": "原始 PDF 第19页两种冷却方式的指定事实已视觉核对。",
+      "evidence": [
+        {
+          "uid": "pem:p19:e465:0",
+          "bbox": [
+            0.5012533052097289,
+            0.172155583781312,
+            0.9287568276946299,
+            0.22432193291659203
+          ]
+        },
+        {
+          "uid": "pem:p19:e467:0",
+          "bbox": [
+            0.5012533052097289,
+            0.2772770949259251,
+            0.9023755303969042,
+            0.3323509638026277
+          ]
+        },
+        {
+          "uid": "pem:p19:e483:0",
+          "bbox": [
+            0.49319517417415193,
+            0.8120157336542508,
+            0.8823617522654759,
+            0.8360366832902997
+          ]
+        },
+        {
+          "uid": "pem:p19:e484:0",
+          "bbox": [
+            0.49319517417415193,
+            0.8434262462223545,
+            0.8844852348492666,
+            0.884380811786465
+          ]
+        },
+        {
+          "uid": "pem:p19:e485:0",
+          "bbox": [
+            0.49319517417415193,
+            0.8889671399476925,
+            0.920452824715053,
+            0.9299178182182465
+          ]
+        }
+      ]
+    }
+  ]
+}

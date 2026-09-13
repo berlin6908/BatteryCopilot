@@ -308,6 +308,16 @@ def run(args):
     ]
     if args.limit:
         selected = selected[: args.limit]
+    if any(t["category"] == "guide" for t in selected):
+        annotations = json.loads((SUITE / "guide-annotations.json").read_text(encoding="utf-8"))
+        digest = hashlib.sha256(DERIVED_PATH.read_text(encoding="utf-8").encode()).hexdigest()
+        if digest != annotations["elements_sha256"]:
+            raise ValueError(
+                "Guide parser snapshot differs from the frozen annotations. "
+                "Use the original parsed snapshot or independently re-annotate a new suite; "
+                "do not score the historical guide IDs against a fresh parse. "
+                "See docs/benchmark-300.md."
+            )
     config = {
         "model": settings().model_name,
         "provider": settings().model_provider,

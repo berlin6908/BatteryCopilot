@@ -6,7 +6,7 @@ import hashlib
 import json
 from collections import Counter, defaultdict
 
-from battery_copilot.settings import DERIVED, RAW, ROOT
+from battery_copilot.settings import RAW, ROOT
 
 SUITE = ROOT / "data/benchmark"
 CATEGORIES = {
@@ -429,13 +429,9 @@ def build():
 
 
 def add_guides(tasks):
-    rows = json.loads((DERIVED / "pem/elements.json").read_text(encoding="utf-8"))
     annotations = json.loads((SUITE / "guide-annotations.json").read_text(encoding="utf-8"))
-    lookup = {r["uid"]: r for r in rows}
-    for index, annotation in enumerate(annotations, 1):
-        sources = annotation["evidence_ids"]
-        for source in sources:
-            assert lookup[source]["page"] == annotation["page"]
+    for index, annotation in enumerate(annotations["items"], 1):
+        sources = [e["uid"] for e in annotation["evidence"]]
         tasks.append(
             {
                 "id": f"guide-{index:03d}",
@@ -461,13 +457,13 @@ def add_guides(tasks):
                 },
                 "sources": [
                     {
-                        "uid": source,
+                        "uid": source["uid"],
                         "file": "data/sources/pem-module-pack-guide.pdf",
                         "page": annotation["page"],
-                        "bbox": lookup[source]["bbox"],
+                        "bbox": source["bbox"],
                         "url": "https://publications.rwth-aachen.de/record/973056/",
                     }
-                    for source in sources
+                    for source in annotation["evidence"]
                 ],
             }
         )

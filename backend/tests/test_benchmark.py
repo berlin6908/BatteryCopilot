@@ -1,8 +1,21 @@
 import json
+from types import SimpleNamespace
 
 import pytest
 from battery_copilot.benchmark import grade, prompt
 from battery_copilot.benchmark_cases import SUITE, SourceRows, build
+
+
+def test_guide_evaluation_stops_before_model_calls_when_parser_snapshot_changed(
+    monkeypatch, tmp_path
+):
+    from battery_copilot import benchmark
+
+    snapshot = tmp_path / "elements.json"
+    snapshot.write_text("[]", encoding="utf-8")
+    monkeypatch.setattr(benchmark, "DERIVED_PATH", snapshot)
+    with pytest.raises(ValueError, match="Guide parser snapshot differs"):
+        benchmark.run(SimpleNamespace(split="all", ids=["guide-001"], limit=None))
 
 
 def test_scoring_requires_correct_values_order_and_retrieved_sources():
