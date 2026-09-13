@@ -2,9 +2,11 @@
 
 import json
 import uuid
+from types import SimpleNamespace
 
 import pytest
 from battery_copilot import manufacturing as mfg
+from battery_copilot.codex_model import CodexChatModel
 from battery_copilot.graph import graph
 from battery_copilot.manufacturing_ingest import BASE, parse_stats, uid
 
@@ -23,6 +25,68 @@ def test_maccor_preserves_empty_values_scientific_notation_and_source_lines():
     assert data["rows"][1]["values"]["AH-OUT"] == pytest.approx(0.43829)
     assert data["rows"][1]["uid"] == "test:L5"
     assert data["rows"][1]["raw"]["AH-OUT"] == "0,43829"
+
+
+def test_cycle_lookup_uses_cycle_number_and_preserves_duplicate_and_missing_rows(monkeypatch):
+    rows = [
+        {"uid": f"file:L{i}", "values": {"Cycle": cycle}}
+        for i, cycle in enumerate([0, 5, 100, 100], 10)
+    ]
+    monkeypatch.setattr(mfg, "test_data", lambda *a: {"rows": rows, "linked_objects": []})
+    result = mfg.test_results("cell", "file", cycles=[100, 101])
+    assert [r["uid"] for r in result["rows"]] == ["file:L12", "file:L13"]
+    assert result["missing_cycles"] == [101]
+    assert result["row_count"] == 4
+
+
+def test_agent_corrects_invalid_page_request_in_existing_tool_loop(monkeypatch, tmp_path):
+    calls, feedback = [], []
+
+    def fake_cli(command, **kwargs):
+        messages = json.loads(kwargs["input"].split("\n", 1)[1])["messages"]
+        results = [m for m in messages if m["type"] == "tool"]
+        if not results:
+            call = {"name": "read_test_results", "args": {"test_uid": "file", "limit": 120}}
+        elif results[-1]["content"].startswith("Error"):
+            feedback.append(results[-1]["content"])
+            call = {"name": "read_cycles", "args": {"test_uid": "file", "cycles": [100]}}
+        else:
+            call = {
+                "name": "Answer",
+                "args": {
+                    "summary": "Cycle 100放电容量0.25 Ah。",
+                    "claims": [
+                        {"statement": "0.25 Ah", "evidence_ids": ["file:L110"], "scope": "record"}
+                    ],
+                    "unknowns": [],
+                    "next_actions": [],
+                },
+            }
+        calls.append(call["name"])
+        events = [
+            {
+                "type": "item.completed",
+                "item": {"type": "agent_message", "text": json.dumps({"tool_calls": [call]})},
+            },
+            {"type": "turn.completed", "usage": {"input_tokens": 20, "output_tokens": 5}},
+        ]
+        return SimpleNamespace(returncode=0, stdout="\n".join(map(json.dumps, events)), stderr="")
+
+    monkeypatch.setattr("battery_copilot.codex_model.subprocess.run", fake_cli)
+    monkeypatch.setattr("battery_copilot.agent.model", lambda: CodexChatModel(model_name="test"))
+    monkeypatch.setattr("battery_copilot.agent.ROOT", tmp_path)
+    monkeypatch.setattr(mfg, "require_cell", lambda _: {"name": "test cell"})
+
+    def data(cell, test, offset=0, limit=12, *, cycles=None):
+        assert cycles == [100]  # Invalid page arguments must never reach the data layer.
+        return {"uid": "file:L110", "values": {"AH-OUT": 0.25}}
+
+    monkeypatch.setattr(mfg, "test_results", data)
+    events = list(mfg.run_analysis("cell", "核对Cycle 100"))
+    assert calls == ["read_test_results", "read_cycles", "Answer"]
+    assert "40" in feedback[0]
+    assert events[-1]["type"] == "answer"
+    assert events[-1]["usage"]["model_calls"] == 3
 
 
 @pytest.fixture
