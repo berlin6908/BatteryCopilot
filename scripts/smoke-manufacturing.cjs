@@ -36,7 +36,7 @@ const path = require('node:path');
     await page.getByText('1 · 制造履历', { exact: true }).waitFor();
     // A saved report is selected through the same history control the user uses.
     await page.getByRole('button', { name: '已保存报告', exact: true }).click();
-    await page.getByRole('menuitem').filter({ hasText: answer.summary }).first().click();
+    await page.getByRole('menuitem', { name: answer.summary }).first().click();
     await page.getByText('人工复核', { exact: true }).waitFor();
     if (process.env.TEST_REVIEW === '1') {
       await page.getByRole('textbox', { name: '复核人', exact: true }).fill('automated browser test');
