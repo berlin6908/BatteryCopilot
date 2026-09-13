@@ -1,0 +1,10 @@
+[
+  {"id":"zh-mount","query":"模组安装有哪些质量要求","page":18},
+  {"id":"en-mount","query":"Quality requirements when mounting battery modules into the pack","page":18},
+  {"id":"de-mount","query":"Welche Anforderungen gelten beim Einbau der Module?","page":18},
+  {"id":"en-layout","query":"Where are buffers and rework areas shown?","page":24},
+  {"id":"zh-layout","query":"产线布局中的缓冲站和返工区域","page":24},
+  {"id":"de-layout","query":"Puffer und Nacharbeit in der Layoutplanung","page":24},
+  {"id":"en-leak","query":"Sealing the battery pack and testing for leaks","page":21},
+  {"id":"zh-leak","query":"电池包密封及泄漏测试","page":21}
+]

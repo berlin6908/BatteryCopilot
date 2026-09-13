@@ -1,0 +1,4 @@
+* text=auto eol=lf
+
+# Keep the published dataset byte-for-byte for its recorded SHA-256 hashes.
+data/sources/kit-battery/*.csv -text

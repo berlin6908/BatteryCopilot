@@ -1,0 +1,322 @@
+[
+  {
+    "id": "counts-1",
+    "category": "counts",
+    "battery_id": 1,
+    "scenario_id": "kit-v1",
+    "question": "Fiat 500e 的部件、连接件和已记录拆解操作各有多少？",
+    "expected_counts": {
+      "Part": 100,
+      "Fixation": 283,
+      "Operation": 375
+    },
+    "gold_basis": "Direct csv.DictReader counts, independent of the ingestion mapper"
+  },
+  {
+    "id": "connections-1",
+    "category": "connections",
+    "battery_id": 1,
+    "scenario_id": "kit-v1",
+    "question": "连接件 1000 连接哪些部件、对应哪条拆解操作？请引用这些对象。",
+    "query": "1000",
+    "expected_ids": [
+      "kit-v1:part:1000",
+      "kit-v1:part:1001",
+      "kit-v1:operation:1000"
+    ],
+    "expected_names": {
+      "kit-v1:part:1000": "housing cover",
+      "kit-v1:part:1001": "housing bottom",
+      "kit-v1:operation:1000": "unscrew"
+    },
+    "gold_basis": "Direct CSV references"
+  },
+  {
+    "id": "counts-2",
+    "category": "counts",
+    "battery_id": 2,
+    "scenario_id": "kit-v1",
+    "question": "Chevrolet Spark 的部件、连接件和已记录拆解操作各有多少？",
+    "expected_counts": {
+      "Part": 32,
+      "Fixation": 145,
+      "Operation": 168
+    },
+    "gold_basis": "Direct csv.DictReader counts, independent of the ingestion mapper"
+  },
+  {
+    "id": "connections-2",
+    "category": "connections",
+    "battery_id": 2,
+    "scenario_id": "kit-v1",
+    "question": "连接件 2000 连接哪些部件、对应哪条拆解操作？请引用这些对象。",
+    "query": "2000",
+    "expected_ids": [
+      "kit-v1:part:2000",
+      "kit-v1:part:2001",
+      "kit-v1:operation:2000"
+    ],
+    "expected_names": {
+      "kit-v1:part:2000": "housing cover",
+      "kit-v1:part:2001": "housing bottom",
+      "kit-v1:operation:2000": "unscrew"
+    },
+    "gold_basis": "Direct CSV references"
+  },
+  {
+    "id": "counts-3",
+    "category": "counts",
+    "battery_id": 3,
+    "scenario_id": "kit-v1",
+    "question": "Hyundai IONIQ 5 的部件、连接件和已记录拆解操作各有多少？",
+    "expected_counts": {
+      "Part": 116,
+      "Fixation": 320,
+      "Operation": 387
+    },
+    "gold_basis": "Direct csv.DictReader counts, independent of the ingestion mapper"
+  },
+  {
+    "id": "connections-3",
+    "category": "connections",
+    "battery_id": 3,
+    "scenario_id": "kit-v1",
+    "question": "连接件 3000 连接哪些部件、对应哪条拆解操作？请引用这些对象。",
+    "query": "3000",
+    "expected_ids": [
+      "kit-v1:part:3000",
+      "kit-v1:part:3002",
+      "kit-v1:operation:3000"
+    ],
+    "expected_names": {
+      "kit-v1:part:3000": "housing cover",
+      "kit-v1:part:3002": "housing bottom",
+      "kit-v1:operation:3000": "unscrew"
+    },
+    "gold_basis": "Direct CSV references"
+  },
+  {
+    "id": "counts-4",
+    "category": "counts",
+    "battery_id": 4,
+    "scenario_id": "kit-v1",
+    "question": "BMW 530e 的部件、连接件和已记录拆解操作各有多少？",
+    "expected_counts": {
+      "Part": 28,
+      "Fixation": 135,
+      "Operation": 158
+    },
+    "gold_basis": "Direct csv.DictReader counts, independent of the ingestion mapper"
+  },
+  {
+    "id": "connections-4",
+    "category": "connections",
+    "battery_id": 4,
+    "scenario_id": "kit-v1",
+    "question": "连接件 4000 连接哪些部件、对应哪条拆解操作？请引用这些对象。",
+    "query": "4000",
+    "expected_ids": [
+      "kit-v1:part:4000",
+      "kit-v1:part:4002",
+      "kit-v1:operation:4000"
+    ],
+    "expected_names": {
+      "kit-v1:part:4000": "housing cover",
+      "kit-v1:part:4002": "housing bottom",
+      "kit-v1:operation:4000": "unscrew"
+    },
+    "gold_basis": "Direct CSV references"
+  },
+  {
+    "id": "counts-5",
+    "category": "counts",
+    "battery_id": 5,
+    "scenario_id": "kit-v1",
+    "question": "Chevrolet Volt 的部件、连接件和已记录拆解操作各有多少？",
+    "expected_counts": {
+      "Part": 36,
+      "Fixation": 137,
+      "Operation": 167
+    },
+    "gold_basis": "Direct csv.DictReader counts, independent of the ingestion mapper"
+  },
+  {
+    "id": "connections-5",
+    "category": "connections",
+    "battery_id": 5,
+    "scenario_id": "kit-v1",
+    "question": "连接件 5000 连接哪些部件、对应哪条拆解操作？请引用这些对象。",
+    "query": "5000",
+    "expected_ids": [
+      "kit-v1:part:5001",
+      "kit-v1:part:5002",
+      "kit-v1:operation:5001"
+    ],
+    "expected_names": {
+      "kit-v1:part:5001": "housing cover",
+      "kit-v1:part:5002": "housing bottom",
+      "kit-v1:operation:5001": "unscrew"
+    },
+    "gold_basis": "Direct CSV references"
+  },
+  {
+    "id": "counts-6",
+    "category": "counts",
+    "battery_id": 6,
+    "scenario_id": "kit-v1",
+    "question": "Volvo EX30 的部件、连接件和已记录拆解操作各有多少？",
+    "expected_counts": {
+      "Part": 42,
+      "Fixation": 186,
+      "Operation": 211
+    },
+    "gold_basis": "Direct csv.DictReader counts, independent of the ingestion mapper"
+  },
+  {
+    "id": "connections-6",
+    "category": "connections",
+    "battery_id": 6,
+    "scenario_id": "kit-v1",
+    "question": "连接件 6000 连接哪些部件、对应哪条拆解操作？请引用这些对象。",
+    "query": "6000",
+    "expected_ids": [
+      "kit-v1:part:6002",
+      "kit-v1:part:6019",
+      "kit-v1:operation:6124"
+    ],
+    "expected_names": {
+      "kit-v1:part:6002": "busbar",
+      "kit-v1:part:6019": "disconnect unit",
+      "kit-v1:operation:6124": "unscrew"
+    },
+    "gold_basis": "Direct CSV references"
+  },
+  {
+    "id": "counts-7",
+    "category": "counts",
+    "battery_id": 7,
+    "scenario_id": "kit-v1",
+    "question": "BMW 330e 的部件、连接件和已记录拆解操作各有多少？",
+    "expected_counts": {
+      "Part": 24,
+      "Fixation": 121,
+      "Operation": 131
+    },
+    "gold_basis": "Direct csv.DictReader counts, independent of the ingestion mapper"
+  },
+  {
+    "id": "connections-7",
+    "category": "connections",
+    "battery_id": 7,
+    "scenario_id": "kit-v1",
+    "question": "连接件 7000 连接哪些部件、对应哪条拆解操作？请引用这些对象。",
+    "query": "7000",
+    "expected_ids": [
+      "kit-v1:part:7000",
+      "kit-v1:part:7001",
+      "kit-v1:operation:7000"
+    ],
+    "expected_names": {
+      "kit-v1:part:7000": "housing cover",
+      "kit-v1:part:7001": "housing bottom",
+      "kit-v1:operation:7000": "unscrew"
+    },
+    "gold_basis": "Direct CSV references"
+  },
+  {
+    "id": "counts-8",
+    "category": "counts",
+    "battery_id": 8,
+    "scenario_id": "kit-v1",
+    "question": "MG ZS 的部件、连接件和已记录拆解操作各有多少？",
+    "expected_counts": {
+      "Part": 97,
+      "Fixation": 256,
+      "Operation": 328
+    },
+    "gold_basis": "Direct csv.DictReader counts, independent of the ingestion mapper"
+  },
+  {
+    "id": "connections-8",
+    "category": "connections",
+    "battery_id": 8,
+    "scenario_id": "kit-v1",
+    "question": "连接件 8000 连接哪些部件、对应哪条拆解操作？请引用这些对象。",
+    "query": "8000",
+    "expected_ids": [
+      "kit-v1:part:8000",
+      "kit-v1:part:8003",
+      "kit-v1:operation:8000"
+    ],
+    "expected_names": {
+      "kit-v1:part:8000": "BMS cover",
+      "kit-v1:part:8003": "housing cover",
+      "kit-v1:operation:8000": "unscrew"
+    },
+    "gold_basis": "Direct CSV references"
+  },
+  {
+    "id": "counts-9",
+    "category": "counts",
+    "battery_id": 9,
+    "scenario_id": "kit-v1",
+    "question": "Mitsubishi Outlander 的部件、连接件和已记录拆解操作各有多少？",
+    "expected_counts": {
+      "Part": 56,
+      "Fixation": 136,
+      "Operation": 183
+    },
+    "gold_basis": "Direct csv.DictReader counts, independent of the ingestion mapper"
+  },
+  {
+    "id": "connections-9",
+    "category": "connections",
+    "battery_id": 9,
+    "scenario_id": "kit-v1",
+    "question": "连接件 9000 连接哪些部件、对应哪条拆解操作？请引用这些对象。",
+    "query": "9000",
+    "expected_ids": [
+      "kit-v1:part:9000",
+      "kit-v1:part:9001",
+      "kit-v1:operation:9000"
+    ],
+    "expected_names": {
+      "kit-v1:part:9000": "housing cover",
+      "kit-v1:part:9001": "housing bottom",
+      "kit-v1:operation:9000": "unscrew"
+    },
+    "gold_basis": "Direct CSV references"
+  },
+  {
+    "id": "counts-10",
+    "category": "counts",
+    "battery_id": 10,
+    "scenario_id": "kit-v1",
+    "question": "BMW i3 的部件、连接件和已记录拆解操作各有多少？",
+    "expected_counts": {
+      "Part": 32,
+      "Fixation": 177,
+      "Operation": 173
+    },
+    "gold_basis": "Direct csv.DictReader counts, independent of the ingestion mapper"
+  },
+  {
+    "id": "connections-10",
+    "category": "connections",
+    "battery_id": 10,
+    "scenario_id": "kit-v1",
+    "question": "连接件 10000 连接哪些部件、对应哪条拆解操作？请引用这些对象。",
+    "query": "10000",
+    "expected_ids": [
+      "kit-v1:part:10000",
+      "kit-v1:part:10001",
+      "kit-v1:operation:10000"
+    ],
+    "expected_names": {
+      "kit-v1:part:10000": "housing cover",
+      "kit-v1:part:10001": "housing bottom",
+      "kit-v1:operation:10000": "unscrew"
+    },
+    "gold_basis": "Direct CSV references"
+  }
+]

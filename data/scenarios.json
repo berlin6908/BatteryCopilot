@@ -1,0 +1,28 @@
+[
+  {
+    "id": "demo-change-01",
+    "name": "螺钉 M6 → M8 · 工具适配复核",
+    "battery_id": 1,
+    "snapshot_id": "kit-v1",
+    "source_kind": "simulation",
+    "target_uid": "kit-v1:fixation:1000",
+    "old_spec": "M6",
+    "new_spec": "M8",
+    "supported_specs": ["M6"],
+    "tool_card": "DEMO-TOOL-01",
+    "description": "在真实连接关系上叠加自建规格与工具卡，仅用于演示规则分析；KIT 未提供这些规格。"
+  },
+  {
+    "id": "demo-change-02",
+    "name": "螺钉 M6 → M8 · 工具卡已更新",
+    "battery_id": 1,
+    "snapshot_id": "kit-v1",
+    "source_kind": "simulation",
+    "target_uid": "kit-v1:fixation:1000",
+    "old_spec": "M6",
+    "new_spec": "M8",
+    "supported_specs": ["M6", "M8"],
+    "tool_card": "DEMO-TOOL-02",
+    "description": "模拟更新工具卡后的对照场景，真实原始数据保持不变。"
+  }
+]
