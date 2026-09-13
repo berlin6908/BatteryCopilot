@@ -5,13 +5,11 @@ import 'widgets.dart';
 
 class EngineeringPage extends StatefulWidget {
   final int battery, section;
-  final String scenario;
   final Map selected;
   const EngineeringPage({
     super.key,
     required this.battery,
     required this.section,
-    required this.scenario,
     required this.selected,
   });
   @override
@@ -20,7 +18,7 @@ class EngineeringPage extends StatefulWidget {
 
 class _EngineeringPageState extends State<EngineeringPage> {
   List entities = [], sequence = [], evidence = [];
-  Map graphData = {}, report = {};
+  Map graphData = {};
   String kind = 'Part';
   int offset = 0, total = 0, page = 18;
   bool busy = true;
@@ -122,7 +120,6 @@ class _EngineeringPageState extends State<EngineeringPage> {
         ),
       if (widget.section == 0 && graphData.isNotEmpty) explorer(),
       if (widget.section == 1) documents(),
-      if (widget.section == 2) changes(),
     ],
   );
   Widget stat(String label, dynamic value, IconData icon) => Expanded(
@@ -496,126 +493,6 @@ class _EngineeringPageState extends State<EngineeringPage> {
             ),
           ),
         ),
-    ],
-  );
-  Widget changes() => Column(
-    crossAxisAlignment: CrossAxisAlignment.stretch,
-    children: [
-      Panel(
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            const Tag('SIMULATION', color: Color(0xFFB08139)),
-            const SizedBox(height: 16),
-            const Text(
-              '螺钉规格变化，工具是否适配？',
-              style: TextStyle(fontSize: 20, fontWeight: FontWeight.w600),
-            ),
-            const SizedBox(height: 12),
-            const Text(
-              '使用 KIT 的真实连接关系定位候选对象。M6、M8 与工具卡为自建演示资料。',
-              style: TextStyle(color: muted, fontSize: 12, height: 1.7),
-            ),
-            const SizedBox(height: 22),
-            if (widget.battery != 1 || widget.scenario == 'kit-v1')
-              const Text(
-                '请选择 Fiat 500e 的模拟变更场景。',
-                style: TextStyle(color: muted),
-              )
-            else
-              FilledButton.icon(
-                onPressed: busy
-                    ? null
-                    : () => run(() async {
-                        final data = await api.get(
-                          'scenarios/${widget.scenario}/report',
-                          scope,
-                        );
-                        if (mounted) setState(() => report = data);
-                      }),
-                icon: const Icon(Icons.play_arrow, size: 18),
-                label: const Text('运行变更复核'),
-              ),
-          ],
-        ),
-      ),
-      if (report.isNotEmpty) ...[
-        const SizedBox(height: 18),
-        Panel(
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Row(
-                children: [
-                  Tag(
-                    report['check']['status'] == 'conflict'
-                        ? '发现工具适配冲突'
-                        : '规格适配通过',
-                    color: report['check']['status'] == 'conflict'
-                        ? const Color(0xFFB66D32)
-                        : teal,
-                  ),
-                  const Spacer(),
-                  Text(
-                    report['rule'],
-                    style: const TextStyle(color: muted, fontSize: 11),
-                  ),
-                ],
-              ),
-              const SizedBox(height: 18),
-              Text(
-                '${report['old_spec']}  →  ${report['new_spec']}',
-                style: const TextStyle(
-                  fontSize: 32,
-                  fontWeight: FontWeight.w600,
-                ),
-              ),
-              const SizedBox(height: 12),
-              Text(report['check']['reason']),
-              const SizedBox(height: 8),
-              Text(
-                '工具卡：${report['tool_card']} · 支持 ${report['supported_specs'].join(', ')}',
-                style: const TextStyle(color: muted, fontSize: 12),
-              ),
-              const Divider(height: 36),
-              const Text(
-                '候选关联对象',
-                style: TextStyle(fontWeight: FontWeight.w600),
-              ),
-              const SizedBox(height: 8),
-              for (final node in report['candidates'])
-                ListTile(
-                  contentPadding: EdgeInsets.zero,
-                  dense: true,
-                  leading: const Icon(
-                    Icons.account_tree_outlined,
-                    size: 18,
-                    color: teal,
-                  ),
-                  title: Text('${node['name']} · ${node['raw_id']}'),
-                  subtitle: Text(kindName(node['kind'])),
-                  trailing: const Icon(Icons.north_east, size: 15),
-                  onTap: () =>
-                      showEvidence(context, node['uid'], widget.battery),
-                ),
-              const Divider(height: 28),
-              const Text('仍需补充', style: TextStyle(fontWeight: FontWeight.w600)),
-              for (final gap in report['unknowns'])
-                Padding(
-                  padding: const EdgeInsets.only(top: 8),
-                  child: Text(
-                    '• $gap',
-                    style: const TextStyle(
-                      fontSize: 12,
-                      color: muted,
-                      height: 1.6,
-                    ),
-                  ),
-                ),
-            ],
-          ),
-        ),
-      ],
     ],
   );
 }

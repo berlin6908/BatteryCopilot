@@ -13,6 +13,25 @@ class Api {
     return data;
   }
 
+  Future<Map> send(String method, String path, Map body) async {
+    final request = http.Request(method, uri(path))
+      ..headers['Content-Type'] = 'application/json'
+      ..body = jsonEncode(body);
+    final response = await client.send(request);
+    final data = jsonDecode(await response.stream.bytesToString());
+    if (response.statusCode < 200 || response.statusCode >= 300) {
+      final detail = data['detail'];
+      throw Exception(
+        detail is List
+            ? detail
+                  .map((e) => '${e['loc'].skip(1).join('.')}：${e['msg']}')
+                  .join('\n')
+            : detail ?? '请求失败',
+      );
+    }
+    return data as Map;
+  }
+
   Stream<Map<String, dynamic>> ask(
     String question,
     int battery,

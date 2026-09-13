@@ -13,6 +13,10 @@ LangGraph 执行查询并把结果送入下一轮，最终由 `ToolStrategy(Answ
 CLI 的 JSONL 事件提供 token 统计；错误直接返回，不切换到其他服务。
 这不是将当前聊天窗口转成 HTTP API，也不是复用聊天历史。当前固定模型是 `gpt-5.6-terra`。
 
+统计工具同时返回分类明细和确定性总数。`before_model` 中间件收集成功工具返回的证据 ID，
+结构化回答的 Pydantic 校验器检查引用；缺失引用通过 LangChain 的 `ToolStrategy` 反馈回工具循环，
+让模型补读来源。循环仍受 24 步限制，没有另建重试框架。
+
 ```mermaid
 flowchart LR
     CSV[KIT CSV] --> Import[显式字段映射]
@@ -49,6 +53,35 @@ Document -HAS_EVIDENCE-> Guide
 结构节点保留 source_file、source_line、raw_record、snapshot_id。
 Guide 保留 element_ref、page、bbox、page_width、page_height、source_kind。
 文档 bbox 转为左上原点、0–1 坐标，界面按实际画布尺寸定位。
+
+## 变更申请与复核
+
+```mermaid
+flowchart LR
+    Draft[保存申请] --> Analyze[分析当前资料]
+    Analyze --> Missing[待补充]
+    Analyze --> Review[待复核]
+    Missing --> Edit[补充或修改资料]
+    Review -->|存在冲突| Edit
+    Edit --> Analyze
+    Review -->|检查通过 + 逐项人工复核| Done[已完成]
+    Done --> Export[导出报告]
+```
+
+`cases.py` 管理申请、版本和复核，`case_api.py` 提供操作接口；Flutter 表单与工作台分别位于
+`case_form.dart` 和 `cases.dart`。复用 Neo4j 保存 `ChangeCase`，每张单据存一份包含输入和历史报告
+的 JSON 文档，另存列表查询需要的标题、产品、状态和时间。当前规模不需要第二个数据库或工作流引擎。
+
+- 输入包括变更对象、原因、原/新规格，以及可缺省的工具卡、作业指导书及其版次。
+- 规则代码负责适配检查；图查询返回直接关联对象。Agent 通过工具读取这些结果并解释来源。
+- 每份报告冻结本次输入、证据、规则结果、Agent 回答和人工复核记录。
+- 修改输入或重新分析会撤下当前报告；旧报告保留，但不能用于当前版本的复核和完成。
+- 只有全部规则通过且每项有人工复核记录时，后端才允许完成。模型不调用复核或完成接口。
+- 写入使用事务和版本号，旧页面提交返回 409。分析记录独立运行 ID，迟到的结果不能覆盖更新后的输入。
+
+分析在 FastAPI 同步请求的线程中执行，页面断开不会主动取消模型调用。服务重启中断的分析
+可以显式重试，不提供后台任务队列。复核人是本地演示填写的姓名，尚未接入账号与审批权限。
+工具适配按填写的规格列表检查，指导书按新规格匹配；这是一条范围明确的资料复核流程。
 
 ## 为什么这些组件值得保留
 

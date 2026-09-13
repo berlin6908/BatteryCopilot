@@ -138,11 +138,18 @@ class LocalGraph extends StatelessWidget {
   }
 }
 
-Future<void> showEvidence(BuildContext context, String uid, int battery) async {
+Future<void> showEvidence(
+  BuildContext context,
+  String uid,
+  int battery, {
+  Map? evidence,
+}) async {
   try {
-    final data = await api.get('evidence/${Uri.encodeComponent(uid)}', {
-      'battery_id': '$battery',
-    }) as Map;
+    final data =
+        evidence ??
+        await api.get('evidence/${Uri.encodeComponent(uid)}', {
+          'battery_id': '$battery',
+        }) as Map;
     if (!context.mounted) return;
     await showDialog<void>(
       context: context,

@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/semantics.dart';
 
 import 'api.dart';
+import 'cases.dart';
 import 'copilot.dart';
 import 'pages.dart';
 import 'widgets.dart';
@@ -82,9 +83,6 @@ class _WorkbenchState extends State<Workbench> {
 
   void navigate(int value) => setState(() {
     section = value;
-    if (value == 2 && battery == 1 && scenario == 'kit-v1') {
-      scenario = 'demo-change-01';
-    }
   });
   @override
   Widget build(BuildContext context) {
@@ -240,7 +238,7 @@ class _WorkbenchState extends State<Workbench> {
                         tooltip: '刷新数据',
                         icon: const Icon(Icons.refresh, size: 20),
                       ),
-                      if (!wide)
+                      if (!wide && section != 2)
                         IconButton(
                           tooltip: '打开工程助手',
                           icon: const Icon(Icons.auto_awesome_outlined),
@@ -271,7 +269,7 @@ class _WorkbenchState extends State<Workbench> {
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
                               Text(
-                                ['结构与拆解记录', '工艺证据库', '模拟工程变更'][section],
+                                ['结构与拆解记录', '工艺证据库', '变更申请与复核'][section],
                                 style: const TextStyle(
                                   fontSize: 28,
                                   fontWeight: FontWeight.w700,
@@ -283,7 +281,7 @@ class _WorkbenchState extends State<Workbench> {
                                 [
                                   '沿真实关系查找对象，让每一步都有出处。',
                                   '查看文本、表格与图像，定位到原始页面。',
-                                  '基于真实连接关系，复核自建规格与工具卡。',
+                                  '创建申请、补充资料并完成复核。业务资料为模拟设定。',
                                 ][section],
                                 style: const TextStyle(
                                   color: muted,
@@ -328,50 +326,52 @@ class _WorkbenchState extends State<Workbench> {
                                       }),
                                     ),
                                   ),
-                                  SizedBox(
-                                    width: 220,
-                                    child: DropdownButtonFormField<String>(
-                                      key: ValueKey('$battery:$scenario'),
-                                      initialValue: scenario,
-                                      isExpanded: true,
-                                      decoration: const InputDecoration(
-                                        labelText: '数据场景',
-                                      ),
-                                      items: [
-                                        const DropdownMenuItem(
-                                          value: 'kit-v1',
-                                          child: Text(
-                                            '原始记录 · KIT v1',
-                                            style: TextStyle(fontSize: 12),
-                                          ),
+                                  if (section != 2)
+                                    SizedBox(
+                                      width: 220,
+                                      child: DropdownButtonFormField<String>(
+                                        key: ValueKey('$battery:$scenario'),
+                                        initialValue: scenario,
+                                        isExpanded: true,
+                                        decoration: const InputDecoration(
+                                          labelText: '数据场景',
                                         ),
-                                        if (battery == 1) ...[
+                                        items: [
                                           const DropdownMenuItem(
-                                            value: 'demo-change-01',
+                                            value: 'kit-v1',
                                             child: Text(
-                                              '模拟变更 · 原工具卡',
+                                              '原始记录 · KIT v1',
                                               style: TextStyle(fontSize: 12),
                                             ),
                                           ),
-                                          const DropdownMenuItem(
-                                            value: 'demo-change-02',
-                                            child: Text(
-                                              '模拟变更 · 已更新工具卡',
-                                              style: TextStyle(fontSize: 12),
+                                          if (battery == 1) ...[
+                                            const DropdownMenuItem(
+                                              value: 'demo-change-01',
+                                              child: Text(
+                                                '模拟变更 · 原工具卡',
+                                                style: TextStyle(fontSize: 12),
+                                              ),
                                             ),
-                                          ),
+                                            const DropdownMenuItem(
+                                              value: 'demo-change-02',
+                                              child: Text(
+                                                '模拟变更 · 已更新工具卡',
+                                                style: TextStyle(fontSize: 12),
+                                              ),
+                                            ),
+                                          ],
                                         ],
-                                      ],
-                                      onChanged: (value) =>
-                                          setState(() => scenario = value!),
+                                        onChanged: (value) =>
+                                            setState(() => scenario = value!),
+                                      ),
                                     ),
-                                  ),
-                                  Tag(
-                                    scenario == 'kit-v1' ? '原始数据' : '含模拟设定',
-                                    color: scenario == 'kit-v1'
-                                        ? teal
-                                        : const Color(0xFFB08139),
-                                  ),
+                                  if (section != 2)
+                                    Tag(
+                                      scenario == 'kit-v1' ? '原始数据' : '含模拟设定',
+                                      color: scenario == 'kit-v1'
+                                          ? teal
+                                          : const Color(0xFFB08139),
+                                    ),
                                 ],
                               ),
                               const SizedBox(height: 24),
@@ -387,15 +387,20 @@ class _WorkbenchState extends State<Workbench> {
                                       ),
                                   ],
                                 ),
-                              EngineeringPage(
-                                key: ValueKey('$battery:$section:$scenario'),
-                                battery: battery,
-                                section: section,
-                                scenario: scenario,
-                                selected: batteries.firstWhere(
-                                  (v) => v['battery']['raw_id'] == battery,
+                              if (section == 2)
+                                CasesPage(
+                                  key: ValueKey(battery),
+                                  battery: battery,
+                                )
+                              else
+                                EngineeringPage(
+                                  key: ValueKey('$battery:$section:$scenario'),
+                                  battery: battery,
+                                  section: section,
+                                  selected: batteries.firstWhere(
+                                    (v) => v['battery']['raw_id'] == battery,
+                                  ),
                                 ),
-                              ),
                             ],
                           ),
                         ),
@@ -403,8 +408,8 @@ class _WorkbenchState extends State<Workbench> {
               ],
             ),
           ),
-          if (wide) Container(width: 1, color: line),
-          if (wide)
+          if (wide && section != 2) Container(width: 1, color: line),
+          if (wide && section != 2)
             Copilot(
               key: ValueKey('$battery:$scenario'),
               battery: battery,

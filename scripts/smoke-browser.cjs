@@ -29,12 +29,13 @@ const path = require('node:path');
   await page.screenshot({ path: path.join(output, 'pdf-evidence.png') });
   await page.getByRole('button', { name: '关闭证据' }).click();
   await page.getByRole('button', { name: '变更复核', exact: true }).click();
-  await page.getByRole('button', { name: '运行变更复核', exact: true }).click();
-  await page.getByText('发现工具适配冲突', { exact: true }).waitFor();
-  await page.screenshot({ path: path.join(output, 'change-review.png') });
+  await page.getByRole('button', { name: '新建申请', exact: true }).waitFor();
   const result = { browser: 'Edge', viewport: '1512x1100',
-    flows: ['graph overview', 'CSV provenance', 'PDF page/bbox', 'change conflict'], errors };
+    flows: ['graph overview', 'CSV provenance', 'PDF page/bbox', 'saved change workbench'], errors };
   if (process.env.LIVE_AGENT === '1') {
+    const { checkCases } = require('./smoke-cases.cjs');
+    result.cases = await checkCases(page, output);
+    await page.getByRole('button', { name: '结构与记录', exact: true }).click();
     await page.getByRole('button', { name: '螺钉 1000 连接哪些部件，如何拆除？', exact: true }).click();
     const response = page.waitForResponse(r => r.url().endsWith('/api/agent/run'));
     await page.getByRole('button', { name: '运行', exact: true }).click();

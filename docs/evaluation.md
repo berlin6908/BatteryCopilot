@@ -59,3 +59,13 @@ uv run python scripts/summarize-evaluation.py data/evaluation/supplement-run
 
 程序分别统计任务通过、引用覆盖、结论支持、耗时和用量。失败任务保留在成功率分母，
 缺失用量不按零计算。Codex CLI 输入包含自身上下文，不直接等于 API 账单费用。
+
+## 业务流程验收
+
+`backend/tests/test_cases.py` 使用实际 Neo4j 和替代模型结果，验证正常完成、缺资料后补充、
+冲突修正、旧报告失效、过期提交、模型失败后重试，以及迟到分析不覆盖新输入。
+`backend/tests/test_agent.py` 通过实际工具循环验证缺失引用收到反馈后补读，以及统计总数的确定性计算。
+
+`LIVE_AGENT=1` 下的浏览器检查使用实际配置的模型，完成三种申请的端到端流程；
+缺资料和冲突各包含修改后的第二次分析，并验证人工复核、报告下载和刷新后的持久化。
+这是少量场景的功能验收，不能作为业务准确率或跨场景泛化能力的 benchmark。
