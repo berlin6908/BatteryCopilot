@@ -1,4 +1,4 @@
-# 架构与面试讲解
+# 系统架构
 
 ## 一条完整请求
 
@@ -7,21 +7,27 @@ Flutter 选择产品和场景 → FastAPI → 绑定上下文的领域工具 →
 根据中间结果继续取证。结构化回答含结论、证据 ID、适用范围、资料缺口和下一步建议。
 运行轨迹保存为 JSON。没有自建 Agent 框架或多 Agent 消息总线。
 
-生成模型当前使用 `CodexChatModel`：继承 LangChain `BaseChatModel`，把绑定工具的
+## 模型适配
+
+Codex 模式使用 `CodexChatModel`：继承 LangChain `BaseChatModel`，把绑定工具的
 JSON Schema 和消息记录传给本机已登录的 `codex exec`。CLI 只返回工具选择，
 LangGraph 执行查询并把结果送入下一轮，最终由 `ToolStrategy(Answer)` 生成回答。
 CLI 的 JSONL 事件提供 token 统计；错误直接返回，不切换到其他服务。
-这不是将当前聊天窗口转成 HTTP API，也不是复用聊天历史。当前固定模型是 `gpt-5.6-terra`。
+模型通过 `.env` 选择，也可配置支持工具调用的 Chat Completions API。
 
 统计工具同时返回分类明细和确定性总数。`before_model` 中间件收集成功工具返回的证据 ID，
 结构化回答的 Pydantic 校验器检查引用；缺失引用通过 LangChain 的 `ToolStrategy` 反馈回工具循环，
 让模型补读来源。循环仍受 24 步限制，没有另建重试框架。
 
+## 数据流
+
 ```mermaid
 flowchart LR
+    JSONLD[KIproBatt JSON-LD / 循环统计] --> MfgImport[RDF 关系与原始行导入]
+    MfgImport --> Neo4j[(Neo4j)]
     CSV[KIT CSV] --> Import[显式字段映射]
     PDF[PEM PDF] --> Docling[Docling 布局解析]
-    Import --> Neo4j[(Neo4j)]
+    Import --> Neo4j
     Docling --> Evidence[页码 / 元素 / bbox]
     Evidence --> Neo4j
     Evidence --> Pages[原页图像]
@@ -129,7 +135,7 @@ flowchart LR
 可以显式重试，不提供后台任务队列。复核人是本地演示填写的姓名，尚未接入账号与审批权限。
 工具适配按填写的规格列表检查，指导书按新规格匹配；这是一条范围明确的资料复核流程。
 
-## 为什么这些组件值得保留
+## 组件职责
 
 - Neo4j：关系和计数由参数化 Cypher 完成；同时托管全文与向量索引，无需第二个数据库。
 - Docling：保存元素和页内坐标。Windows 使用其 PyPdfium 后端，布局模型仍是标准管线。
@@ -138,9 +144,9 @@ flowchart LR
 - CrossEncoder：仅对指南的前 100 个混合候选做多语言重排，降低短页面标签对正文的干扰；
   复用 SentenceTransformers，固定模型版本。取舍与失败见[指南验证](guide-validation.md)。
 - LangChain：直接复用工具调度和结构化输出；不让模型执行任意 Cypher。
-- Flutter：适配岗位要求，并复用 graphview；PDF 来源用原页图 + 归一化区域高亮。
+- Flutter：提供统一的 Web 工作台，并复用 graphview；PDF 来源用原页图与归一化区域高亮。
 
-## 实际遇到的质量问题
+## 来源与检索处理
 
 1. 数字 ID 跨实体重复：以类型和快照组成 UID，保留官方关系方向。
 2. PDF 双栏阅读顺序不等于栏目归属：用同页标题与元素位置关联栏目，
@@ -149,7 +155,7 @@ flowchart LR
    为正文补充页主题和所属栏目。
 4. 无实际车型参数：不从示意图估测尺寸，也不把通用知识绑定到车型事实。
 
-## 当前可解释的限制
+## 当前限制
 
 关系工具默认展开一跳、最多 40 条，Agent 可继续查询下一对象。完整图不直接塞入上下文。
 指南查询使用独立的 GuideChunk 标签索引，避免大量 CSV 候选挤掉文档证据。
@@ -158,4 +164,4 @@ flowchart LR
 当前只检查引用来自已返回证据，尚不能自动证明每句话被其语义支持。
 图文能力是元素检索、页面与区域定位；没有宣称视觉模型已理解示意图。
 Codex 模式每轮启动一个短生命周期进程，存在启动与上下文开销，适合本机演示。
-已完成真实工具循环联调；长问题成功率仍需独立测试集验证。
+评测范围、分项结果与已知失败见[评测文档](evaluation.md)。

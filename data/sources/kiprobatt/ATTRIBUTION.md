@@ -9,7 +9,7 @@ Andreas Räder, Jonas Rodi, Kai Oppel, Franziska Stahl, Jannis Johann,
 Thilo Zürrlein and Lukas Gold.
 
 License: [Creative Commons Attribution 4.0 International](https://creativecommons.org/licenses/by/4.0/).
-The source data describes laboratory-scale battery manufacturing, not Audi factory production.
+The source data describes laboratory-scale battery manufacturing.
 
 The importer downloads the pinned archive, verifies the publisher's MD5
 `03dbcb62fcf17f843b90709d07668450`, and parses the JSON-LD with RDFLib after cp1252 decoding.

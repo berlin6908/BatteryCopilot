@@ -202,15 +202,6 @@ class _WorkbenchState extends State<Workbench> {
                       ],
                     ),
                   ),
-                  const SizedBox(height: 24),
-                  const Text(
-                    'PORTFOLIO / 2026',
-                    style: TextStyle(
-                      color: Color(0xFF69808A),
-                      fontSize: 9,
-                      letterSpacing: 1.7,
-                    ),
-                  ),
                   const SizedBox(height: 26),
                 ],
               ),
