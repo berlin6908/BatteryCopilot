@@ -1,0 +1,238 @@
+[
+  {
+    "id": "zh-mount",
+    "query": "模组安装有哪些质量要求",
+    "page": 18,
+    "split": "dev",
+    "regions": []
+  },
+  {
+    "id": "en-mount",
+    "query": "Quality requirements when mounting battery modules into the pack",
+    "page": 18,
+    "split": "dev",
+    "regions": []
+  },
+  {
+    "id": "de-mount",
+    "query": "Welche Anforderungen gelten beim Einbau der Module?",
+    "page": 18,
+    "split": "dev",
+    "regions": []
+  },
+  {
+    "id": "en-layout",
+    "query": "Where are buffers and rework areas shown?",
+    "page": 24,
+    "split": "dev",
+    "regions": []
+  },
+  {
+    "id": "zh-layout",
+    "query": "产线布局中的缓冲站和返工区域",
+    "page": 24,
+    "split": "dev",
+    "regions": []
+  },
+  {
+    "id": "de-layout",
+    "query": "Puffer und Nacharbeit in der Layoutplanung",
+    "page": 24,
+    "split": "dev",
+    "regions": []
+  },
+  {
+    "id": "en-leak",
+    "query": "Sealing the battery pack and testing for leaks",
+    "page": 21,
+    "split": "dev",
+    "regions": []
+  },
+  {
+    "id": "zh-leak",
+    "query": "电池包密封及泄漏测试",
+    "page": 21,
+    "split": "dev",
+    "regions": []
+  },
+  {
+    "id": "zh-ultrasonic-access",
+    "split": "test",
+    "family": "ultrasonic-access",
+    "query": "超声焊接极耳时，接触区可达性和焊头空间有什么限制？",
+    "page": 14,
+    "regions": [
+      [
+        0.3628959640824545,
+        0.49727680956466636,
+        0.9304244846250145,
+        0.5241401557851418
+      ]
+    ]
+  },
+  {
+    "id": "en-ultrasonic-access",
+    "split": "test",
+    "family": "ultrasonic-access",
+    "query": "What limits access and tooling space when ultrasonically welding cell contacts?",
+    "page": 14,
+    "regions": [
+      [
+        0.3628959640824545,
+        0.49727680956466636,
+        0.9304244846250145,
+        0.5241401557851418
+      ]
+    ]
+  },
+  {
+    "id": "de-ultrasonic-access",
+    "split": "test",
+    "family": "ultrasonic-access",
+    "query": "Welche Grenzen setzen Zugänglichkeit und Platzbedarf beim Ultraschallschweißen der Zellkontakte?",
+    "page": 14,
+    "regions": [
+      [
+        0.3628959640824545,
+        0.49727680956466636,
+        0.9304244846250145,
+        0.5241401557851418
+      ]
+    ]
+  },
+  {
+    "id": "zh-bonding-fuse",
+    "split": "test",
+    "family": "bonding-fuse",
+    "query": "哪种电连接工艺中的细线还能充当每个电芯的熔断保护？",
+    "page": 14,
+    "regions": [
+      [
+        0.3628959640824545,
+        0.8632059764695527,
+        0.8023359255905104,
+        0.8760096161720254
+      ]
+    ]
+  },
+  {
+    "id": "en-bonding-fuse",
+    "split": "test",
+    "family": "bonding-fuse",
+    "query": "Which electrical joining method uses thin wires that also serve as individual cell fuses?",
+    "page": 14,
+    "regions": [
+      [
+        0.3628959640824545,
+        0.8632059764695527,
+        0.8023359255905104,
+        0.8760096161720254
+      ]
+    ]
+  },
+  {
+    "id": "de-bonding-fuse",
+    "split": "test",
+    "family": "bonding-fuse",
+    "query": "Bei welchem elektrischen Fügeverfahren übernehmen dünne Drähte auch die Sicherungsfunktion einzelner Zellen?",
+    "page": 14,
+    "regions": [
+      [
+        0.3628959640824545,
+        0.8632059764695527,
+        0.8023359255905104,
+        0.8760096161720254
+      ]
+    ]
+  },
+  {
+    "id": "zh-bms-assembly",
+    "split": "test",
+    "family": "bms-assembly",
+    "query": "电池包内部装配时，BMS主控需要连接并控制哪些系统？",
+    "page": 20,
+    "regions": [
+      [
+        0.07998035823830793,
+        0.5329593761118664,
+        0.9254244424189355,
+        0.5598878329294232
+      ]
+    ]
+  },
+  {
+    "id": "en-bms-assembly",
+    "split": "test",
+    "family": "bms-assembly",
+    "query": "During pack assembly, which systems does the BMS master connect to and control?",
+    "page": 20,
+    "regions": [
+      [
+        0.07998035823830793,
+        0.5329593761118664,
+        0.9254244424189355,
+        0.5598878329294232
+      ]
+    ]
+  },
+  {
+    "id": "de-bms-assembly",
+    "split": "test",
+    "family": "bms-assembly",
+    "query": "Welche Systeme werden bei der Packmontage mit dem BMS-Master verbunden und von ihm gesteuert?",
+    "page": 20,
+    "regions": [
+      [
+        0.07998035823830793,
+        0.5329593761118664,
+        0.9254244424189355,
+        0.5598878329294232
+      ]
+    ]
+  },
+  {
+    "id": "zh-leak-pressure",
+    "split": "test",
+    "family": "leak-pressure",
+    "query": "电池包气密测试中，过压会带来什么需要避免的风险？",
+    "page": 21,
+    "regions": [
+      [
+        0.08530140889921206,
+        0.7091595286997564,
+        0.436532479472772,
+        0.7501789034229988
+      ]
+    ]
+  },
+  {
+    "id": "en-leak-pressure",
+    "split": "test",
+    "family": "leak-pressure",
+    "query": "What overpressure hazard must be prevented during battery enclosure leak testing?",
+    "page": 21,
+    "regions": [
+      [
+        0.08530140889921206,
+        0.7091595286997564,
+        0.436532479472772,
+        0.7501789034229988
+      ]
+    ]
+  },
+  {
+    "id": "de-leak-pressure",
+    "split": "test",
+    "family": "leak-pressure",
+    "query": "Welche Überdruckgefahr muss bei der Dichtheitsprüfung eines Batteriegehäuses verhindert werden?",
+    "page": 21,
+    "regions": [
+      [
+        0.08530140889921206,
+        0.7091595286997564,
+        0.436532479472772,
+        0.7501789034229988
+      ]
+    ]
+  }
+]

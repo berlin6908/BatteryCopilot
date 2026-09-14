@@ -1,0 +1,11 @@
+{
+  "cases": 20,
+  "dev": 8,
+  "test": 12,
+  "new_intents": 4,
+  "source": "https://publications.rwth-aachen.de/record/973056/",
+  "source_sha256": "c79f2bc097a7ac44101e4dec6ceffa996d692acfaf3f8c6dc952d9ec2a685128",
+  "cases_sha256": "2bd87cf0ca071add6851934ab73c154a6e54a2529bf16f38da86f33f2fba2feb",
+  "annotation": "Development assistant, original PDF page/region; not external engineer annotation. Four additional questions expressed in three languages; not twelve independent business tasks. Questions frozen before retrieval results inspected.",
+  "metrics": "Original eight probes: page Hit@6. Additional twelve: page Hit@6 and union coverage >=80% of each source region by the first six retrieved regions."
+}

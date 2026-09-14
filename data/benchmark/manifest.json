@@ -1,0 +1,25 @@
+{
+  "cases": 300,
+  "splits": {
+    "dev": 60,
+    "test": 240
+  },
+  "families": 41,
+  "category_families": {
+    "inventory": 5,
+    "connections": 5,
+    "sequence": 5,
+    "guide": 11,
+    "scope": 5,
+    "workflow": 10
+  },
+  "sha256": "f12350af540ba536f9f0f05772434eb2dde92539848a0f51b368a6549cb3bb65",
+  "source_sha256": {
+    "data\\sources\\kit-battery\\battery_catalogue.csv": "a1de7eadff569c511f8aeabf1fa7013bc249f4ad450a7f9bf6a09ca1710371b3",
+    "data\\sources\\kit-battery\\fixations.csv": "5bc454a59509275b199828fc7376d28507046bffd28c3f4ec23f076d8bd52339",
+    "data\\sources\\kit-battery\\operations.csv": "8cfad668c5b87765dc4de044d72c8b8ce439d67740506a422e4597dc4fc4ba05",
+    "data\\sources\\kit-battery\\parts.csv": "3ceaba9d186dcc7342499e3ccf432a07c78b75dbd4cc732c0b43a92aa140c790",
+    "data\\benchmark\\guide-annotations.json": "72bb57471b72b8ba529e378a7e283c963c35466778df2e8bd26854981731be97",
+    "data\\sources\\pem-module-pack-guide.pdf": "c79f2bc097a7ac44101e4dec6ceffa996d692acfaf3f8c6dc952d9ec2a685128"
+  }
+}

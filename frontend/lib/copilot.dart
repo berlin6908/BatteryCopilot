@@ -173,6 +173,8 @@ class _CopilotState extends State<Copilot> {
                       ],
                     ),
                   )
+                else if (event['type'] == 'validation')
+                  const Text('正在补查引用证据…', style: TextStyle(color: muted))
                 else if (event['type'] == 'answer') ...[
                   const Divider(height: 30),
                   SelectableText(

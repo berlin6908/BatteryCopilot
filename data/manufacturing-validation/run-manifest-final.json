@@ -1,0 +1,45 @@
+{
+  "created_at": "2026-09-13T23:12:13.928031+00:00",
+  "config": {
+    "model": "gpt-5.6-terra",
+    "provider": "codex",
+    "workers": 3,
+    "variants": [
+      "no_data",
+      "fixed",
+      "agent"
+    ],
+    "max_model_calls": 10,
+    "max_tool_calls": 16,
+    "suite": "data/manufacturing-validation",
+    "fixed_policy": "trace + all scoped parameters + first/last12 + explicit Cycle lookup",
+    "sha256": {
+      "backend/src/battery_copilot/__init__.py": "0fd0839a077b370b54b7be0011473391fea3556ba660cedf0ce315c12845dc61",
+      "backend/src/battery_copilot/agent.py": "f88461fcf4e715c6a91f0e9fea3a7e4ffdff4387a6da1d0261c0f2419c2c7662",
+      "backend/src/battery_copilot/api.py": "d4d09f86b9d8c5a1da759666f8f5fe074445e3dda037907f12aacecd1a3bc0ca",
+      "backend/src/battery_copilot/benchmark.py": "bace87912a5a4e7540e5a8bb0110abf16b6416c9e344e83926567c14f8ab5ec7",
+      "backend/src/battery_copilot/benchmark_cases.py": "91721531859a1233d0060caaabbdf8ce98cf6539ee029eabe9b56d4c0c8eff99",
+      "backend/src/battery_copilot/case_api.py": "3732151fc5093c16c3fb69a19a4a678447aab2d6407bd8cd5b0c0ba19461853d",
+      "backend/src/battery_copilot/cases.py": "ebd1787ec0a1f1c02a1d06a26a28be382ec5d8b44d5a57c7b8ad1cfed8574bc3",
+      "backend/src/battery_copilot/changes.py": "94c9461a57377159d856245ca054206f1bce71f584c35f13e85774e10bff81f5",
+      "backend/src/battery_copilot/codex_model.py": "add3601157f63db4eae6b68becef1abdbeac259f1d128c6fcb3fdcd10595c40d",
+      "backend/src/battery_copilot/dataset.py": "eb872ca8168218c7ef7e87678ec87ec6bba8f6828630892299eeb2affc7a11e7",
+      "backend/src/battery_copilot/documents.py": "d977a35d5383f1a9bf664ea773cb5e09d727ffcc2d353943e3623f0e3ea79d3e",
+      "backend/src/battery_copilot/evaluate.py": "a7af44e5a27e245a742348997ce5d9d9ed7f03224205a48142ce1d7c7c8c8e39",
+      "backend/src/battery_copilot/graph.py": "f68653a73fb4c0e6d92c6a77eadeaac2870f495934fa8d810bb36beba0f1acb5",
+      "backend/src/battery_copilot/ingest.py": "6ff9c3b69bd270f9a44077764f61caf28e9f864adea53919c34da83fd3e5221f",
+      "backend/src/battery_copilot/manufacturing.py": "a49bdc243eb29abd26906bd6d97deaf4ec7de8acbd1049ed6bbc8fadf64ebd16",
+      "backend/src/battery_copilot/manufacturing_api.py": "2e8f965baac3cf1c7227a30f33ef2ac11f99ca169a3260ad5fb7480ca6fc0ce3",
+      "backend/src/battery_copilot/manufacturing_benchmark.py": "0032c518200025121eea8af81faebcec4e28acffcccf9b86b1b7ca99e855702e",
+      "backend/src/battery_copilot/manufacturing_cases.py": "69cbd8d759f5c5468196725c4841ee03410b73876aa7eba4d6ad8a4e36773c34",
+      "backend/src/battery_copilot/manufacturing_ingest.py": "3a069be149fe2f793568bcd3da4730c7b8c3aa5ec2048228922d46182946c841",
+      "backend/src/battery_copilot/manufacturing_validation_cases.py": "bd0bf8fdaec88f052a21372c4f7c3a8ac5e7f221a1ab4ae6148e2dba6b18ac4e",
+      "backend/src/battery_copilot/retrieval.py": "4e00360376001435374fe277b25698c3773ec7bb5cf34d95e827c8b754486aee",
+      "backend/src/battery_copilot/settings.py": "9f6c627e6e655dbafa357475189ad865ae9203242393c93fa7d5a39ba4466913",
+      "data/manufacturing-validation/cases.json": "1ddb092761134a10af2232b344671d34a5474f1741ef3ba17f3907b4540b05bf",
+      "data/manufacturing-validation/manifest.json": "ec677d3fb8989af8481aed5c1d262a4101fd4cd0ce336671b641688668efc554",
+      "uv.lock": "803cbc4a0eefc02295909e2883f08b665c1823eaa2e5246da6da2cbff42f4717"
+    }
+  },
+  "suite_cases": 32
+}

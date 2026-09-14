@@ -10,7 +10,8 @@ const path = require('node:path');
   page.on('console', message => { if (message.type() === 'error') { errors.push(message.text()); console.error(message.text()); } });
   const output = path.join(__dirname, '../data/runs/browser');
   fs.mkdirSync(output, { recursive: true });
-  await page.goto('http://127.0.0.1:8000');
+  await page.goto(process.env.BASE_URL || 'http://127.0.0.1:8000');
+  await page.getByRole('button', { name: '结构与记录', exact: true }).click();
   await page.getByRole('button', { name: '查看当前对象证据', exact: true }).waitFor();
   await page.getByRole('button', { name: /^screw 1000/ }).waitFor();
   await page.waitForTimeout(1200);
@@ -28,13 +29,25 @@ const path = require('node:path');
   await page.waitForTimeout(500);
   await page.screenshot({ path: path.join(output, 'pdf-evidence.png') });
   await page.getByRole('button', { name: '关闭证据' }).click();
+  for (const query of ['产线布局中的缓冲站和返工区域', 'Puffer und Nacharbeit in der Layoutplanung']) {
+    // Flutter removes the hint's accessible name once this field contains text.
+    await page.getByRole('textbox').first().fill(query);
+    const searchResponse = page.waitForResponse(r => r.url().includes('/api/search?'), { timeout: 120000 });
+    await page.getByRole('button', { name: '检索', exact: true }).click();
+    const hits = await (await searchResponse).json();
+    if (!hits.some(r => r.page === 24)) throw new Error(`Missing layout page for ${query}`);
+    await page.getByRole('button', { name: /第 24 页.*Layout/ }).first().click();
+    await page.getByText('PEM · 第 24 页原文区域', { exact: true }).waitFor();
+    await page.getByRole('button', { name: '关闭证据' }).click();
+  }
   await page.getByRole('button', { name: '变更复核', exact: true }).click();
-  await page.getByRole('button', { name: '运行变更复核', exact: true }).click();
-  await page.getByText('发现工具适配冲突', { exact: true }).waitFor();
-  await page.screenshot({ path: path.join(output, 'change-review.png') });
+  await page.getByRole('button', { name: '新建申请', exact: true }).waitFor();
   const result = { browser: 'Edge', viewport: '1512x1100',
-    flows: ['graph overview', 'CSV provenance', 'PDF page/bbox', 'change conflict'], errors };
+    flows: ['graph overview', 'CSV provenance', 'PDF page/bbox', 'Chinese/German layout retrieval and PDF region source', 'saved change workbench'], errors };
   if (process.env.LIVE_AGENT === '1') {
+    const { checkCases } = require('./smoke-cases.cjs');
+    result.cases = await checkCases(page, output);
+    await page.getByRole('button', { name: '结构与记录', exact: true }).click();
     await page.getByRole('button', { name: '螺钉 1000 连接哪些部件，如何拆除？', exact: true }).click();
     const response = page.waitForResponse(r => r.url().endsWith('/api/agent/run'));
     await page.getByRole('button', { name: '运行', exact: true }).click();

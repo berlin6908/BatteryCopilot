@@ -1,0 +1,2507 @@
+[
+  {
+    "id": "mfg-01",
+    "scenario": "march-1",
+    "split": "dev",
+    "batch": "OSL9f61349f3b81400b9f4049ac95e03cd7",
+    "category": "lineage",
+    "input": {
+      "cell_uid": "ki:4df8de18d3933c20569b",
+      "question": "准备履历交接：列出明确对象链的名称，从最上游到当前对象，输出 chain。不要根据工序常识补链。",
+      "fields": {
+        "chain": "array of object-name strings, upstream first"
+      }
+    },
+    "gold": {
+      "answer": {
+        "chain": [
+          "DryCell",
+          "FilledCell1",
+          "FormatedCell1"
+        ]
+      },
+      "ordered_fields": [
+        "chain"
+      ],
+      "required_sources": [
+        "ki:trace:ki:4df8de18d3933c20569b"
+      ]
+    },
+    "sources": [
+      {
+        "uid": "ki:trace:ki:4df8de18d3933c20569b",
+        "file": [
+          "data/OSL0e8041ee17964c61a042f4c1a699ea91.jsonld",
+          "data/OSL29cbe80ececf44fa8663128740061c37.jsonld",
+          "data/OSL9f61349f3b81400b9f4049ac95e03cd7.jsonld"
+        ],
+        "basis": "Direct traversal of original object-specific predecessor parameters",
+        "objects": [
+          "https://kiprobatt.de/id/LabObject-3AOSL0e8041ee17964c61a042f4c1a699ea91-23O0002",
+          "https://kiprobatt.de/id/LabObject-3AOSL29cbe80ececf44fa8663128740061c37-23O0001",
+          "https://kiprobatt.de/id/LabObject-3AOSL9f61349f3b81400b9f4049ac95e03cd7-23O0001"
+        ],
+        "predecessor_parameters": [
+          {
+            "uid": "ki:904bc9e28e7603deec26",
+            "file": "data/OSL9f61349f3b81400b9f4049ac95e03cd7.jsonld",
+            "subject": "https://kiprobatt.de/id/LabObject-3AOSL9f61349f3b81400b9f4049ac95e03cd7/S0010-23P0001",
+            "raw_node": {
+              "@id": "LabObject:OSL9f61349f3b81400b9f4049ac95e03cd7/S0010-23P0001",
+              "@type": [
+                "Category:LabProcess-2FParameter-2FInstance",
+                "swivt:Subject"
+              ],
+              "Property:HasName": "FormationCellSelection1",
+              "Property:HasPredecessor": {
+                "@id": "LabObject:OSL29cbe80ececf44fa8663128740061c37-23O0001"
+              },
+              "Property:HasProperty": {
+                "@id": "Property:HasPredecessor"
+              },
+              "Property:HasValue": {
+                "@id": "LabObject:OSL29cbe80ececf44fa8663128740061c37-23O0001"
+              },
+              "Property:IsInstanceOf": [
+                {
+                  "@id": "Term:Parameter/Actual"
+                },
+                {
+                  "@id": "Term:Parameter/InputObject"
+                }
+              ],
+              "Property:IsObjectParameterOf": {
+                "@id": "LabObject:OSL9f61349f3b81400b9f4049ac95e03cd7-23O0001"
+              },
+              "Property:IsProcessParameterOf": {
+                "@id": "LabObject:OSL9f61349f3b81400b9f4049ac95e03cd7/S0010"
+              }
+            }
+          },
+          {
+            "uid": "ki:0fa4c2bbb1091a3391e0",
+            "file": "data/OSL29cbe80ececf44fa8663128740061c37.jsonld",
+            "subject": "https://kiprobatt.de/id/LabObject-3AOSL29cbe80ececf44fa8663128740061c37/S0010-23P0001",
+            "raw_node": {
+              "@id": "LabObject:OSL29cbe80ececf44fa8663128740061c37/S0010-23P0001",
+              "@type": [
+                "Category:LabProcess-2FParameter-2FInstance",
+                "swivt:Subject"
+              ],
+              "Property:HasName": "CellSelection1",
+              "Property:HasPredecessor": {
+                "@id": "LabObject:OSL0e8041ee17964c61a042f4c1a699ea91-23O0002"
+              },
+              "Property:HasProperty": {
+                "@id": "Property:HasPredecessor"
+              },
+              "Property:HasValue": {
+                "@id": "LabObject:OSL0e8041ee17964c61a042f4c1a699ea91-23O0002"
+              },
+              "Property:IsInstanceOf": [
+                {
+                  "@id": "Term:Parameter/Actual"
+                },
+                {
+                  "@id": "Term:Parameter/InputObject"
+                }
+              ],
+              "Property:IsObjectParameterOf": {
+                "@id": "LabObject:OSL29cbe80ececf44fa8663128740061c37-23O0001"
+              },
+              "Property:IsProcessParameterOf": {
+                "@id": "LabObject:OSL29cbe80ececf44fa8663128740061c37/S0010"
+              }
+            }
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "mfg-07",
+    "scenario": "shared-1",
+    "split": "dev",
+    "batch": "OSL5fc0a8322ff64454952ef5a31b6e39e4",
+    "category": "lineage",
+    "input": {
+      "cell_uid": "ki:37951e10af424d0448d9",
+      "question": "该对象经过化成后又被记录为已测试。输出按上游到下游的 chain，以及不同来源过程的 unique_processes。不要把对象状态数当成不同工序数。",
+      "fields": {
+        "chain": "array of object-name strings, upstream first",
+        "unique_processes": "integer count"
+      }
+    },
+    "gold": {
+      "answer": {
+        "chain": [
+          "DryCell",
+          "FilledCell1",
+          "FormatedCell1",
+          "TestedCell1"
+        ],
+        "unique_processes": 3
+      },
+      "ordered_fields": [
+        "chain"
+      ],
+      "required_sources": [
+        "ki:trace:ki:37951e10af424d0448d9"
+      ]
+    },
+    "sources": [
+      {
+        "uid": "ki:trace:ki:37951e10af424d0448d9",
+        "file": [
+          "data/OSL5fc0a8322ff64454952ef5a31b6e39e4.jsonld",
+          "data/OSLac6d0e3720af4747b0c37cf58a5135bc.jsonld",
+          "data/OSLee2b001b118848a0848cbea943fb4aaa.jsonld"
+        ],
+        "basis": "Direct traversal of original object-specific predecessor parameters",
+        "objects": [
+          "https://kiprobatt.de/id/LabObject-3AOSLac6d0e3720af4747b0c37cf58a5135bc-23O0002",
+          "https://kiprobatt.de/id/LabObject-3AOSLee2b001b118848a0848cbea943fb4aaa-23O0005",
+          "https://kiprobatt.de/id/LabObject-3AOSL5fc0a8322ff64454952ef5a31b6e39e4-23O0004",
+          "https://kiprobatt.de/id/LabObject-3AOSL5fc0a8322ff64454952ef5a31b6e39e4-23O0054"
+        ],
+        "predecessor_parameters": [
+          {
+            "uid": "ki:dda15790a5cdf474b484",
+            "file": "data/OSL5fc0a8322ff64454952ef5a31b6e39e4.jsonld",
+            "subject": "https://kiprobatt.de/id/LabObject-3AOSL5fc0a8322ff64454952ef5a31b6e39e4/S0010-23P0054",
+            "raw_node": {
+              "@id": "LabObject:OSL5fc0a8322ff64454952ef5a31b6e39e4/S0010-23P0054",
+              "@type": [
+                "Category:LabProcess-2FParameter-2FInstance",
+                "swivt:Subject"
+              ],
+              "Property:HasName": "TestingCellSelection4",
+              "Property:HasPredecessor": {
+                "@id": "LabObject:OSL5fc0a8322ff64454952ef5a31b6e39e4-23O0004"
+              },
+              "Property:HasProperty": {
+                "@id": "Property:HasPredecessor"
+              },
+              "Property:HasValue": {
+                "@id": "LabObject:OSL5fc0a8322ff64454952ef5a31b6e39e4-23O0004"
+              },
+              "Property:IsInstanceOf": [
+                {
+                  "@id": "Term:Parameter/Actual"
+                },
+                {
+                  "@id": "Term:Parameter/InputObject"
+                }
+              ],
+              "Property:IsObjectParameterOf": {
+                "@id": "LabObject:OSL5fc0a8322ff64454952ef5a31b6e39e4-23O0054"
+              },
+              "Property:IsProcessParameterOf": {
+                "@id": "LabObject:OSL5fc0a8322ff64454952ef5a31b6e39e4/S0010"
+              }
+            }
+          },
+          {
+            "uid": "ki:267656225579cf274c14",
+            "file": "data/OSL5fc0a8322ff64454952ef5a31b6e39e4.jsonld",
+            "subject": "https://kiprobatt.de/id/LabObject-3AOSL5fc0a8322ff64454952ef5a31b6e39e4/S0010-23P0004",
+            "raw_node": {
+              "@id": "LabObject:OSL5fc0a8322ff64454952ef5a31b6e39e4/S0010-23P0004",
+              "@type": [
+                "Category:LabProcess-2FParameter-2FInstance",
+                "swivt:Subject"
+              ],
+              "Property:HasName": "FormationCellSelection4",
+              "Property:HasPredecessor": {
+                "@id": "LabObject:OSLee2b001b118848a0848cbea943fb4aaa-23O0005"
+              },
+              "Property:HasProperty": {
+                "@id": "Property:HasPredecessor"
+              },
+              "Property:HasValue": {
+                "@id": "LabObject:OSLee2b001b118848a0848cbea943fb4aaa-23O0005"
+              },
+              "Property:IsInstanceOf": [
+                {
+                  "@id": "Term:Parameter/Actual"
+                },
+                {
+                  "@id": "Term:Parameter/InputObject"
+                }
+              ],
+              "Property:IsObjectParameterOf": {
+                "@id": "LabObject:OSL5fc0a8322ff64454952ef5a31b6e39e4-23O0004"
+              },
+              "Property:IsProcessParameterOf": {
+                "@id": "LabObject:OSL5fc0a8322ff64454952ef5a31b6e39e4/S0010"
+              }
+            }
+          },
+          {
+            "uid": "ki:3ca73b7507be051b0d2d",
+            "file": "data/OSLee2b001b118848a0848cbea943fb4aaa.jsonld",
+            "subject": "https://kiprobatt.de/id/LabObject-3AOSLee2b001b118848a0848cbea943fb4aaa/S0010-23P0005",
+            "raw_node": {
+              "@id": "LabObject:OSLee2b001b118848a0848cbea943fb4aaa/S0010-23P0005",
+              "@type": [
+                "Category:LabProcess-2FParameter-2FInstance",
+                "swivt:Subject"
+              ],
+              "Property:HasName": "CellSelection5",
+              "Property:HasPredecessor": {
+                "@id": "LabObject:OSLac6d0e3720af4747b0c37cf58a5135bc-23O0002"
+              },
+              "Property:HasProperty": {
+                "@id": "Property:HasPredecessor"
+              },
+              "Property:HasValue": {
+                "@id": "LabObject:OSLac6d0e3720af4747b0c37cf58a5135bc-23O0002"
+              },
+              "Property:IsInstanceOf": [
+                {
+                  "@id": "Term:Parameter/Actual"
+                },
+                {
+                  "@id": "Term:Parameter/InputObject"
+                }
+              ],
+              "Property:IsObjectParameterOf": {
+                "@id": "LabObject:OSLee2b001b118848a0848cbea943fb4aaa-23O0005"
+              },
+              "Property:IsProcessParameterOf": {
+                "@id": "LabObject:OSLee2b001b118848a0848cbea943fb4aaa/S0010"
+              }
+            }
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "mfg-09",
+    "scenario": "shared-3",
+    "split": "dev",
+    "batch": "OSL5fc0a8322ff64454952ef5a31b6e39e4",
+    "category": "identity",
+    "input": {
+      "cell_uid": "ki:37951e10af424d0448d9",
+      "question": "仅根据此文件被多少图谱对象引用，能否把该数量直接当成独立物理电芯数量？输出 can_count_physical_cells（布尔）和 file_count（当前对象所绑定的不同循环统计文件数）。",
+      "fields": {
+        "can_count_physical_cells": "boolean",
+        "file_count": "integer count"
+      }
+    },
+    "gold": {
+      "answer": {
+        "can_count_physical_cells": false,
+        "file_count": 1
+      },
+      "ordered_fields": [],
+      "required_sources": [
+        "ki:fda051c10cb8597e2705"
+      ]
+    },
+    "sources": [
+      {
+        "uid": "ki:fda051c10cb8597e2705",
+        "file": "files/Gron_KI_220803-kaop-0251-mi-033_-STATS-.txt",
+        "row_count": 314,
+        "linked_objects": [
+          "https://kiprobatt.de/id/LabObject-3AOSL5fc0a8322ff64454952ef5a31b6e39e4-23O0001",
+          "https://kiprobatt.de/id/LabObject-3AOSL5fc0a8322ff64454952ef5a31b6e39e4-23O0054"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "mfg-11",
+    "scenario": "gap-2",
+    "split": "dev",
+    "batch": "OSLfdb74e35b39a4ad3ac3e933a90b37b26",
+    "category": "missing_values",
+    "input": {
+      "cell_uid": "ki:f55776d32b82594208dd",
+      "question": "采购同事想沿用上一批的注液量。当前电芯履历是否提供自己的注液量？输出 electrolyte_ml；资料没有给出则null，不能借用别的批次。",
+      "fields": {
+        "electrolyte_ml": "number or null"
+      }
+    },
+    "gold": {
+      "answer": {
+        "electrolyte_ml": null
+      },
+      "ordered_fields": [],
+      "required_sources": [
+        "ki:trace:ki:f55776d32b82594208dd"
+      ]
+    },
+    "sources": [
+      {
+        "uid": "ki:trace:ki:f55776d32b82594208dd",
+        "file": [
+          "data/OSLfdb74e35b39a4ad3ac3e933a90b37b26.jsonld"
+        ],
+        "basis": "Direct traversal of original object-specific predecessor parameters",
+        "objects": [
+          "https://kiprobatt.de/id/LabObject-3AOSLfdb74e35b39a4ad3ac3e933a90b37b26-23O0001"
+        ],
+        "predecessor_parameters": []
+      }
+    ]
+  },
+  {
+    "id": "mfg-18",
+    "scenario": "lowvol-3",
+    "split": "dev",
+    "batch": "OSLb947c332babc438b9212aac087a68fa8",
+    "category": "decision_boundary",
+    "input": {
+      "cell_uid": "ki:dc16593373dda5d9a6ba",
+      "question": "有人想仅凭同一文件的 Cycle 1 和 Cycle 100 容量就报告健康度下降。输出 cycle1_ah、cycle100_ah（6位小数）和 soh_established（这些资料是否足以确定SOH）。",
+      "fields": {
+        "cycle1_ah": "number",
+        "cycle100_ah": "number",
+        "soh_established": "boolean"
+      }
+    },
+    "gold": {
+      "answer": {
+        "cycle1_ah": 0.347363,
+        "cycle100_ah": 0.216677,
+        "soh_established": false
+      },
+      "ordered_fields": [],
+      "required_sources": [
+        "ki:95044186b39040388eb9:L11",
+        "ki:95044186b39040388eb9:L110"
+      ]
+    },
+    "sources": [
+      {
+        "uid": "ki:95044186b39040388eb9:L11",
+        "file": "files/Gron_KI_230223-tizue-0100-033_-STATS-.txt",
+        "line": 11,
+        "raw_row": {
+          "Cycle": "1",
+          "AH-IN": "0,414010703562",
+          "AH-OUT": "0,347362888151",
+          "WH-IN": "1,542875177922",
+          "WH-OUT": "1,273138759219",
+          "ACR": "0",
+          "DCIR": "0",
+          "Date": "44989,0467892477"
+        }
+      },
+      {
+        "uid": "ki:95044186b39040388eb9:L110",
+        "file": "files/Gron_KI_230223-tizue-0100-033_-STATS-.txt",
+        "line": 110,
+        "raw_row": {
+          "Cycle": "100",
+          "AH-IN": "0,216996842311",
+          "AH-OUT": "0,216677089371",
+          "WH-IN": "0,861775262675",
+          "WH-OUT": "0,78130254781",
+          "ACR": "0,069769956172",
+          "DCIR": "0,161576956511",
+          "Date": "44998,4036763194"
+        }
+      }
+    ]
+  },
+  {
+    "id": "mfg-22",
+    "scenario": "feb6-1",
+    "split": "dev",
+    "batch": "OSLa7024a3883424ccf8a711c3ac5267ec5",
+    "category": "missing_values",
+    "input": {
+      "cell_uid": "ki:61c0eb1f71055ba3a242",
+      "question": "不要把电阻字段中的数值零误当空值。核对 Cycle 1，输出 acr_raw、dcir_raw；不推定单位。",
+      "fields": {
+        "acr_raw": "number or null, never a string",
+        "dcir_raw": "number or null, never a string"
+      }
+    },
+    "gold": {
+      "answer": {
+        "acr_raw": 0.0,
+        "dcir_raw": 0.0
+      },
+      "ordered_fields": [],
+      "required_sources": [
+        "ki:d5ae29136e95229cdcc8:L11"
+      ]
+    },
+    "sources": [
+      {
+        "uid": "ki:d5ae29136e95229cdcc8:L11",
+        "file": "files/Gron_KI_230206-gron-0200-043_-STATS-.txt",
+        "line": 11,
+        "raw_row": {
+          "Cycle": "1",
+          "AH-IN": "0,495877925218",
+          "AH-OUT": "0,422758625525",
+          "WH-IN": "1,845814414195",
+          "WH-OUT": "1,552141859345",
+          "ACR": "0",
+          "DCIR": "0",
+          "Date": "44966,9655100694"
+        }
+      }
+    ]
+  },
+  {
+    "id": "mfg-30",
+    "scenario": "filename-3",
+    "split": "dev",
+    "batch": "OSL463655a934d24ff4bd148b2e9cc190e7",
+    "category": "lineage",
+    "input": {
+      "cell_uid": "ki:856fab4c441df15da6cc",
+      "question": "文件命名不同不代表工艺链不同。输出当前对象明确履历中不同来源过程的数量 unique_processes。",
+      "fields": {
+        "unique_processes": "integer count"
+      }
+    },
+    "gold": {
+      "answer": {
+        "unique_processes": 3
+      },
+      "ordered_fields": [],
+      "required_sources": [
+        "ki:trace:ki:856fab4c441df15da6cc"
+      ]
+    },
+    "sources": [
+      {
+        "uid": "ki:trace:ki:856fab4c441df15da6cc",
+        "file": [
+          "data/OSL23fd1f9aab624654afe3ebc0466021b6.jsonld",
+          "data/OSL463655a934d24ff4bd148b2e9cc190e7.jsonld",
+          "data/OSL5ef1a2b871a949f3945c10b2c3e1dc87.jsonld"
+        ],
+        "basis": "Direct traversal of original object-specific predecessor parameters",
+        "objects": [
+          "https://kiprobatt.de/id/LabObject-3AOSL23fd1f9aab624654afe3ebc0466021b6-23O0002",
+          "https://kiprobatt.de/id/LabObject-3AOSL5ef1a2b871a949f3945c10b2c3e1dc87-23O0010",
+          "https://kiprobatt.de/id/LabObject-3AOSL463655a934d24ff4bd148b2e9cc190e7-23O0010"
+        ],
+        "predecessor_parameters": [
+          {
+            "uid": "ki:d6aa102f72c9e0894a1f",
+            "file": "data/OSL463655a934d24ff4bd148b2e9cc190e7.jsonld",
+            "subject": "https://kiprobatt.de/id/LabObject-3AOSL463655a934d24ff4bd148b2e9cc190e7/S0010-23P0010",
+            "raw_node": {
+              "@id": "LabObject:OSL463655a934d24ff4bd148b2e9cc190e7/S0010-23P0010",
+              "@type": [
+                "Category:LabProcess-2FParameter-2FInstance",
+                "swivt:Subject"
+              ],
+              "Property:HasName": "FormationCellSelection10",
+              "Property:HasPredecessor": {
+                "@id": "LabObject:OSL5ef1a2b871a949f3945c10b2c3e1dc87-23O0010"
+              },
+              "Property:HasProperty": {
+                "@id": "Property:HasPredecessor"
+              },
+              "Property:HasValue": {
+                "@id": "LabObject:OSL5ef1a2b871a949f3945c10b2c3e1dc87-23O0010"
+              },
+              "Property:IsInstanceOf": [
+                {
+                  "@id": "Term:Parameter/Actual"
+                },
+                {
+                  "@id": "Term:Parameter/InputObject"
+                }
+              ],
+              "Property:IsObjectParameterOf": {
+                "@id": "LabObject:OSL463655a934d24ff4bd148b2e9cc190e7-23O0010"
+              },
+              "Property:IsProcessParameterOf": {
+                "@id": "LabObject:OSL463655a934d24ff4bd148b2e9cc190e7/S0010"
+              }
+            }
+          },
+          {
+            "uid": "ki:b0fbb1e978ca0d1be3f3",
+            "file": "data/OSL5ef1a2b871a949f3945c10b2c3e1dc87.jsonld",
+            "subject": "https://kiprobatt.de/id/LabObject-3AOSL5ef1a2b871a949f3945c10b2c3e1dc87/S0010-23P0010",
+            "raw_node": {
+              "@id": "LabObject:OSL5ef1a2b871a949f3945c10b2c3e1dc87/S0010-23P0010",
+              "@type": [
+                "Category:LabProcess-2FParameter-2FInstance",
+                "swivt:Subject"
+              ],
+              "Property:HasName": "CellSelection10",
+              "Property:HasPredecessor": {
+                "@id": "LabObject:OSL23fd1f9aab624654afe3ebc0466021b6-23O0002"
+              },
+              "Property:HasProperty": {
+                "@id": "Property:HasPredecessor"
+              },
+              "Property:HasValue": {
+                "@id": "LabObject:OSL23fd1f9aab624654afe3ebc0466021b6-23O0002"
+              },
+              "Property:IsInstanceOf": [
+                {
+                  "@id": "Term:Parameter/Actual"
+                },
+                {
+                  "@id": "Term:Parameter/InputObject"
+                }
+              ],
+              "Property:IsObjectParameterOf": {
+                "@id": "LabObject:OSL5ef1a2b871a949f3945c10b2c3e1dc87-23O0010"
+              },
+              "Property:IsProcessParameterOf": {
+                "@id": "LabObject:OSL5ef1a2b871a949f3945c10b2c3e1dc87/S0010"
+              }
+            }
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "mfg-33",
+    "scenario": "mass-3",
+    "split": "dev",
+    "batch": "OSL191ebd16f651496b9c980ad555af2f45",
+    "category": "decision_boundary",
+    "input": {
+      "cell_uid": "ki:9d0f96e69986adc5f416",
+      "question": "资料表要求湿质量可追溯。输出 mass_field_reviewable（是否有可核查的值）；另输出 filling_accepted，缺少注液质量判据时返回null并说明缺口。",
+      "fields": {
+        "mass_field_reviewable": "boolean",
+        "filling_accepted": "boolean or null"
+      }
+    },
+    "gold": {
+      "answer": {
+        "mass_field_reviewable": true,
+        "filling_accepted": null
+      },
+      "ordered_fields": [],
+      "required_sources": [
+        "ki:ffe45a3c8b83c121f6a0"
+      ]
+    },
+    "sources": [
+      {
+        "uid": "ki:ffe45a3c8b83c121f6a0",
+        "file": "data/OSLb60dc99622fb46ceb2ad21a8b41ee9e4.jsonld",
+        "subject": "https://kiprobatt.de/id/LabObject-3AOSLb60dc99622fb46ceb2ad21a8b41ee9e4/S0010-23P0402",
+        "raw_node": {
+          "@id": "LabObject:OSLb60dc99622fb46ceb2ad21a8b41ee9e4/S0010-23P0402",
+          "@type": [
+            "Category:LabProcess-2FParameter-2FInstance",
+            "swivt:Subject"
+          ],
+          "Property:HasMass": 0.00227,
+          "Property:HasName": "WettCellMass2",
+          "Property:HasProperty": {
+            "@id": "Property:HasMass"
+          },
+          "Property:HasValue": {
+            "@id": "kiprobatt:2.27_g"
+          },
+          "Property:IsInstanceOf": [
+            {
+              "@id": "Term:Parameter/Actual"
+            },
+            {
+              "@id": "Term:Parameter/Quantitative"
+            },
+            {
+              "@id": "Term:WettCellMass"
+            }
+          ],
+          "Property:IsObjectParameterOf": {
+            "@id": "LabObject:OSLb60dc99622fb46ceb2ad21a8b41ee9e4-23O0002"
+          },
+          "Property:IsProcessParameterOf": {
+            "@id": "LabObject:OSLb60dc99622fb46ceb2ad21a8b41ee9e4/S0010"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "id": "new-01",
+    "split": "test",
+    "batch": "OSL0f1dcbc0ddec45608d5272fc38ed5f4a",
+    "category": "cycle_lookup",
+    "input": {
+      "cell_uid": "ki:9704997bd7227bfbc3c2",
+      "question": "交接前核对 Cycle 160 的充电容量 charge_ah 和放电容量 discharge_ah，单位Ah。",
+      "fields": {
+        "charge_ah": "number or null",
+        "discharge_ah": "number or null"
+      }
+    },
+    "gold": {
+      "answer": {
+        "charge_ah": 0.409687260173,
+        "discharge_ah": 0.409579595916
+      },
+      "ordered_fields": [],
+      "required_sources": [
+        "ki:49f4e94a5807946df443:L170"
+      ]
+    },
+    "sources": [
+      {
+        "uid": "ki:49f4e94a5807946df443:L170",
+        "file": "files/Gron_KI_230207-tizue-1000-064_-STATS-.txt",
+        "line": 170,
+        "raw": {
+          "Cycle": "160",
+          "AH-IN": "0,409687260173",
+          "AH-OUT": "0,409579595916",
+          "WH-IN": "1,579872434461",
+          "WH-OUT": "1,476379208051",
+          "ACR": "0,046805221587",
+          "DCIR": "0,108427681029",
+          "Date": "44987,1886993287"
+        },
+        "values": {
+          "Cycle": 160.0,
+          "AH-IN": 0.409687260173,
+          "AH-OUT": 0.409579595916,
+          "WH-IN": 1.579872434461,
+          "WH-OUT": 1.476379208051,
+          "ACR": 0.046805221587,
+          "DCIR": 0.108427681029,
+          "Date": 44987.1886993287
+        }
+      }
+    ]
+  },
+  {
+    "id": "new-02",
+    "split": "test",
+    "batch": "OSL0f1dcbc0ddec45608d5272fc38ed5f4a",
+    "category": "parameters",
+    "input": {
+      "cell_uid": "ki:9704997bd7227bfbc3c2",
+      "question": "沿本对象的实际前驱查注液量 electrolyte_ml 与湿质量 wet_g。",
+      "fields": {
+        "electrolyte_ml": "number or null",
+        "wet_g": "number or null"
+      }
+    },
+    "gold": {
+      "answer": {
+        "electrolyte_ml": 2.1,
+        "wet_g": 1.39
+      },
+      "ordered_fields": [],
+      "required_sources": [
+        "ki:3af40b862d0e2a3bf55d",
+        "ki:0d75fc0b2d773e5fedbe"
+      ]
+    },
+    "sources": [
+      {
+        "uid": "ki:3af40b862d0e2a3bf55d",
+        "file": "data/OSL7c3548c22225494faa0be4fc105c3c4a.jsonld",
+        "subject": "https://kiprobatt.de/id/LabObject-3AOSL7c3548c22225494faa0be4fc105c3c4a/S0010-23P0310",
+        "raw_node": {
+          "@id": "LabObject:OSL7c3548c22225494faa0be4fc105c3c4a/S0010-23P0310",
+          "@type": [
+            "Category:LabProcess-2FParameter-2FInstance",
+            "swivt:Subject"
+          ],
+          "Property:HasName": "ElectrolyteVolume10",
+          "Property:HasProperty": {
+            "@id": "Property:HasVolume"
+          },
+          "Property:HasValue": {
+            "@id": "kiprobatt:2.1_ml"
+          },
+          "Property:HasVolume": 2.1e-06,
+          "Property:IsInstanceOf": [
+            {
+              "@id": "Term:ElectrolyteVolume"
+            },
+            {
+              "@id": "Term:Parameter/Actual"
+            },
+            {
+              "@id": "Term:Parameter/Quantitative"
+            }
+          ],
+          "Property:IsObjectParameterOf": {
+            "@id": "LabObject:OSL7c3548c22225494faa0be4fc105c3c4a-23O0010"
+          },
+          "Property:IsProcessParameterOf": {
+            "@id": "LabObject:OSL7c3548c22225494faa0be4fc105c3c4a/S0010"
+          }
+        }
+      },
+      {
+        "uid": "ki:0d75fc0b2d773e5fedbe",
+        "file": "data/OSL7c3548c22225494faa0be4fc105c3c4a.jsonld",
+        "subject": "https://kiprobatt.de/id/LabObject-3AOSL7c3548c22225494faa0be4fc105c3c4a/S0010-23P0410",
+        "raw_node": {
+          "@id": "LabObject:OSL7c3548c22225494faa0be4fc105c3c4a/S0010-23P0410",
+          "@type": [
+            "Category:LabProcess-2FParameter-2FInstance",
+            "swivt:Subject"
+          ],
+          "Property:HasMass": 0.00139,
+          "Property:HasName": "WettCellMass10",
+          "Property:HasProperty": {
+            "@id": "Property:HasMass"
+          },
+          "Property:HasValue": {
+            "@id": "kiprobatt:1.39_g"
+          },
+          "Property:IsInstanceOf": [
+            {
+              "@id": "Term:Parameter/Actual"
+            },
+            {
+              "@id": "Term:Parameter/Quantitative"
+            },
+            {
+              "@id": "Term:WettCellMass"
+            }
+          ],
+          "Property:IsObjectParameterOf": {
+            "@id": "LabObject:OSL7c3548c22225494faa0be4fc105c3c4a-23O0010"
+          },
+          "Property:IsProcessParameterOf": {
+            "@id": "LabObject:OSL7c3548c22225494faa0be4fc105c3c4a/S0010"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "id": "new-03",
+    "split": "test",
+    "batch": "OSL191ebd16f651496b9c980ad555af2f45",
+    "category": "cycle_lookup",
+    "input": {
+      "cell_uid": "ki:eb90fb411cbe2ba12348",
+      "question": "对账 Cycle 250 的放电能量 discharge_wh，使用原始WH-OUT。",
+      "fields": {
+        "discharge_wh": "number or null"
+      }
+    },
+    "gold": {
+      "answer": {
+        "discharge_wh": 1.460027281293
+      },
+      "ordered_fields": [],
+      "required_sources": [
+        "ki:b7a04866a0d99ca253a2:L260"
+      ]
+    },
+    "sources": [
+      {
+        "uid": "ki:b7a04866a0d99ca253a2:L260",
+        "file": "files/Gron-221201-gron-4800-064_-STATS-.txt",
+        "line": 260,
+        "raw": {
+          "Cycle": "250",
+          "AH-IN": "0,405101774262",
+          "AH-OUT": "0,404991655641",
+          "WH-IN": "1,562718580174",
+          "WH-OUT": "1,460027281293",
+          "Date": "44933,9374260995"
+        },
+        "values": {
+          "Cycle": 250.0,
+          "AH-IN": 0.405101774262,
+          "AH-OUT": 0.404991655641,
+          "WH-IN": 1.562718580174,
+          "WH-OUT": 1.460027281293,
+          "Date": 44933.9374260995
+        }
+      }
+    ]
+  },
+  {
+    "id": "new-04",
+    "split": "test",
+    "batch": "OSL191ebd16f651496b9c980ad555af2f45",
+    "category": "missing_values",
+    "input": {
+      "cell_uid": "ki:eb90fb411cbe2ba12348",
+      "question": "复核称重资料：wet_g为湿质量，dry_g为干电芯带支撑质量；未填写则null。",
+      "fields": {
+        "wet_g": "number or null",
+        "dry_g": "number or null"
+      }
+    },
+    "gold": {
+      "answer": {
+        "wet_g": 1.51,
+        "dry_g": null
+      },
+      "ordered_fields": [],
+      "required_sources": [
+        "ki:625e4d749eb990cd9293",
+        "ki:66489c864992fd1420aa"
+      ]
+    },
+    "sources": [
+      {
+        "uid": "ki:625e4d749eb990cd9293",
+        "file": "data/OSLb60dc99622fb46ceb2ad21a8b41ee9e4.jsonld",
+        "subject": "https://kiprobatt.de/id/LabObject-3AOSLb60dc99622fb46ceb2ad21a8b41ee9e4/S0010-23P0413",
+        "raw_node": {
+          "@id": "LabObject:OSLb60dc99622fb46ceb2ad21a8b41ee9e4/S0010-23P0413",
+          "@type": [
+            "Category:LabProcess-2FParameter-2FInstance",
+            "swivt:Subject"
+          ],
+          "Property:HasMass": 0.00151,
+          "Property:HasName": "WettCellMass13",
+          "Property:HasProperty": {
+            "@id": "Property:HasMass"
+          },
+          "Property:HasValue": {
+            "@id": "kiprobatt:1.51_g"
+          },
+          "Property:IsInstanceOf": [
+            {
+              "@id": "Term:Parameter/Actual"
+            },
+            {
+              "@id": "Term:Parameter/Quantitative"
+            },
+            {
+              "@id": "Term:WettCellMass"
+            }
+          ],
+          "Property:IsObjectParameterOf": {
+            "@id": "LabObject:OSLb60dc99622fb46ceb2ad21a8b41ee9e4-23O0013"
+          },
+          "Property:IsProcessParameterOf": {
+            "@id": "LabObject:OSLb60dc99622fb46ceb2ad21a8b41ee9e4/S0010"
+          }
+        }
+      },
+      {
+        "uid": "ki:66489c864992fd1420aa",
+        "file": "data/OSLb60dc99622fb46ceb2ad21a8b41ee9e4.jsonld",
+        "subject": "https://kiprobatt.de/id/LabObject-3AOSLb60dc99622fb46ceb2ad21a8b41ee9e4/S0010-23P0213",
+        "raw_node": {
+          "@id": "LabObject:OSLb60dc99622fb46ceb2ad21a8b41ee9e4/S0010-23P0213",
+          "@type": [
+            "Category:LabProcess-2FParameter-2FInstance",
+            "swivt:Subject"
+          ],
+          "Property:HasName": "DryCellWithBracingMass13",
+          "Property:HasProperty": {
+            "@id": "Property:HasMass"
+          },
+          "Property:IsInstanceOf": [
+            {
+              "@id": "Term:DryCellWithBracingMass"
+            },
+            {
+              "@id": "Term:Parameter/Actual"
+            },
+            {
+              "@id": "Term:Parameter/Quantitative"
+            }
+          ],
+          "Property:IsObjectParameterOf": {
+            "@id": "LabObject:OSLb60dc99622fb46ceb2ad21a8b41ee9e4-23O0013"
+          },
+          "Property:IsProcessParameterOf": {
+            "@id": "LabObject:OSLb60dc99622fb46ceb2ad21a8b41ee9e4/S0010"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "id": "new-05",
+    "split": "test",
+    "batch": "OSL463655a934d24ff4bd148b2e9cc190e7",
+    "category": "cycle_lookup",
+    "input": {
+      "cell_uid": "ki:bc195f3dc9a441479b64",
+      "question": "先核对测试初始化行 Cycle 0，输出 charge_ah 和 discharge_ah，保留微小非零值。",
+      "fields": {
+        "charge_ah": "number or null",
+        "discharge_ah": "number or null"
+      }
+    },
+    "gold": {
+      "answer": {
+        "charge_ah": null,
+        "discharge_ah": 5.977e-08
+      },
+      "ordered_fields": [],
+      "required_sources": [
+        "ki:507f099c67870cad1ec8:L10"
+      ]
+    },
+    "sources": [
+      {
+        "uid": "ki:507f099c67870cad1ec8:L10",
+        "file": "files/Joro-KI-230504-jajo-1400-056_-STATS-.txt",
+        "line": 10,
+        "raw": {
+          "Cycle": "0",
+          "AH-IN": "",
+          "AH-OUT": "5,977E-8",
+          "WH-IN": "",
+          "WH-OUT": "1,4878E-8",
+          "ACR": "0",
+          "DCIR": "0",
+          "T1_Start": "-0,248069763183594",
+          "T1_End": "-0,265109360218048",
+          "T1_Min": "-0,265109360218048",
+          "T1_Max": "-0,248069763183594",
+          "Date": "45057,5672475694"
+        },
+        "values": {
+          "Cycle": 0.0,
+          "AH-IN": null,
+          "AH-OUT": 5.977e-08,
+          "WH-IN": null,
+          "WH-OUT": 1.4878e-08,
+          "ACR": 0.0,
+          "DCIR": 0.0,
+          "T1_Start": -0.248069763183594,
+          "T1_End": -0.265109360218048,
+          "T1_Min": -0.265109360218048,
+          "T1_Max": -0.248069763183594,
+          "Date": 45057.5672475694
+        }
+      }
+    ]
+  },
+  {
+    "id": "new-06",
+    "split": "test",
+    "batch": "OSL463655a934d24ff4bd148b2e9cc190e7",
+    "category": "missing_values",
+    "input": {
+      "cell_uid": "ki:bc195f3dc9a441479b64",
+      "question": "称重表中干电芯带支撑质量是否填写？输出 dry_g 和 wet_g，区分记录的0与缺失。",
+      "fields": {
+        "dry_g": "number or null",
+        "wet_g": "number or null"
+      }
+    },
+    "gold": {
+      "answer": {
+        "dry_g": 0.0,
+        "wet_g": 1.615
+      },
+      "ordered_fields": [],
+      "required_sources": [
+        "ki:ea6cdbd3daeea520b4ad",
+        "ki:bc36427e00ebde4253c7"
+      ]
+    },
+    "sources": [
+      {
+        "uid": "ki:ea6cdbd3daeea520b4ad",
+        "file": "data/OSL5ef1a2b871a949f3945c10b2c3e1dc87.jsonld",
+        "subject": "https://kiprobatt.de/id/LabObject-3AOSL5ef1a2b871a949f3945c10b2c3e1dc87/S0010-23P0212",
+        "raw_node": {
+          "@id": "LabObject:OSL5ef1a2b871a949f3945c10b2c3e1dc87/S0010-23P0212",
+          "@type": [
+            "Category:LabProcess-2FParameter-2FInstance",
+            "swivt:Subject"
+          ],
+          "Property:HasMass": 0.0,
+          "Property:HasName": "DryCellWithBracingMass12",
+          "Property:HasProperty": {
+            "@id": "Property:HasMass"
+          },
+          "Property:HasValue": {
+            "@id": "kiprobatt:0_g"
+          },
+          "Property:IsInstanceOf": [
+            {
+              "@id": "Term:DryCellWithBracingMass"
+            },
+            {
+              "@id": "Term:Parameter/Actual"
+            },
+            {
+              "@id": "Term:Parameter/Quantitative"
+            }
+          ],
+          "Property:IsObjectParameterOf": {
+            "@id": "LabObject:OSL5ef1a2b871a949f3945c10b2c3e1dc87-23O0012"
+          },
+          "Property:IsProcessParameterOf": {
+            "@id": "LabObject:OSL5ef1a2b871a949f3945c10b2c3e1dc87/S0010"
+          }
+        }
+      },
+      {
+        "uid": "ki:bc36427e00ebde4253c7",
+        "file": "data/OSL5ef1a2b871a949f3945c10b2c3e1dc87.jsonld",
+        "subject": "https://kiprobatt.de/id/LabObject-3AOSL5ef1a2b871a949f3945c10b2c3e1dc87/S0010-23P0412",
+        "raw_node": {
+          "@id": "LabObject:OSL5ef1a2b871a949f3945c10b2c3e1dc87/S0010-23P0412",
+          "@type": [
+            "Category:LabProcess-2FParameter-2FInstance",
+            "swivt:Subject"
+          ],
+          "Property:HasMass": 0.001615,
+          "Property:HasName": "WettCellMass12",
+          "Property:HasProperty": {
+            "@id": "Property:HasMass"
+          },
+          "Property:HasValue": {
+            "@id": "kiprobatt:1.615_g"
+          },
+          "Property:IsInstanceOf": [
+            {
+              "@id": "Term:Parameter/Actual"
+            },
+            {
+              "@id": "Term:Parameter/Quantitative"
+            },
+            {
+              "@id": "Term:WettCellMass"
+            }
+          ],
+          "Property:IsObjectParameterOf": {
+            "@id": "LabObject:OSL5ef1a2b871a949f3945c10b2c3e1dc87-23O0012"
+          },
+          "Property:IsProcessParameterOf": {
+            "@id": "LabObject:OSL5ef1a2b871a949f3945c10b2c3e1dc87/S0010"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "id": "new-07",
+    "split": "test",
+    "batch": "OSL4ea2d2f3808849239117806bd17894a3",
+    "category": "cycle_lookup",
+    "input": {
+      "cell_uid": "ki:a32688dc1e22c072f2af",
+      "question": "请核对相邻 Cycle 73 和 Cycle 74 的放电容量，输出 cycle73_ah、cycle74_ah。",
+      "fields": {
+        "cycle73_ah": "number or null",
+        "cycle74_ah": "number or null"
+      }
+    },
+    "gold": {
+      "answer": {
+        "cycle73_ah": 2.66829e-07,
+        "cycle74_ah": 0.23474513948
+      },
+      "ordered_fields": [],
+      "required_sources": [
+        "ki:ff02aa0f50d3c511ac9c:L83",
+        "ki:ff02aa0f50d3c511ac9c:L84"
+      ]
+    },
+    "sources": [
+      {
+        "uid": "ki:ff02aa0f50d3c511ac9c:L83",
+        "file": "files/Gron-221208-gron-1000-063_-STATS-.txt",
+        "line": 83,
+        "raw": {
+          "Cycle": "73",
+          "AH-IN": "0,402536666047",
+          "AH-OUT": "2,66829E-7",
+          "WH-IN": "1,553541310102",
+          "WH-OUT": "8,6214E-7",
+          "Date": "44923,2790275579"
+        },
+        "values": {
+          "Cycle": 73.0,
+          "AH-IN": 0.402536666047,
+          "AH-OUT": 2.66829e-07,
+          "WH-IN": 1.553541310102,
+          "WH-OUT": 8.6214e-07,
+          "Date": 44923.2790275579
+        }
+      },
+      {
+        "uid": "ki:ff02aa0f50d3c511ac9c:L84",
+        "file": "files/Gron-221208-gron-1000-063_-STATS-.txt",
+        "line": 84,
+        "raw": {
+          "Cycle": "74",
+          "AH-IN": "5,97645024287276E-13",
+          "AH-OUT": "0,23474513948",
+          "WH-IN": "2,23624165474824E-12",
+          "WH-OUT": "0,823369160724",
+          "Date": "44923,5451140046"
+        },
+        "values": {
+          "Cycle": 74.0,
+          "AH-IN": 5.97645024287276e-13,
+          "AH-OUT": 0.23474513948,
+          "WH-IN": 2.23624165474824e-12,
+          "WH-OUT": 0.823369160724,
+          "Date": 44923.5451140046
+        }
+      }
+    ]
+  },
+  {
+    "id": "new-08",
+    "split": "test",
+    "batch": "OSL4ea2d2f3808849239117806bd17894a3",
+    "category": "parameters",
+    "input": {
+      "cell_uid": "ki:a32688dc1e22c072f2af",
+      "question": "报告需要注液压力 injection_mbar 与封口压力 sealing_mbar，分别核对原工序字段。",
+      "fields": {
+        "injection_mbar": "number or null",
+        "sealing_mbar": "number or null"
+      }
+    },
+    "gold": {
+      "answer": {
+        "injection_mbar": 100.0,
+        "sealing_mbar": 50.0
+      },
+      "ordered_fields": [],
+      "required_sources": [
+        "ki:37a0e9b331706f7a46da",
+        "ki:53cd78bf1d8b5888083f"
+      ]
+    },
+    "sources": [
+      {
+        "uid": "ki:37a0e9b331706f7a46da",
+        "file": "data/OSLe9f3d466b0f84ac9a96779fe35f4596f.jsonld",
+        "subject": "https://kiprobatt.de/id/LabObject-3AOSLe9f3d466b0f84ac9a96779fe35f4596f/S0010-23P0113",
+        "raw_node": {
+          "@id": "LabObject:OSLe9f3d466b0f84ac9a96779fe35f4596f/S0010-23P0113",
+          "@type": [
+            "Category:LabProcess-2FParameter-2FInstance",
+            "swivt:Subject"
+          ],
+          "Property:HasName": "InjectionPressure",
+          "Property:HasPressure": 10000.0,
+          "Property:HasProperty": {
+            "@id": "Property:HasPressure"
+          },
+          "Property:HasValue": {
+            "@id": "kiprobatt:100_mbar"
+          },
+          "Property:IsInstanceOf": [
+            {
+              "@id": "Term:Parameter/Actual"
+            },
+            {
+              "@id": "Term:Parameter/Quantitative"
+            }
+          ],
+          "Property:IsProcessParameterOf": {
+            "@id": "LabObject:OSLe9f3d466b0f84ac9a96779fe35f4596f/S0010"
+          }
+        }
+      },
+      {
+        "uid": "ki:53cd78bf1d8b5888083f",
+        "file": "data/OSLe9f3d466b0f84ac9a96779fe35f4596f.jsonld",
+        "subject": "https://kiprobatt.de/id/LabObject-3AOSLe9f3d466b0f84ac9a96779fe35f4596f/S0010-23P0114",
+        "raw_node": {
+          "@id": "LabObject:OSLe9f3d466b0f84ac9a96779fe35f4596f/S0010-23P0114",
+          "@type": [
+            "Category:LabProcess-2FParameter-2FInstance",
+            "swivt:Subject"
+          ],
+          "Property:HasName": "SealingPressure",
+          "Property:HasPressure": 5000.0,
+          "Property:HasProperty": {
+            "@id": "Property:HasPressure"
+          },
+          "Property:HasValue": {
+            "@id": "kiprobatt:50_mbar"
+          },
+          "Property:IsInstanceOf": [
+            {
+              "@id": "Term:Parameter/Actual"
+            },
+            {
+              "@id": "Term:Parameter/Quantitative"
+            }
+          ],
+          "Property:IsProcessParameterOf": {
+            "@id": "LabObject:OSLe9f3d466b0f84ac9a96779fe35f4596f/S0010"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "id": "new-09",
+    "split": "test",
+    "batch": "OSL5fc0a8322ff64454952ef5a31b6e39e4",
+    "category": "cycle_lookup",
+    "input": {
+      "cell_uid": "ki:bb8ac3e502adf5bdb195",
+      "question": "核对较后段 Cycle 400 的 discharge_ah 和 discharge_wh，不能把Ah当Wh。",
+      "fields": {
+        "discharge_ah": "number or null",
+        "discharge_wh": "number or null"
+      }
+    },
+    "gold": {
+      "answer": {
+        "discharge_ah": 0.089623735544,
+        "discharge_wh": 0.303162026145
+      },
+      "ordered_fields": [],
+      "required_sources": [
+        "ki:a425810a7ab3da805bab:L410"
+      ]
+    },
+    "sources": [
+      {
+        "uid": "ki:a425810a7ab3da805bab:L410",
+        "file": "files/Gron_KI_220803-kaop-0262-mi-077_-STATS-.txt",
+        "line": 410,
+        "raw": {
+          "Cycle": "400",
+          "AH-IN": "0,089331927605",
+          "AH-OUT": "0,089623735544",
+          "WH-IN": "0,374415203893",
+          "WH-OUT": "0,303162026145",
+          "ACR": "0,178089678288",
+          "DCIR": "0,48669975996",
+          "Date": "44816,080639456"
+        },
+        "values": {
+          "Cycle": 400.0,
+          "AH-IN": 0.089331927605,
+          "AH-OUT": 0.089623735544,
+          "WH-IN": 0.374415203893,
+          "WH-OUT": 0.303162026145,
+          "ACR": 0.178089678288,
+          "DCIR": 0.48669975996,
+          "Date": 44816.080639456
+        }
+      }
+    ]
+  },
+  {
+    "id": "new-10",
+    "split": "test",
+    "batch": "OSL5fc0a8322ff64454952ef5a31b6e39e4",
+    "category": "parameters",
+    "input": {
+      "cell_uid": "ki:bb8ac3e502adf5bdb195",
+      "question": "沿明确前驱读取 electrolyte_ml、dry_g、wet_g；不能按当前对象编号猜注液参数编号。",
+      "fields": {
+        "electrolyte_ml": "number or null",
+        "dry_g": "number or null",
+        "wet_g": "number or null"
+      }
+    },
+    "gold": {
+      "answer": {
+        "electrolyte_ml": 0.92,
+        "dry_g": 11.815,
+        "wet_g": 12.91
+      },
+      "ordered_fields": [],
+      "required_sources": [
+        "ki:e6e1547bc7f4092ed35a",
+        "ki:42b9bc304cf167085773",
+        "ki:392fce6c36d5224c5742"
+      ]
+    },
+    "sources": [
+      {
+        "uid": "ki:e6e1547bc7f4092ed35a",
+        "file": "data/OSLee2b001b118848a0848cbea943fb4aaa.jsonld",
+        "subject": "https://kiprobatt.de/id/LabObject-3AOSLee2b001b118848a0848cbea943fb4aaa/S0010-23P0313",
+        "raw_node": {
+          "@id": "LabObject:OSLee2b001b118848a0848cbea943fb4aaa/S0010-23P0313",
+          "@type": [
+            "Category:LabProcess-2FParameter-2FInstance",
+            "swivt:Subject"
+          ],
+          "Property:HasName": "ElectrolyteVolume13",
+          "Property:HasProperty": {
+            "@id": "Property:HasVolume"
+          },
+          "Property:HasValue": {
+            "@id": "kiprobatt:0.92_ml"
+          },
+          "Property:HasVolume": 9.2e-07,
+          "Property:IsInstanceOf": [
+            {
+              "@id": "Term:ElectrolyteVolume"
+            },
+            {
+              "@id": "Term:Parameter/Actual"
+            },
+            {
+              "@id": "Term:Parameter/Quantitative"
+            }
+          ],
+          "Property:IsObjectParameterOf": {
+            "@id": "LabObject:OSLee2b001b118848a0848cbea943fb4aaa-23O0013"
+          },
+          "Property:IsProcessParameterOf": {
+            "@id": "LabObject:OSLee2b001b118848a0848cbea943fb4aaa/S0010"
+          }
+        }
+      },
+      {
+        "uid": "ki:42b9bc304cf167085773",
+        "file": "data/OSLee2b001b118848a0848cbea943fb4aaa.jsonld",
+        "subject": "https://kiprobatt.de/id/LabObject-3AOSLee2b001b118848a0848cbea943fb4aaa/S0010-23P0213",
+        "raw_node": {
+          "@id": "LabObject:OSLee2b001b118848a0848cbea943fb4aaa/S0010-23P0213",
+          "@type": [
+            "Category:LabProcess-2FParameter-2FInstance",
+            "swivt:Subject"
+          ],
+          "Property:HasMass": 0.011815,
+          "Property:HasName": "DryCellWithBracingMass13",
+          "Property:HasProperty": {
+            "@id": "Property:HasMass"
+          },
+          "Property:HasValue": {
+            "@id": "kiprobatt:11.815_g"
+          },
+          "Property:IsInstanceOf": [
+            {
+              "@id": "Term:DryCellWithBracingMass"
+            },
+            {
+              "@id": "Term:Parameter/Actual"
+            },
+            {
+              "@id": "Term:Parameter/Quantitative"
+            }
+          ],
+          "Property:IsObjectParameterOf": {
+            "@id": "LabObject:OSLee2b001b118848a0848cbea943fb4aaa-23O0013"
+          },
+          "Property:IsProcessParameterOf": {
+            "@id": "LabObject:OSLee2b001b118848a0848cbea943fb4aaa/S0010"
+          }
+        }
+      },
+      {
+        "uid": "ki:392fce6c36d5224c5742",
+        "file": "data/OSLee2b001b118848a0848cbea943fb4aaa.jsonld",
+        "subject": "https://kiprobatt.de/id/LabObject-3AOSLee2b001b118848a0848cbea943fb4aaa/S0010-23P0413",
+        "raw_node": {
+          "@id": "LabObject:OSLee2b001b118848a0848cbea943fb4aaa/S0010-23P0413",
+          "@type": [
+            "Category:LabProcess-2FParameter-2FInstance",
+            "swivt:Subject"
+          ],
+          "Property:HasMass": 0.01291,
+          "Property:HasName": "WettCellMass13",
+          "Property:HasProperty": {
+            "@id": "Property:HasMass"
+          },
+          "Property:HasValue": {
+            "@id": "kiprobatt:12.91_g"
+          },
+          "Property:IsInstanceOf": [
+            {
+              "@id": "Term:Parameter/Actual"
+            },
+            {
+              "@id": "Term:Parameter/Quantitative"
+            },
+            {
+              "@id": "Term:WettCellMass"
+            }
+          ],
+          "Property:IsObjectParameterOf": {
+            "@id": "LabObject:OSLee2b001b118848a0848cbea943fb4aaa-23O0013"
+          },
+          "Property:IsProcessParameterOf": {
+            "@id": "LabObject:OSLee2b001b118848a0848cbea943fb4aaa/S0010"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "id": "new-11",
+    "split": "test",
+    "batch": "OSL618063bc437a4b8285b9aaf52d961b45",
+    "category": "cycle_lookup",
+    "input": {
+      "cell_uid": "ki:22d410df1a92c9d296c5",
+      "question": "交接清单要求 Cycle 220 和 Cycle 221 的放电能量，输出 cycle220_wh、cycle221_wh。",
+      "fields": {
+        "cycle220_wh": "number or null",
+        "cycle221_wh": "number or null"
+      }
+    },
+    "gold": {
+      "answer": {
+        "cycle220_wh": 1.160951733119,
+        "cycle221_wh": 1.160748238948
+      },
+      "ordered_fields": [],
+      "required_sources": [
+        "ki:8344640b2b03d026795c:L230",
+        "ki:8344640b2b03d026795c:L231"
+      ]
+    },
+    "sources": [
+      {
+        "uid": "ki:8344640b2b03d026795c:L230",
+        "file": "files/Gron-221123-joro-0600-058_-STATS-.txt",
+        "line": 230,
+        "raw": {
+          "Cycle": "220",
+          "AH-IN": "0,323886122179",
+          "AH-OUT": "0,323983992677",
+          "WH-IN": "1,276044295152",
+          "WH-OUT": "1,160951733119",
+          "V1_Start": "-0,00084642181172967",
+          "V1_End": "-0,00100469507742673",
+          "V1_Min": "-0,00116296834312379",
+          "V1_Max": "-0,000688148604240268",
+          "Date": "44927,08000375"
+        },
+        "values": {
+          "Cycle": 220.0,
+          "AH-IN": 0.323886122179,
+          "AH-OUT": 0.323983992677,
+          "WH-IN": 1.276044295152,
+          "WH-OUT": 1.160951733119,
+          "V1_Start": -0.00084642181172967,
+          "V1_End": -0.00100469507742673,
+          "V1_Min": -0.00116296834312379,
+          "V1_Max": -0.000688148604240268,
+          "Date": 44927.08000375
+        }
+      },
+      {
+        "uid": "ki:8344640b2b03d026795c:L231",
+        "file": "files/Gron-221123-joro-0600-058_-STATS-.txt",
+        "line": 231,
+        "raw": {
+          "Cycle": "221",
+          "AH-IN": "0,323831877134",
+          "AH-OUT": "0,323933594035",
+          "WH-IN": "1,275832378973",
+          "WH-OUT": "1,160748238948",
+          "V1_Start": "-0,00084642181172967",
+          "V1_End": "-0,00084642181172967",
+          "V1_Min": "-0,00132124160882086",
+          "V1_Max": "-0,000688148604240268",
+          "Date": "44927,1722058912"
+        },
+        "values": {
+          "Cycle": 221.0,
+          "AH-IN": 0.323831877134,
+          "AH-OUT": 0.323933594035,
+          "WH-IN": 1.275832378973,
+          "WH-OUT": 1.160748238948,
+          "V1_Start": -0.00084642181172967,
+          "V1_End": -0.00084642181172967,
+          "V1_Min": -0.00132124160882086,
+          "V1_Max": -0.000688148604240268,
+          "Date": 44927.1722058912
+        }
+      }
+    ]
+  },
+  {
+    "id": "new-12",
+    "split": "test",
+    "batch": "OSL618063bc437a4b8285b9aaf52d961b45",
+    "category": "source_transcription",
+    "input": {
+      "cell_uid": "ki:22d410df1a92c9d296c5",
+      "question": "为核对异常显示，请把湿质量HasValue的工具显示值原样写入wet_source_value，保留其中编码和单位，不修正数字。",
+      "fields": {
+        "wet_source_value": "string or null"
+      }
+    },
+    "gold": {
+      "answer": {
+        "wet_source_value": "2-2C11 g"
+      },
+      "ordered_fields": [],
+      "required_sources": [
+        "ki:c324d36ad545c66214c7"
+      ]
+    },
+    "sources": [
+      {
+        "uid": "ki:c324d36ad545c66214c7",
+        "file": "data/OSL7b1b88ba76b140988d27f7b843927a79.jsonld",
+        "subject": "https://kiprobatt.de/id/LabObject-3AOSL7b1b88ba76b140988d27f7b843927a79/S0010-23P0402",
+        "raw_node": {
+          "@id": "LabObject:OSL7b1b88ba76b140988d27f7b843927a79/S0010-23P0402",
+          "@type": [
+            "Category:LabProcess-2FParameter-2FInstance",
+            "swivt:Subject"
+          ],
+          "Property:HasName": "WettCellMass2",
+          "Property:HasProperty": {
+            "@id": "Property:HasMass"
+          },
+          "Property:HasValue": {
+            "@id": "kiprobatt:2-2C11_g"
+          },
+          "Property:IsInstanceOf": [
+            {
+              "@id": "Term:Parameter/Actual"
+            },
+            {
+              "@id": "Term:Parameter/Quantitative"
+            },
+            {
+              "@id": "Term:WettCellMass"
+            }
+          ],
+          "Property:IsObjectParameterOf": {
+            "@id": "LabObject:OSL7b1b88ba76b140988d27f7b843927a79-23O0002"
+          },
+          "Property:IsProcessParameterOf": {
+            "@id": "LabObject:OSL7b1b88ba76b140988d27f7b843927a79/S0010"
+          },
+          "Property:Processing_error": {
+            "@id": "LabObject:OSL7b1b88ba76b140988d27f7b843927a79/S0010-23_ERR9655075c2e9950c20c1c1d1668bbf2d9"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "id": "new-13",
+    "split": "test",
+    "batch": "OSL6f0a8e17487e4b87806f2d5da185abd1",
+    "category": "cycle_lookup",
+    "input": {
+      "cell_uid": "ki:4d88b08ca69ed2888b2a",
+      "question": "核查 Cycle 100 的 discharge_ah、discharge_wh，原单位分别为Ah和Wh。",
+      "fields": {
+        "discharge_ah": "number or null",
+        "discharge_wh": "number or null"
+      }
+    },
+    "gold": {
+      "answer": {
+        "discharge_ah": 0.417662708567,
+        "discharge_wh": 1.507870408948
+      },
+      "ordered_fields": [],
+      "required_sources": [
+        "ki:6a861e1a92b7b7532684:L110"
+      ]
+    },
+    "sources": [
+      {
+        "uid": "ki:6a861e1a92b7b7532684:L110",
+        "file": "files/Joro-KI-221123-0300-048_-STATS-.txt",
+        "line": 110,
+        "raw": {
+          "Cycle": "100",
+          "AH-IN": "0,41788206143",
+          "AH-OUT": "0,417662708567",
+          "WH-IN": "1,6097999534",
+          "WH-OUT": "1,507870408948",
+          "Date": "44902,9327551042"
+        },
+        "values": {
+          "Cycle": 100.0,
+          "AH-IN": 0.41788206143,
+          "AH-OUT": 0.417662708567,
+          "WH-IN": 1.6097999534,
+          "WH-OUT": 1.507870408948,
+          "Date": 44902.9327551042
+        }
+      }
+    ]
+  },
+  {
+    "id": "new-14",
+    "split": "test",
+    "batch": "OSL6f0a8e17487e4b87806f2d5da185abd1",
+    "category": "parameters",
+    "input": {
+      "cell_uid": "ki:4d88b08ca69ed2888b2a",
+      "question": "核对本对象前驱称重：dry_g、wet_g；同时给出该前驱注液量electrolyte_ml。",
+      "fields": {
+        "dry_g": "number or null",
+        "wet_g": "number or null",
+        "electrolyte_ml": "number or null"
+      }
+    },
+    "gold": {
+      "answer": {
+        "dry_g": 12.98,
+        "wet_g": 14.4869,
+        "electrolyte_ml": 1.1
+      },
+      "ordered_fields": [],
+      "required_sources": [
+        "ki:5a1529ab74b55520722f",
+        "ki:dc034bb9fa09e23aaf23",
+        "ki:b9059b21b2648dea4fd2"
+      ]
+    },
+    "sources": [
+      {
+        "uid": "ki:5a1529ab74b55520722f",
+        "file": "data/OSL43162995e8b34a17a062e326e0dc1fea.jsonld",
+        "subject": "https://kiprobatt.de/id/LabObject-3AOSL43162995e8b34a17a062e326e0dc1fea/S0010-23P0215",
+        "raw_node": {
+          "@id": "LabObject:OSL43162995e8b34a17a062e326e0dc1fea/S0010-23P0215",
+          "@type": [
+            "Category:LabProcess-2FParameter-2FInstance",
+            "swivt:Subject"
+          ],
+          "Property:HasMass": 0.01298,
+          "Property:HasName": "DryCellWithBracingMass15",
+          "Property:HasProperty": {
+            "@id": "Property:HasMass"
+          },
+          "Property:HasValue": {
+            "@id": "kiprobatt:12.980_g"
+          },
+          "Property:IsInstanceOf": [
+            {
+              "@id": "Term:DryCellWithBracingMass"
+            },
+            {
+              "@id": "Term:Parameter/Actual"
+            },
+            {
+              "@id": "Term:Parameter/Quantitative"
+            }
+          ],
+          "Property:IsObjectParameterOf": {
+            "@id": "LabObject:OSL43162995e8b34a17a062e326e0dc1fea-23O0015"
+          },
+          "Property:IsProcessParameterOf": {
+            "@id": "LabObject:OSL43162995e8b34a17a062e326e0dc1fea/S0010"
+          }
+        }
+      },
+      {
+        "uid": "ki:dc034bb9fa09e23aaf23",
+        "file": "data/OSL43162995e8b34a17a062e326e0dc1fea.jsonld",
+        "subject": "https://kiprobatt.de/id/LabObject-3AOSL43162995e8b34a17a062e326e0dc1fea/S0010-23P0415",
+        "raw_node": {
+          "@id": "LabObject:OSL43162995e8b34a17a062e326e0dc1fea/S0010-23P0415",
+          "@type": [
+            "Category:LabProcess-2FParameter-2FInstance",
+            "swivt:Subject"
+          ],
+          "Property:HasMass": 0.0144869,
+          "Property:HasName": "WettCellMass15",
+          "Property:HasProperty": {
+            "@id": "Property:HasMass"
+          },
+          "Property:HasValue": {
+            "@id": "kiprobatt:14.4869_g"
+          },
+          "Property:IsInstanceOf": [
+            {
+              "@id": "Term:Parameter/Actual"
+            },
+            {
+              "@id": "Term:Parameter/Quantitative"
+            },
+            {
+              "@id": "Term:WettCellMass"
+            }
+          ],
+          "Property:IsObjectParameterOf": {
+            "@id": "LabObject:OSL43162995e8b34a17a062e326e0dc1fea-23O0015"
+          },
+          "Property:IsProcessParameterOf": {
+            "@id": "LabObject:OSL43162995e8b34a17a062e326e0dc1fea/S0010"
+          }
+        }
+      },
+      {
+        "uid": "ki:b9059b21b2648dea4fd2",
+        "file": "data/OSL43162995e8b34a17a062e326e0dc1fea.jsonld",
+        "subject": "https://kiprobatt.de/id/LabObject-3AOSL43162995e8b34a17a062e326e0dc1fea/S0010-23P0315",
+        "raw_node": {
+          "@id": "LabObject:OSL43162995e8b34a17a062e326e0dc1fea/S0010-23P0315",
+          "@type": [
+            "Category:LabProcess-2FParameter-2FInstance",
+            "swivt:Subject"
+          ],
+          "Property:HasName": "ElectrolyteVolume15",
+          "Property:HasProperty": {
+            "@id": "Property:HasVolume"
+          },
+          "Property:HasValue": {
+            "@id": "kiprobatt:1.1_ml"
+          },
+          "Property:HasVolume": 1.1e-06,
+          "Property:IsInstanceOf": [
+            {
+              "@id": "Term:ElectrolyteVolume"
+            },
+            {
+              "@id": "Term:Parameter/Actual"
+            },
+            {
+              "@id": "Term:Parameter/Quantitative"
+            }
+          ],
+          "Property:IsObjectParameterOf": {
+            "@id": "LabObject:OSL43162995e8b34a17a062e326e0dc1fea-23O0015"
+          },
+          "Property:IsProcessParameterOf": {
+            "@id": "LabObject:OSL43162995e8b34a17a062e326e0dc1fea/S0010"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "id": "new-15",
+    "split": "test",
+    "batch": "OSL9f61349f3b81400b9f4049ac95e03cd7",
+    "category": "cycle_lookup",
+    "input": {
+      "cell_uid": "ki:34228c1f3be8ec392198",
+      "question": "在性能资料交接中摘录 Cycle 300 的充放电容量，输出charge_ah、discharge_ah。",
+      "fields": {
+        "charge_ah": "number or null",
+        "discharge_ah": "number or null"
+      }
+    },
+    "gold": {
+      "answer": {
+        "charge_ah": 0.355145837636,
+        "discharge_ah": 0.355108648182
+      },
+      "ordered_fields": [],
+      "required_sources": [
+        "ki:a9d67df639aca07c7f08:L310"
+      ]
+    },
+    "sources": [
+      {
+        "uid": "ki:a9d67df639aca07c7f08:L310",
+        "file": "files/120_tizue-ki-230307-tizue-1000-046_-STATS-.txt",
+        "line": 310,
+        "raw": {
+          "Cycle": "300",
+          "AH-IN": "0,355145837636",
+          "AH-OUT": "0,355108648182",
+          "WH-IN": "1,376541934025",
+          "WH-OUT": "1,283278064834",
+          "ACR": "0,05026352033",
+          "DCIR": "0,120255984366",
+          "Date": "45042,4652576389"
+        },
+        "values": {
+          "Cycle": 300.0,
+          "AH-IN": 0.355145837636,
+          "AH-OUT": 0.355108648182,
+          "WH-IN": 1.376541934025,
+          "WH-OUT": 1.283278064834,
+          "ACR": 0.05026352033,
+          "DCIR": 0.120255984366,
+          "Date": 45042.4652576389
+        }
+      }
+    ]
+  },
+  {
+    "id": "new-16",
+    "split": "test",
+    "batch": "OSL9f61349f3b81400b9f4049ac95e03cd7",
+    "category": "missing_values",
+    "input": {
+      "cell_uid": "ki:34228c1f3be8ec392198",
+      "question": "核对末号样品自己的wet_g和electrolyte_ml，不采用同批另一只样品的称重。",
+      "fields": {
+        "wet_g": "number or null",
+        "electrolyte_ml": "number or null"
+      }
+    },
+    "gold": {
+      "answer": {
+        "wet_g": null,
+        "electrolyte_ml": 2.1
+      },
+      "ordered_fields": [],
+      "required_sources": [
+        "ki:488913ccde18389b2f89",
+        "ki:b18981091527f07d0647"
+      ]
+    },
+    "sources": [
+      {
+        "uid": "ki:488913ccde18389b2f89",
+        "file": "data/OSL29cbe80ececf44fa8663128740061c37.jsonld",
+        "subject": "https://kiprobatt.de/id/LabObject-3AOSL29cbe80ececf44fa8663128740061c37/S0010-23P0420",
+        "raw_node": {
+          "@id": "LabObject:OSL29cbe80ececf44fa8663128740061c37/S0010-23P0420",
+          "@type": [
+            "Category:LabProcess-2FParameter-2FInstance",
+            "swivt:Subject"
+          ],
+          "Property:HasName": "WettCellMass20",
+          "Property:HasProperty": {
+            "@id": "Property:HasMass"
+          },
+          "Property:IsInstanceOf": [
+            {
+              "@id": "Term:Parameter/Actual"
+            },
+            {
+              "@id": "Term:Parameter/Quantitative"
+            },
+            {
+              "@id": "Term:WettCellMass"
+            }
+          ],
+          "Property:IsObjectParameterOf": {
+            "@id": "LabObject:OSL29cbe80ececf44fa8663128740061c37-23O0020"
+          },
+          "Property:IsProcessParameterOf": {
+            "@id": "LabObject:OSL29cbe80ececf44fa8663128740061c37/S0010"
+          }
+        }
+      },
+      {
+        "uid": "ki:b18981091527f07d0647",
+        "file": "data/OSL29cbe80ececf44fa8663128740061c37.jsonld",
+        "subject": "https://kiprobatt.de/id/LabObject-3AOSL29cbe80ececf44fa8663128740061c37/S0010-23P0320",
+        "raw_node": {
+          "@id": "LabObject:OSL29cbe80ececf44fa8663128740061c37/S0010-23P0320",
+          "@type": [
+            "Category:LabProcess-2FParameter-2FInstance",
+            "swivt:Subject"
+          ],
+          "Property:HasName": "ElectrolyteVolume20",
+          "Property:HasProperty": {
+            "@id": "Property:HasVolume"
+          },
+          "Property:HasValue": {
+            "@id": "kiprobatt:2.1_ml"
+          },
+          "Property:HasVolume": 2.1e-06,
+          "Property:IsInstanceOf": [
+            {
+              "@id": "Term:ElectrolyteVolume"
+            },
+            {
+              "@id": "Term:Parameter/Actual"
+            },
+            {
+              "@id": "Term:Parameter/Quantitative"
+            }
+          ],
+          "Property:IsObjectParameterOf": {
+            "@id": "LabObject:OSL29cbe80ececf44fa8663128740061c37-23O0020"
+          },
+          "Property:IsProcessParameterOf": {
+            "@id": "LabObject:OSL29cbe80ececf44fa8663128740061c37/S0010"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "id": "new-17",
+    "split": "test",
+    "batch": "OSLa7024a3883424ccf8a711c3ac5267ec5",
+    "category": "cycle_lookup",
+    "input": {
+      "cell_uid": "ki:121e914b44839ae6b449",
+      "question": "核对 Cycle 239 的放电容量discharge_ah，为归档保留6位小数。",
+      "fields": {
+        "discharge_ah": "number or null"
+      }
+    },
+    "gold": {
+      "answer": {
+        "discharge_ah": null
+      },
+      "ordered_fields": [],
+      "required_sources": [
+        "ki:cd80366a5c77748fd6d5:L249"
+      ]
+    },
+    "sources": [
+      {
+        "uid": "ki:cd80366a5c77748fd6d5:L249",
+        "file": "files/Gron_KI_230206-gron-1100-054_-STATS-.txt",
+        "line": 249,
+        "raw": {
+          "Cycle": "239",
+          "AH-IN": "0,359136827489",
+          "AH-OUT": "",
+          "WH-IN": "1,379507774839",
+          "WH-OUT": "",
+          "ACR": "0,050080295652",
+          "DCIR": "0,121735289693",
+          "V1_Start": "",
+          "V1_End": "",
+          "V1_Min": "",
+          "V1_Max": "",
+          "Date": "44994,5514716667"
+        },
+        "values": {
+          "Cycle": 239.0,
+          "AH-IN": 0.359136827489,
+          "AH-OUT": null,
+          "WH-IN": 1.379507774839,
+          "WH-OUT": null,
+          "ACR": 0.050080295652,
+          "DCIR": 0.121735289693,
+          "V1_Start": null,
+          "V1_End": null,
+          "V1_Min": null,
+          "V1_Max": null,
+          "Date": 44994.5514716667
+        }
+      }
+    ]
+  },
+  {
+    "id": "new-18",
+    "split": "test",
+    "batch": "OSLa7024a3883424ccf8a711c3ac5267ec5",
+    "category": "parameters",
+    "input": {
+      "cell_uid": "ki:121e914b44839ae6b449",
+      "question": "系统接收Pa：把记录中的注液和封口压力转换成injection_pa、sealing_pa，保留原始引用。",
+      "fields": {
+        "injection_pa": "number or null",
+        "sealing_pa": "number or null"
+      }
+    },
+    "gold": {
+      "answer": {
+        "injection_pa": 10000.0,
+        "sealing_pa": 5000.0
+      },
+      "ordered_fields": [],
+      "required_sources": [
+        "ki:e36b4287849a9ca030f2",
+        "ki:e65f448368a1a4d2188d"
+      ]
+    },
+    "sources": [
+      {
+        "uid": "ki:e36b4287849a9ca030f2",
+        "file": "data/OSL6a2c9891d42843869f7d2162b4911880.jsonld",
+        "subject": "https://kiprobatt.de/id/LabObject-3AOSL6a2c9891d42843869f7d2162b4911880/S0010-23P0113",
+        "raw_node": {
+          "@id": "LabObject:OSL6a2c9891d42843869f7d2162b4911880/S0010-23P0113",
+          "@type": [
+            "Category:LabProcess-2FParameter-2FInstance",
+            "swivt:Subject"
+          ],
+          "Property:HasName": "InjectionPressure",
+          "Property:HasPressure": 10000.0,
+          "Property:HasProperty": {
+            "@id": "Property:HasPressure"
+          },
+          "Property:HasValue": {
+            "@id": "kiprobatt:100_mbar"
+          },
+          "Property:IsInstanceOf": [
+            {
+              "@id": "Term:Parameter/Actual"
+            },
+            {
+              "@id": "Term:Parameter/Quantitative"
+            }
+          ],
+          "Property:IsProcessParameterOf": {
+            "@id": "LabObject:OSL6a2c9891d42843869f7d2162b4911880/S0010"
+          }
+        }
+      },
+      {
+        "uid": "ki:e65f448368a1a4d2188d",
+        "file": "data/OSL6a2c9891d42843869f7d2162b4911880.jsonld",
+        "subject": "https://kiprobatt.de/id/LabObject-3AOSL6a2c9891d42843869f7d2162b4911880/S0010-23P0114",
+        "raw_node": {
+          "@id": "LabObject:OSL6a2c9891d42843869f7d2162b4911880/S0010-23P0114",
+          "@type": [
+            "Category:LabProcess-2FParameter-2FInstance",
+            "swivt:Subject"
+          ],
+          "Property:HasName": "SealingPressure",
+          "Property:HasPressure": 5000.0,
+          "Property:HasProperty": {
+            "@id": "Property:HasPressure"
+          },
+          "Property:HasValue": {
+            "@id": "kiprobatt:50_mbar"
+          },
+          "Property:IsInstanceOf": [
+            {
+              "@id": "Term:Parameter/Actual"
+            },
+            {
+              "@id": "Term:Parameter/Quantitative"
+            }
+          ],
+          "Property:IsProcessParameterOf": {
+            "@id": "LabObject:OSL6a2c9891d42843869f7d2162b4911880/S0010"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "id": "new-19",
+    "split": "test",
+    "batch": "OSLb4cba0d88fdc49938172c48bf098df6a",
+    "category": "missing_cycle",
+    "input": {
+      "cell_uid": "ki:200802131cb338442988",
+      "question": "分别定位 Cycle 10 和 Cycle 100，输出cycle10_ah、cycle100_ah；不存在的循环返回null。",
+      "fields": {
+        "cycle10_ah": "number or null",
+        "cycle100_ah": "number or null"
+      }
+    },
+    "gold": {
+      "answer": {
+        "cycle10_ah": 0.402326962045,
+        "cycle100_ah": null
+      },
+      "ordered_fields": [],
+      "required_sources": [
+        "ki:1434369ba6f08bb57d22:L20",
+        "ki:1434369ba6f08bb57d22"
+      ]
+    },
+    "sources": [
+      {
+        "uid": "ki:1434369ba6f08bb57d22:L20",
+        "file": "files/Joro-KI-230502-joro-0100-050_-STATS-.txt",
+        "line": 20,
+        "raw": {
+          "Cycle": "10",
+          "AH-IN": "0,404529078917",
+          "AH-OUT": "0,402326962045",
+          "WH-IN": "1,539833532029",
+          "WH-OUT": "1,454023251813",
+          "ACR": "0,045592747629",
+          "DCIR": "0,129984781146",
+          "Date": "45060,5419452662"
+        },
+        "values": {
+          "Cycle": 10.0,
+          "AH-IN": 0.404529078917,
+          "AH-OUT": 0.402326962045,
+          "WH-IN": 1.539833532029,
+          "WH-OUT": 1.454023251813,
+          "ACR": 0.045592747629,
+          "DCIR": 0.129984781146,
+          "Date": 45060.5419452662
+        }
+      },
+      {
+        "uid": "ki:1434369ba6f08bb57d22",
+        "file": "files/Joro-KI-230502-joro-0100-050_-STATS-.txt",
+        "row_count": 23,
+        "linked_objects": [
+          "https://kiprobatt.de/id/LabObject-3AOSLb4cba0d88fdc49938172c48bf098df6a-23O0006"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "new-20",
+    "split": "test",
+    "batch": "OSLb4cba0d88fdc49938172c48bf098df6a",
+    "category": "missing_values",
+    "input": {
+      "cell_uid": "ki:200802131cb338442988",
+      "question": "核对干电芯带支撑质量dry_g与注液量electrolyte_ml：零质量按记录保留，不改成null。",
+      "fields": {
+        "dry_g": "number or null",
+        "electrolyte_ml": "number or null"
+      }
+    },
+    "gold": {
+      "answer": {
+        "dry_g": 0.0,
+        "electrolyte_ml": 1.1
+      },
+      "ordered_fields": [],
+      "required_sources": [
+        "ki:f0924b9335213bdf28d3",
+        "ki:4935d87cb39f23737022"
+      ]
+    },
+    "sources": [
+      {
+        "uid": "ki:f0924b9335213bdf28d3",
+        "file": "data/OSL48bd2e6830ab4ca4a0feb05fc0517dcf.jsonld",
+        "subject": "https://kiprobatt.de/id/LabObject-3AOSL48bd2e6830ab4ca4a0feb05fc0517dcf/S0010-23P0206",
+        "raw_node": {
+          "@id": "LabObject:OSL48bd2e6830ab4ca4a0feb05fc0517dcf/S0010-23P0206",
+          "@type": [
+            "Category:LabProcess-2FParameter-2FInstance",
+            "swivt:Subject"
+          ],
+          "Property:HasMass": 0.0,
+          "Property:HasName": "DryCellWithBracingMass6",
+          "Property:HasProperty": {
+            "@id": "Property:HasMass"
+          },
+          "Property:HasValue": {
+            "@id": "kiprobatt:0_g"
+          },
+          "Property:IsInstanceOf": [
+            {
+              "@id": "Term:DryCellWithBracingMass"
+            },
+            {
+              "@id": "Term:Parameter/Actual"
+            },
+            {
+              "@id": "Term:Parameter/Quantitative"
+            }
+          ],
+          "Property:IsObjectParameterOf": {
+            "@id": "LabObject:OSL48bd2e6830ab4ca4a0feb05fc0517dcf-23O0006"
+          },
+          "Property:IsProcessParameterOf": {
+            "@id": "LabObject:OSL48bd2e6830ab4ca4a0feb05fc0517dcf/S0010"
+          }
+        }
+      },
+      {
+        "uid": "ki:4935d87cb39f23737022",
+        "file": "data/OSL48bd2e6830ab4ca4a0feb05fc0517dcf.jsonld",
+        "subject": "https://kiprobatt.de/id/LabObject-3AOSL48bd2e6830ab4ca4a0feb05fc0517dcf/S0010-23P0306",
+        "raw_node": {
+          "@id": "LabObject:OSL48bd2e6830ab4ca4a0feb05fc0517dcf/S0010-23P0306",
+          "@type": [
+            "Category:LabProcess-2FParameter-2FInstance",
+            "swivt:Subject"
+          ],
+          "Property:HasName": "ElectrolyteVolume6",
+          "Property:HasProperty": {
+            "@id": "Property:HasVolume"
+          },
+          "Property:HasValue": {
+            "@id": "kiprobatt:1.1_ml"
+          },
+          "Property:HasVolume": 1.1e-06,
+          "Property:IsInstanceOf": [
+            {
+              "@id": "Term:ElectrolyteVolume"
+            },
+            {
+              "@id": "Term:Parameter/Actual"
+            },
+            {
+              "@id": "Term:Parameter/Quantitative"
+            }
+          ],
+          "Property:IsObjectParameterOf": {
+            "@id": "LabObject:OSL48bd2e6830ab4ca4a0feb05fc0517dcf-23O0006"
+          },
+          "Property:IsProcessParameterOf": {
+            "@id": "LabObject:OSL48bd2e6830ab4ca4a0feb05fc0517dcf/S0010"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "id": "new-21",
+    "split": "test",
+    "batch": "OSLb947c332babc438b9212aac087a68fa8",
+    "category": "cycle_lookup",
+    "input": {
+      "cell_uid": "ki:9ec2a667fef70302da1b",
+      "question": "需要逐行复核 Cycle 200 与 Cycle 201，输出cycle200_ah、cycle201_ah。",
+      "fields": {
+        "cycle200_ah": "number or null",
+        "cycle201_ah": "number or null"
+      }
+    },
+    "gold": {
+      "answer": {
+        "cycle200_ah": 0.332821341453,
+        "cycle201_ah": 0.33271804741
+      },
+      "ordered_fields": [],
+      "required_sources": [
+        "ki:eacfcdad0349616ce241:L210",
+        "ki:eacfcdad0349616ce241:L211"
+      ]
+    },
+    "sources": [
+      {
+        "uid": "ki:eacfcdad0349616ce241:L210",
+        "file": "files/Gron_KI_230223-tizue-1000-042_-STATS-.txt",
+        "line": 210,
+        "raw": {
+          "Cycle": "200",
+          "AH-IN": "0,332971257041",
+          "AH-OUT": "0,332821341453",
+          "WH-IN": "1,290345352211",
+          "WH-OUT": "1,197313308912",
+          "ACR": "0,047409322113",
+          "DCIR": "0,131591439247",
+          "Date": "45011,5418594444"
+        },
+        "values": {
+          "Cycle": 200.0,
+          "AH-IN": 0.332971257041,
+          "AH-OUT": 0.332821341453,
+          "WH-IN": 1.290345352211,
+          "WH-OUT": 1.197313308912,
+          "ACR": 0.047409322113,
+          "DCIR": 0.131591439247,
+          "Date": 45011.5418594444
+        }
+      },
+      {
+        "uid": "ki:eacfcdad0349616ce241:L211",
+        "file": "files/Gron_KI_230223-tizue-1000-042_-STATS-.txt",
+        "line": 211,
+        "raw": {
+          "Cycle": "201",
+          "AH-IN": "0,332881625774",
+          "AH-OUT": "0,33271804741",
+          "WH-IN": "1,290007406519",
+          "WH-OUT": "1,196942521999",
+          "ACR": "0,047409322113",
+          "DCIR": "0,131591439247",
+          "Date": "45011,6310113773"
+        },
+        "values": {
+          "Cycle": 201.0,
+          "AH-IN": 0.332881625774,
+          "AH-OUT": 0.33271804741,
+          "WH-IN": 1.290007406519,
+          "WH-OUT": 1.196942521999,
+          "ACR": 0.047409322113,
+          "DCIR": 0.131591439247,
+          "Date": 45011.6310113773
+        }
+      }
+    ]
+  },
+  {
+    "id": "new-22",
+    "split": "test",
+    "batch": "OSLb947c332babc438b9212aac087a68fa8",
+    "category": "lineage",
+    "input": {
+      "cell_uid": "ki:9ec2a667fef70302da1b",
+      "question": "输出从上游到下游的chain名称字符串数组，以及去重后的过程数量process_count。",
+      "fields": {
+        "chain": "array of object-name strings, upstream first",
+        "process_count": "integer count"
+      }
+    },
+    "gold": {
+      "answer": {
+        "chain": [
+          "DryCell",
+          "FilledCell1",
+          "FormatedCell1"
+        ],
+        "process_count": 3
+      },
+      "ordered_fields": [
+        "chain"
+      ],
+      "required_sources": [
+        "ki:trace:ki:9ec2a667fef70302da1b"
+      ]
+    },
+    "sources": [
+      {
+        "uid": "ki:trace:ki:9ec2a667fef70302da1b",
+        "file": [
+          "data/OSL6380f976d43748fea77c3b6c56a3956e.jsonld",
+          "data/OSL8e2bf89e1d034b5cadafd47a8ddf6a3f.jsonld",
+          "data/OSLb947c332babc438b9212aac087a68fa8.jsonld"
+        ],
+        "objects": [
+          "https://kiprobatt.de/id/LabObject-3AOSL8e2bf89e1d034b5cadafd47a8ddf6a3f-23O0002",
+          "https://kiprobatt.de/id/LabObject-3AOSL6380f976d43748fea77c3b6c56a3956e-23O0010",
+          "https://kiprobatt.de/id/LabObject-3AOSLb947c332babc438b9212aac087a68fa8-23O0010"
+        ],
+        "predecessor_parameters": [
+          {
+            "uid": "ki:119e63a9f42defd9e36e",
+            "file": "data/OSLb947c332babc438b9212aac087a68fa8.jsonld",
+            "subject": "https://kiprobatt.de/id/LabObject-3AOSLb947c332babc438b9212aac087a68fa8/S0010-23P0010",
+            "raw_node": {
+              "@id": "LabObject:OSLb947c332babc438b9212aac087a68fa8/S0010-23P0010",
+              "@type": [
+                "Category:LabProcess-2FParameter-2FInstance",
+                "swivt:Subject"
+              ],
+              "Property:HasName": "FormationCellSelection10",
+              "Property:HasPredecessor": {
+                "@id": "LabObject:OSL6380f976d43748fea77c3b6c56a3956e-23O0010"
+              },
+              "Property:HasProperty": {
+                "@id": "Property:HasPredecessor"
+              },
+              "Property:HasValue": {
+                "@id": "LabObject:OSL6380f976d43748fea77c3b6c56a3956e-23O0010"
+              },
+              "Property:IsInstanceOf": [
+                {
+                  "@id": "Term:Parameter/Actual"
+                },
+                {
+                  "@id": "Term:Parameter/InputObject"
+                }
+              ],
+              "Property:IsObjectParameterOf": {
+                "@id": "LabObject:OSLb947c332babc438b9212aac087a68fa8-23O0010"
+              },
+              "Property:IsProcessParameterOf": {
+                "@id": "LabObject:OSLb947c332babc438b9212aac087a68fa8/S0010"
+              }
+            }
+          },
+          {
+            "uid": "ki:f7e11f60103174f325db",
+            "file": "data/OSL6380f976d43748fea77c3b6c56a3956e.jsonld",
+            "subject": "https://kiprobatt.de/id/LabObject-3AOSL6380f976d43748fea77c3b6c56a3956e/S0010-23P0010",
+            "raw_node": {
+              "@id": "LabObject:OSL6380f976d43748fea77c3b6c56a3956e/S0010-23P0010",
+              "@type": [
+                "Category:LabProcess-2FParameter-2FInstance",
+                "swivt:Subject"
+              ],
+              "Property:HasName": "CellSelection10",
+              "Property:HasPredecessor": {
+                "@id": "LabObject:OSL8e2bf89e1d034b5cadafd47a8ddf6a3f-23O0002"
+              },
+              "Property:HasProperty": {
+                "@id": "Property:HasPredecessor"
+              },
+              "Property:HasValue": {
+                "@id": "LabObject:OSL8e2bf89e1d034b5cadafd47a8ddf6a3f-23O0002"
+              },
+              "Property:IsInstanceOf": [
+                {
+                  "@id": "Term:Parameter/Actual"
+                },
+                {
+                  "@id": "Term:Parameter/InputObject"
+                }
+              ],
+              "Property:IsObjectParameterOf": {
+                "@id": "LabObject:OSL6380f976d43748fea77c3b6c56a3956e-23O0010"
+              },
+              "Property:IsProcessParameterOf": {
+                "@id": "LabObject:OSL6380f976d43748fea77c3b6c56a3956e/S0010"
+              }
+            }
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "new-23",
+    "split": "test",
+    "batch": "OSLfdb74e35b39a4ad3ac3e933a90b37b26",
+    "category": "cycle_lookup",
+    "input": {
+      "cell_uid": "ki:170d61b822e11c0193e8",
+      "question": "核查 Cycle 300 的放电容量discharge_ah及能量discharge_wh，按各自单位摘录。",
+      "fields": {
+        "discharge_ah": "number or null",
+        "discharge_wh": "number or null"
+      }
+    },
+    "gold": {
+      "answer": {
+        "discharge_ah": 0.351833037411,
+        "discharge_wh": 1.271214552508
+      },
+      "ordered_fields": [],
+      "required_sources": [
+        "ki:68832478ffa28a9930a7:L310"
+      ]
+    },
+    "sources": [
+      {
+        "uid": "ki:68832478ffa28a9930a7:L310",
+        "file": "files/Joro-KI-230502-joro-0200-045_-STATS-.txt",
+        "line": 310,
+        "raw": {
+          "Cycle": "300",
+          "AH-IN": "0,351178342835",
+          "AH-OUT": "0,351833037411",
+          "WH-IN": "1,363098199336",
+          "WH-OUT": "1,271214552508",
+          "ACR": "0,050281543285",
+          "DCIR": "0,114286273718",
+          "Date": "45089,8740983796"
+        },
+        "values": {
+          "Cycle": 300.0,
+          "AH-IN": 0.351178342835,
+          "AH-OUT": 0.351833037411,
+          "WH-IN": 1.363098199336,
+          "WH-OUT": 1.271214552508,
+          "ACR": 0.050281543285,
+          "DCIR": 0.114286273718,
+          "Date": 45089.8740983796
+        }
+      }
+    ]
+  },
+  {
+    "id": "new-24",
+    "split": "test",
+    "batch": "OSLfdb74e35b39a4ad3ac3e933a90b37b26",
+    "category": "missing_lineage",
+    "input": {
+      "cell_uid": "ki:170d61b822e11c0193e8",
+      "question": "核对本对象自己的上游注液量electrolyte_ml，明确前驱资料无法提供该数值时返回null并引用查询范围。",
+      "fields": {
+        "electrolyte_ml": "number or null"
+      }
+    },
+    "gold": {
+      "answer": {
+        "electrolyte_ml": null
+      },
+      "ordered_fields": [],
+      "required_sources": [
+        "ki:trace:ki:170d61b822e11c0193e8"
+      ]
+    },
+    "sources": [
+      {
+        "uid": "ki:trace:ki:170d61b822e11c0193e8",
+        "file": [
+          "data/OSLfdb74e35b39a4ad3ac3e933a90b37b26.jsonld"
+        ],
+        "objects": [
+          "https://kiprobatt.de/id/LabObject-3AOSLfdb74e35b39a4ad3ac3e933a90b37b26-23O0005"
+        ],
+        "predecessor_parameters": []
+      }
+    ]
+  }
+]
