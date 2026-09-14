@@ -111,7 +111,8 @@ def document_elements(page: int = Query(default=18, ge=1, le=28)):
     return [
         r["node"]
         for r in graph().query(
-            "MATCH (n:Guide {page:$page}) RETURN n{.*,embedding:null} AS node ORDER BY n.uid",
+            "MATCH (n:Guide {page:$page}) RETURN n{.*,embedding:null} AS node "
+            "ORDER BY n.bbox[1],n.bbox[0]",
             page=page,
         )
     ]

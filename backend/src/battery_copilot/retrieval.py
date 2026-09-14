@@ -29,7 +29,16 @@ def search(query: str, battery_id: int, scope: str = "all", limit: int = 6) -> l
         graph().driver,
         "guide_vectors" if scope == "guide" else "evidence_vectors",
         "guide_text" if scope == "guide" else "evidence_text",
-        return_properties=["uid", "text", "name", "kind", "source_kind", "battery_id", "page"],
+        return_properties=[
+            "uid",
+            "text",
+            "name",
+            "kind",
+            "source_kind",
+            "battery_id",
+            "page",
+            "bbox",
+        ],
     )
     result = retriever.get_search_results(query_text=terms, query_vector=vector, top_k=100)
     rows = []

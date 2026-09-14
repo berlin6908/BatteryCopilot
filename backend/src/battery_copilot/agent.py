@@ -16,6 +16,7 @@ from pydantic import BaseModel, Field, create_model, model_validator
 
 from battery_copilot.changes import compare_scenario
 from battery_copilot.codex_model import CodexChatModel
+from battery_copilot.document_sources import read_region
 from battery_copilot.graph import graph
 from battery_copilot.retrieval import search
 from battery_copilot.settings import ROOT, settings
@@ -41,6 +42,8 @@ class AgentRequest(BaseModel):
 
 
 def read_evidence(uid: str, battery_id: int) -> dict:
+    if uid.startswith("pem:"):
+        return read_region(uid)
     if uid == f"summary:{battery_id}":
         classes = graph().composition(battery_id)
         totals = {
