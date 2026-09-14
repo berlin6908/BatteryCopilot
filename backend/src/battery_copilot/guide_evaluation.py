@@ -3,11 +3,19 @@
 import argparse
 import hashlib
 import json
+import time
 from datetime import datetime, timezone
 from pathlib import Path
+from statistics import median
 
 from battery_copilot.graph import graph
-from battery_copilot.retrieval import MODEL, MODEL_REVISION, search
+from battery_copilot.retrieval import (
+    MODEL,
+    MODEL_REVISION,
+    RERANKER,
+    RERANKER_REVISION,
+    search,
+)
 from battery_copilot.settings import ROOT
 
 SUITE = ROOT / "data/guide-validation"
@@ -46,6 +54,10 @@ def run(output):
         "created_at": datetime.now(timezone.utc).isoformat(),
         "embedding": MODEL,
         "embedding_revision": MODEL_REVISION,
+        "reranker": RERANKER,
+        "reranker_revision": RERANKER_REVISION,
+        "candidate_top_k": 100,
+        "effective_search_ratio": 6,
         "corpus_sha256": hashlib.sha256(json.dumps(corpus, sort_keys=True).encode()).hexdigest(),
         "sha256": {
             p.relative_to(ROOT).as_posix(): hashlib.sha256(
@@ -68,12 +80,14 @@ def run(output):
         "results": [],
     }
     for case in cases:
+        started = time.perf_counter()
         hits = search(case["query"], 1, "guide", 6)
         boxes = [r["bbox"] for r in hits if r["page"] == case["page"]]
         overlaps = [round(coverage(region, boxes), 4) for region in case["regions"]]
         report["results"].append(
             {
                 **case,
+                "seconds": round(time.perf_counter() - started, 3),
                 "page_hit_at_6": any(r["page"] == case["page"] for r in hits),
                 "region_coverage": overlaps,
                 "region_hit_at_6": all(v >= 0.8 for v in overlaps) if overlaps else None,
@@ -91,6 +105,10 @@ def run(output):
         for split in ["dev", "test"]
         for rows in [[r for r in report["results"] if r["split"] == split]]
     ]
+    report["latency"] = {
+        "first_query_seconds": report["results"][0]["seconds"],
+        "remaining_19_median_seconds": median(r["seconds"] for r in report["results"][1:]),
+    }
     output.parent.mkdir(parents=True, exist_ok=True)
     output.write_text(json.dumps(report, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
     print(json.dumps(report["summary"]))
