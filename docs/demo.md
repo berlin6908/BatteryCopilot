@@ -2,6 +2,26 @@
 
 ## 三分钟演示
 
+[观看三分钟字幕演示（MP4）](https://github.com/berlin6908/BatteryCopilot/releases/download/v0.1.0/battery-copilot-demo.mp4)
+
+视频展示真实应用与提前生成的 Terra 报告，含原始行、结论来源、资料缺口、演示复核意见、
+刷新恢复和导出；字幕明确说明生成发生在录屏前。录屏中的复核意见不是工程师验收。
+数据来自 KIproBatt v0.3.2，CC BY 4.0，作者和转换说明见
+[完整署名](../data/sources/kiprobatt/ATTRIBUTION.md)。视频中的应用界面和生成报告由本项目制作。
+
+复录需 Node、可解析的 Playwright 包、本机 Edge 与 FFmpeg；先执行 `playwright install ffmpeg`。
+对独立演示数据库运行，脚本会生成真实报告并保存标为演示的复核意见：
+
+```powershell
+$env:BASE_URL = 'http://127.0.0.1:18000'
+node scripts/record-demo.cjs
+uv run python scripts/render-demo.py
+```
+
+字幕 MP4 与原始录屏写入 `data/runs/demo/`，仅最终 MP4 作为 GitHub Release 附件。
+若录制中断且已生成报告，可设置 `DEMO_REUSE_REPORT=1` 复用同目录的模型事件与已保存报告；
+已填写复核意见的报告不能再次提交复核，完整重录应生成新报告。
+
 演示前按 README 启动服务，确认首页可列出电芯、模型已连接。选中默认样本
 `FormatedCell1 · 101_tizue-ki-230306-tizue-0400-059_-STATS-.txt`。
 生成耗时受本机与模型服务影响，可以提前保存一份报告，现场展示查询过程与历史恢复。

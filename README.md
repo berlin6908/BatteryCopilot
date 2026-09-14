@@ -13,7 +13,7 @@
 ![制造履历与循环测试](docs/images/manufacturing-workbench.png)
 
 [三分钟演示与简历表述](docs/demo.md) · [制造验证结果](docs/manufacturing-validation.md) ·
-[安装与交付验证](docs/delivery-check.md)
+[指南引用与检索验证](docs/guide-validation.md) · [安装与交付验证](docs/delivery-check.md)
 
 ## 安装与运行
 
@@ -114,6 +114,8 @@ uv run ruff check backend
 uv run pytest -q
 # 检索示例：
 uv run python -m battery_copilot.evaluate --mode retrieval
+# 当前指南的页码与原文区域检索验证：
+uv run python -m battery_copilot.guide_evaluation --output data/runs/guide-validation.json
 ```
 
 前端检查和构建：
@@ -137,6 +139,11 @@ Pop-Location
 默认为 `http://127.0.0.1:8000`，均需可解析的 Playwright
 Node 包和本机 Edge。制造功能的数值与对象范围测试位于 `backend/tests/test_manufacturing.py`。
 原 300 题不覆盖 KIproBatt 制造业务。
+
+工艺指南采用 PDF 版本、页码和区域引用，解析分块变化后仍可读取原引用。
+新增图中文字提取和多语言重排后，干净安装的原 8 道页检索探针为 8/8；
+另 4 个业务意图的中英德表达共 12 问，目标页命中 10/12、原文区域命中 9/12。
+这些是已查看问题后的修复验证。失败、分步对照和 CPU 延迟见[指南验证](docs/guide-validation.md)。
 
 当前制造验证包含8道已知回归题和24道同批次新对象题，固定对照也能定位题目要求的循环。
 两轮各96次尝试，保留修复前后的答案、引用评分、开销和来源抽查。

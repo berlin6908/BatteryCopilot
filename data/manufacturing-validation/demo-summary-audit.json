@@ -1,0 +1,94 @@
+{
+  "purpose": "Delivery demo source audit; not a benchmark or external engineer review",
+  "before": {
+    "run_id": "b7a8c0648f844a0ebf33bffdb99dee07",
+    "summary": "FormatedCell1 的明确履历为 DryCell 经 Stacking Protocol 形成 FilledCell1，再经 Filling Protocol 与 Formation Protocol 形成当前电芯；Cycle 1 已记录充、放电容量。由于缺少测试工况与验收依据，目前不能作质量判定。",
+    "finding": "Summary incorrectly mapped Stacking to FilledCell1. The trace maps Stacking Protocol to DryCell, Filling Protocol to FilledCell1, Formation Protocol to FormatedCell1. Individual claims had the correct order.",
+    "expected_process_outputs": [
+      [
+        "Stacking Protocol",
+        "DryCell"
+      ],
+      [
+        "Filling Protocol",
+        "FilledCell1"
+      ],
+      [
+        "Formation Protocol",
+        "FormatedCell1"
+      ]
+    ],
+    "evidence_uid": "ki:trace:ki:4df8de18d3933c20569b"
+  },
+  "change": "Explain stage process-to-output correspondence in manufacturing instructions. This does not guarantee semantic correctness of future summaries.",
+  "after": {
+    "source_commit": "b9b67ca",
+    "run_id": "d0957f29616e47f092c2542902b9f542",
+    "summary": "已核对 FormatedCell1 的明确前驱履历、Cycle 1 容量记录及当前质量判定资料缺口。",
+    "claims": [
+      {
+        "statement": "明确履历共有三道按上游至当前对象排列的工序：Stacking Protocol 产生 DryCell；Filling Protocol 以该 DryCell 为前驱并产生 FilledCell1（该对象记录电解液体积 2.1 ml）；Formation Protocol 以 FilledCell1 为前驱并产生 FormatedCell1。Formation 共享温度记录为 25 °C，且该电芯绑定测量通道 59。追溯在 DryCell 处结束，未将同批或其他对象推定为前驱。",
+        "evidence_ids": [
+          "ki:trace:ki:4df8de18d3933c20569b",
+          "ki:0fa4c2bbb1091a3391e0",
+          "ki:904bc9e28e7603deec26",
+          "ki:190c63428cb06e8a6f1a",
+          "ki:0fd9a347e27000f449d4",
+          "ki:6d11658b7fed6dae8b29"
+        ],
+        "scope": "record"
+      },
+      {
+        "statement": "关联的 Maccor#2、通道 59 测试文件中，Cycle 1 原始记录为 AH-IN 0.515318259753 Ah、AH-OUT 0.438290374336 Ah；对应 WH-IN 1.917893841624 Wh、WH-OUT 1.609059917635 Wh。",
+        "evidence_ids": [
+          "ki:f32fa0b6022060cdc591",
+          "ki:f32fa0b6022060cdc591:L11"
+        ],
+        "scope": "record"
+      },
+      {
+        "statement": "目前不能据此作质量合格/不合格判定：虽有 Cycle 1 的容量结果和文件关联，但记录未提供可用于判定的程序分段、各段电流与温度条件以及验收标准；因此也不能由该单个循环结果计算 SOH、判断衰减或归因缺陷。",
+        "evidence_ids": [
+          "ki:f32fa0b6022060cdc591",
+          "ki:f32fa0b6022060cdc591:L11",
+          "ki:trace:ki:4df8de18d3933c20569b"
+        ],
+        "scope": "record"
+      }
+    ],
+    "check": "Development assistant compared the three process-output pairs and Cycle 1 numeric results with the trace/source records. One replay passed; this is not a semantic guarantee or a new benchmark score."
+  },
+  "recorded_demo": {
+    "source_commit": "b9b67ca",
+    "run_id": "0570359bac3f41bf942ce1178d1d7c19",
+    "summary": "已追溯到 FormatedCell1 的明确前驱链及其三道对应工序；Cycle 1 记录了充、放电容量。由于履历在 DryCell 处终止，且缺少测试程序条件与验收标准，当前不能作质量判定。",
+    "claims": [
+      {
+        "statement": "履历按上游至当前对象为：Stacking Protocol 产生 DryCell，Filling Protocol 产生 FilledCell1（其明确前驱为 DryCell），Formation Protocol 产生 FormatedCell1（其明确前驱为 FilledCell1）。追溯共覆盖3道工序，终点为 DryCell。",
+        "evidence_ids": [
+          "ki:trace:ki:4df8de18d3933c20569b",
+          "ki:0fa4c2bbb1091a3391e0",
+          "ki:904bc9e28e7603deec26"
+        ],
+        "scope": "record"
+      },
+      {
+        "statement": "测试文件中 Cycle 1 的 AH-IN（充电容量）为0.515318259753 Ah，AH-OUT（放电容量）为0.438290374336 Ah。该文件关联 FormatedCell1，测试仪为 Maccor#2、通道59。",
+        "evidence_ids": [
+          "ki:f32fa0b6022060cdc591",
+          "ki:f32fa0b6022060cdc591:L11"
+        ],
+        "scope": "record"
+      },
+      {
+        "statement": "当前不能作质量合格/不合格判定：明确前驱追溯在 DryCell 终止，未提供其更早前驱；同时现有资料没有测试程序分段、电流/温度条件及验收标准。Cycle 1 的单条容量记录本身不足以推定 SOH、衰减或质量状态。",
+        "evidence_ids": [
+          "ki:trace:ki:4df8de18d3933c20569b",
+          "ki:f32fa0b6022060cdc591"
+        ],
+        "scope": "record"
+      }
+    ],
+    "check": "A second real model run for the full recording; process-output mapping, Cycle 1 values and metadata matched the same source records."
+  }
+}

@@ -100,6 +100,10 @@ uv run python -m battery_copilot.manufacturing_benchmark --output data/runs/manu
 ```
 
 原始轨迹留在被忽略的 `data/runs/`；公开仓库保存协议、题库、执行器和汇总结果。
-历史v2源码检查点为 `ded512b`，最终制造重放源码为 `101025c`；当前制造实现与后者相同。
+历史v2源码检查点为 `ded512b`，最终制造重放源码为 `101025c`。
+发布演示时另发现摘要把工序与产物错配，`b9b67ca` 补充了每个 stage 的 process 产生同一行 object
+这一说明。两次真实模型重放（含正式录屏报告）的摘要与三组工序—产物对应已核对，
+[错误摘要与修复后输出](../data/manufacturing-validation/demo-summary-audit.json)保留。
+这次没有重跑整个制造题库；上文成绩仍对应原运行清单，不能据此声称当前摘要均正确。
 不同源码/配置的尝试必须写入新目录。再次执行同一配置可以补齐未运行的组合，
 不能覆盖已有失败；模型重新运行可能产生不同回答。

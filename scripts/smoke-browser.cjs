@@ -29,10 +29,21 @@ const path = require('node:path');
   await page.waitForTimeout(500);
   await page.screenshot({ path: path.join(output, 'pdf-evidence.png') });
   await page.getByRole('button', { name: '关闭证据' }).click();
+  for (const query of ['产线布局中的缓冲站和返工区域', 'Puffer und Nacharbeit in der Layoutplanung']) {
+    // Flutter removes the hint's accessible name once this field contains text.
+    await page.getByRole('textbox').first().fill(query);
+    const searchResponse = page.waitForResponse(r => r.url().includes('/api/search?'), { timeout: 120000 });
+    await page.getByRole('button', { name: '检索', exact: true }).click();
+    const hits = await (await searchResponse).json();
+    if (!hits.some(r => r.page === 24)) throw new Error(`Missing layout page for ${query}`);
+    await page.getByRole('button', { name: /第 24 页.*Layout/ }).first().click();
+    await page.getByText('PEM · 第 24 页原文区域', { exact: true }).waitFor();
+    await page.getByRole('button', { name: '关闭证据' }).click();
+  }
   await page.getByRole('button', { name: '变更复核', exact: true }).click();
   await page.getByRole('button', { name: '新建申请', exact: true }).waitFor();
   const result = { browser: 'Edge', viewport: '1512x1100',
-    flows: ['graph overview', 'CSV provenance', 'PDF page/bbox', 'saved change workbench'], errors };
+    flows: ['graph overview', 'CSV provenance', 'PDF page/bbox', 'Chinese/German layout retrieval and PDF region source', 'saved change workbench'], errors };
   if (process.env.LIVE_AGENT === '1') {
     const { checkCases } = require('./smoke-cases.cjs');
     result.cases = await checkCases(page, output);

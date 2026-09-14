@@ -96,6 +96,9 @@ Document -HAS_EVIDENCE-> Guide
 结构节点保留 source_file、source_line、raw_record、snapshot_id。
 Guide 保留 element_ref、page、bbox、page_width、page_height、source_kind。
 文档 bbox 转为左上原点、0–1 坐标，界面按实际画布尺寸定位。
+指南 UID 由 PDF SHA-256、页码和区域组成；`element_ref` 仅供解析诊断。
+`document_sources.py` 直接从指定版本 PDF 读取区域，已保存引用不依赖当前分块索引。
+布局图的原生文字通过 PDFium 提取；无文字图形仍需查看页面。
 
 ## 变更申请与复核
 
@@ -132,6 +135,8 @@ flowchart LR
 - Docling：保存元素和页内坐标。Windows 使用其 PyPdfium 后端，布局模型仍是标准管线。
 - E5：CPU 上的真实多语言向量，384 维；query/passage 前缀按模型约定分开。
 - Neo4j GraphRAG：直接复用 HybridRetriever，不重写混合检索。
+- CrossEncoder：仅对指南的前 100 个混合候选做多语言重排，降低短页面标签对正文的干扰；
+  复用 SentenceTransformers，固定模型版本。取舍与失败见[指南验证](guide-validation.md)。
 - LangChain：直接复用工具调度和结构化输出；不让模型执行任意 Cypher。
 - Flutter：适配岗位要求，并复用 graphview；PDF 来源用原页图 + 归一化区域高亮。
 
